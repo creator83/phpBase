@@ -1,9 +1,6 @@
-<?php
 
-	?>
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru" lang="ru">
 <head>
 	<title>Вход</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -12,63 +9,57 @@
 			background:url("back.jpg") fixed no-repeat center;
 			background-size:/*contain*/cover;			
 			}
-		.field{
-				float: right;
-				margin-right: 20px;
-				/*margin-top: 20 px;*/
-			}
-		.lbl{
-			font-weight: bold;
-			color: white;
-			float: left;	
-			margin-left:20px;
-			/*margin-top: 20 px;*/
-		}
-		#pa{
-			morgin-top: 0px;
-			margin-bottom: 0px;
-		}
-		
-		#lo{
-			
-			margin-bottom: 0px;
-		}
-		
-		form{
-			/*border: 3px solid green;*/
+		form{		
 			width:400px;
+			height: 170px;
+			margin-top: 80px;
 			margin-right:auto;
 			margin-left:auto;
 			background: url("rect4136.png") no-repeat;
+			font-weight: bold;
 		}
-		.buttons{
+		form label {
+			clear:left;
+			float: left;
+			margin-top: 18px;
+			margin-left: 20px;
+			font-size: 1.3em;
+			color: lightgray;
+		}
+		form input[type="text"] {
+			float:right;
 			margin-top: 20px;
-			/*display: inline-block;*/
+			margin-right: 20px;
 		}
-		#connect{
-			/*float: left;*/
+		form input[type="password"]{
+			clear: right;
+			float:right;
+			margin-right: 20px;
+			margin-top: 20px;
 		}
-		#clear{
-			/*float: right;*/
+		form input[type="reset"]{
+			clear: right;
+			float:right;
+			margin-right: 80px;
+			margin-top: 40px;
 		}
-		#passL{
-			margin-top: 5px;
+		form input[type="submit"]{
+			clear: left;
+			float: left;
+			margin-left: 80px;
+			margin-top: 40px;
 		}
+
 	</style>
 </head>
 <body>
-
 	<form action="">
-		<label class="lbl" id="nameL">Имя пользователя: </label>
-		<input id="lo" class="field" type="text" name="login" value=""/><br/>
-		<label class="lbl" id="passL">Пароль: </label>
-		<input id="pa" class="field" type="password" name="pass"/><br/>
-		<input id="connect" class="buttons" type="submit" value="Подключится"/>
-		<input id="clear" class="buttons" type="reset" value="очистить"/>
+		<label>Имя пользователя: </label>
+		<input type="text" name="login" value=""/><br/ >
+		<label>Пароль: </label>
+		<input type="password" name="pass"/><br/>
+		<input type="submit" value="Подключится"/>
+		<input type="reset" value="очистить"/>
 	</form>
-
-	<?php
-
-	?>
 </body>
 </html>
