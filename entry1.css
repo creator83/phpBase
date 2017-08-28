@@ -1,0 +1,61 @@
+
+body{
+	background:url("back.jpg") fixed no-repeat center;
+	background-size:/*contain*/cover;	
+	/*background-size: 100%;		*/
+	}
+section {
+	position: absolute;
+	width:400px;
+	height: 170px;
+	left: 0;
+	right: 0;
+	top: 40%;
+	bottom: 60%;
+	margin: auto;
+}
+div {
+	/*background: #5B5959;*/
+	background: linear-gradient(to left, #F1ECEC, #191917);
+	opacity: 0.5;
+	position: relative;	
+	width:400px;
+	height: 170px;
+	border-radius: 10px;
+	box-shadow: 55px 55px 65px rgba(0,0,0,.9);
+}
+form{	
+	position: relative;	
+	font-weight: bold;
+	top: -170px;
+	/*color: lightgray;*/
+}
+form label {
+	clear:left;
+	float: left;
+	margin-top: 18px;
+	margin-left: 20px;
+	font-size: 1.3em;	
+}
+form input[type="text"] {
+	float:right;
+	margin-top: 20px;
+	margin-right: 20px;
+}
+form input[type="password"]{
+	clear: right;
+	float:right;
+	margin-right: 20px;
+	margin-top: 20px;
+}
+form input[type="reset"]{
+	float:right;
+	margin-right: 80px;
+	margin-top: 40px;
+}
+form input[type="submit"]{
+	clear: left;
+	float: left;
+	margin-left: 80px;
+	margin-top: 40px;
+}

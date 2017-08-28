@@ -4,11 +4,12 @@
 <head>
 	<title>Вход</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<link rel="stylesheet" href="entry.css" />
+	<link rel="stylesheet" href="entry1.css" />
 
 </head>
 <body>
 	<section>
+	<div></div>
 	<form action="">
 		
 		<label>Имя пользователя: </label>
@@ -17,8 +18,7 @@
 		<input type="password" name="pass"/><br/>
 		<input type="submit" value="Подключится"/>
 		<input type="reset" value="очистить"/>
-		</div>
 	</form>
-	</section>
+</section>
 </body>
 </html>
