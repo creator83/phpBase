@@ -1,24 +1,40 @@
 
 body{
 	background:url("back.jpg") fixed no-repeat center;
-	background-size:/*contain*/cover;			
+	background-size:/*contain*/cover;	
+	/*background-size: 100%;		*/
 	}
-form{		
+section {
 	width:400px;
 	height: 170px;
-	margin-top: 80px;
+	background: gray;
+	margin: auto;
+	opacity: 0.6;
+	position: absolute;	
+	left: 0;
+	right: 0;
+	top: 40%;
+	bottom: 60%;
+	width:400px;
+	height: 170px;
+	margin: auto;
+}
+form{	
+	position: absolute;	
+	/*margin-top: 80px;
 	margin-right:auto;
 	margin-left:auto;
-	background: url("rect4136.png") no-repeat;
+	background: url("rect4136.png") no-repeat;*/
 	font-weight: bold;
+	/*color: lightgray;*/
+	background: 
 }
 form label {
 	clear:left;
 	float: left;
 	margin-top: 18px;
 	margin-left: 20px;
-	font-size: 1.3em;
-	color: lightgray;
+	font-size: 1.3em;	
 }
 form input[type="text"] {
 	float:right;
@@ -32,7 +48,6 @@ form input[type="password"]{
 	margin-top: 20px;
 }
 form input[type="reset"]{
-	clear: right;
 	float:right;
 	margin-right: 80px;
 	margin-top: 40px;
