@@ -1,0 +1,29 @@
+
+body{
+	background:url("back.jpg") fixed no-repeat center;
+	background-size:/*contain*/cover;	
+	}
+.container {
+	display: table-cell;
+	width: 60px;
+	height: 50px;
+	border: 1px solid red;
+	
+}
+.container_head {
+	display: block;
+	text-decoration: none;
+	height: 100%;
+	border: 1px solid green;
+	padding-top: 15px;
+	margin-left: 15px;
+}
+.dummy {
+	width: 100%;
+	border: none;
+	border-bottom: 1px solid yellow;
+}
+.container_head__ctu:target {
+
+}
+
