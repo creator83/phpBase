@@ -1,0 +1,20 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+.personalData_fio {
+	width: 150px;
+	border: 1px solid red;
+}
+.personalData_label {
+	
+	text-align: center;
+	border: 1px solid green;
+	width: 150px;
+}
+.personalData_wrapper_surename {
+	display: flex;
+	flex-direction: column-reverse;
+	margin: auto;
+
+}

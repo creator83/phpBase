@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+
+<head>
+	<title>Вход</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="create_tu.css" />
+
+</head>
+<body>
+	<form action="" method="get" class="personalData">
+		<fieldset>
+			<legend>Данные заявителя</legend>
+			<div class="personalData_wrapper_surename">
+				<div class="personalData_label">Фамилия:</div>
+				<input type="text" class="personalData_fio">
+			</div>	
+				
+				<div class="personalData_label">Отчество:</div>
+			<div class="personalData_wrapper_firstname">		
+				<div class="personalData_label">Имя:</div>
+				<input type="text" class="personalData_fio">
+			</div>
+			<input type="text" class="personalData_fio">
+			<input type="text" class="personalData_phoneCode">
+			<input type="text" class="personalData_phoneNumber">
+			<select class="personalData_Region">
+				<option value="1">dummy1</option>
+				<option value="2">dummy2</option>
+			</select>
+			<input type="button" class="personalData_addRegion" value="+">
+			<select class="personalData_state">
+				<option value="1">dummy1</option>
+				<option value="2">dummy2</option>
+			</select>
+			<input type="button" class="personalData_addState" value="+">
+			<select class="personalData_street">
+				<option value="1">dummy1</option>
+				<option value="2">dummy2</option>
+			</select>
+			<input type="button" class="personalData_addStreet" value="+">
+			
+		</fieldset>
+		<fieldset>
+			<legend>Информация об участке</legend>
+			<select class="landData_district">
+				<option value="1">dummy1</option>
+				<option value="2">dummy2</option>
+			</select>
+			<input type="text" class="landData_quarter">
+			<input type="text" class="landData_number">
+			<textarea rows="4" cols="30" class="landData_address">
+			</textarea>
+		</fieldset>
+			<input type="radio" name="project" value="wProject"><span>С проектом</span><br />
+			<input type="radio" name="project" value="woProject" checked><span>Без проекта</span>
+			<input type="submit" value="Создать">
+			<input type="reset" value="Очистить">
+
+	</form>
+</body>
+</html>
