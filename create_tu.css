@@ -2,19 +2,232 @@
 	margin: 0;
 	padding: 0;
 }
-.personalData_fio {
+form {
+	width: 770px;
+	margin: auto;
+}
+fieldset {
+	padding-top: 20px;
+}
+.personalData {
+	display: inline-block;	
+	margin-left: 10px;
+
+}
+
+.personalData__label {	
+	text-align: center;
+	width: 150px;
+	font-size: 1.3em;
+	border: 1px solid green;
+
+}
+.personalData__label_phone {
+	width: 165px;
+	margin-left: 50px;
+}
+.personalData__fio {
 	width: 150px;
 	border: 1px solid red;
+	margin-left: 10px;
+	margin-top: 5px;
+	font-size	: 1.3em;
 }
-.personalData_label {
-	
+
+.personalData__phoneCode {
+	width: 50px;
+	border: 1px solid red;
+	margin-left: 50px;
+	margin-top: 5px;
+	font-size: 1.3em;
 	text-align: center;
-	border: 1px solid green;
+}
+
+.personalData__phoneNumber {
+	width: 100px;
+	border: 1px solid red;
+	margin-left: 10px;
+	font-size: 1.3em;
+	text-align: center;
+}
+.personalData__label_secondLine {
+	margin-top: 15px;
+}
+
+.personalData__label_region {
+	width: 300px;
+}
+
+.personalData__label_state {
+	width: 300px;
+	margin-left: 90px;
+}
+
+.personalData__secondLine {
+	margin-top: 5px;
+	display: inline-block;
+	font-size: 1.1em;
+}
+.personalData__secondLine__region {
+	margin-left: 0px;		
+	width: 300px;
+	
+}
+.personalData__secondLine__state {
+	width: 300px;
+	margin-left: 30px;
+	margin-top: 5px;
+}
+
+legend {
+	font-size: 1.2em;
+}
+
+
+.personalData__button {
+	margin-left: 5px;	
+	width: 40px;
+	font-size: 1.2em;
+}
+
+
+.personalData__label_thirdLine {
+	margin-top: 5px;
+}
+
+.personalData__label_street{
+	width: 250px;
+}
+
+.personalData__label_house {
+	margin-left: 80px;
+	width: 60px;
+}
+
+.personalData__label_corp {
+	width: 70px;
+}
+
+.personalData__label_app {
+	width: 60px;
+}
+
+.personalData__thirdLine {
+	font-size: 1.1em;
+	text-align: center;
+}
+
+.personalData__thirdLine_street {
+	width: 250px;
+	margin-left: 0px;	
+	margin-top: 5px;
+}
+
+
+.personalData__houseNumber {
+	width: 60px;
+	border: 1px solid red;
+	margin-left: 30px;
+	margin-top: 5px;
+}
+
+.personalData__corpNumber {
+	width: 68px;
+}
+
+.personalData__appNumber {
+	width: 58px;
+
+}
+fieldset {
+	padding-bottom: 20px;
+}
+
+.landData {
+	margin-top: 20px;
+	padding-top: 20px;
+	position: relative;
+}
+.landData__label {
+	display: inline-block;	
+	border: 1px solid red;
+	margin-left: 10px;
+	margin-top: 5px;
+	font-size: 1.3em;
+	text-align: center;
+}
+.landData__label_state {
+	width: 248px;
+}
+
+.landData__label_kadastr {
+	width: 220px;
+	margin-left: 40px;
+}
+
+.landData__label_address {
+	margin-left: 40px;
 	width: 150px;
 }
-.personalData_wrapper_surename {
-	display: flex;
-	flex-direction: column-reverse;
-	margin: auto;
+.landData__secondLine {
+	font-size: 1.2em;
+	margin-top: 5px;
+	border: 1px solid green;
+}
+.landData__district {
+	width: 250px;
+	font-size: 1.1em;
+	margin-left: 10px;
 
+}
+
+.landData__kadastr {
+	margin-left: 30px;
+
+}
+.landData_quarter {
+	width: 90px;
+}
+.landData_number {
+	width: 60px;
+	font-size: 1.2em;
+}
+.landData__kadastr_dot {
+	margin-left: 0px;
+}
+
+.landData__address {
+	font-size: 1.0em;
+	margin-left: 20px;
+	display: block;
+}
+
+
+.wrap1 {
+	display: inline-block;
+	border: 1px solid red;
+	margin-top: 0px;
+	
+	
+}
+
+.wrap2 {
+	display: inline-block;
+	border: 1px solid black;
+	position: absolute;
+	top: 38px;
+	right: 10px;
+}
+.main-button {
+	margin-top: 30px;
+	width: 80px;
+	height: 50px;
+	margin-left: 100px;
+}
+.main-button_apply {
+
+}
+
+.radio {
+	font-size: 1.2em;
 }
