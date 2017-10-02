@@ -8,7 +8,7 @@
 
 </head>
 <body>
-	<form action="" method="get" >
+	<form action="create_tu.php" method="post" >
 		<fieldset class="personalData">
 			<legend>Данные заявителя</legend>
 
@@ -17,11 +17,11 @@
 				<div class="personalData personalData__label">Имя:</div>
 				<div class="personalData personalData__label personalData__label_phone">Телефон:</div>
 	
-				<input type="text" class="personalData personalData__fio">
-				<input type="text" class="personalData personalData__fio">
-				<input type="text" class="personalData personalData__fio">
-				<input type="text" class="personalData personalData__phoneCode">
-				<input type="text" class="personalData personalData__phoneNumber">
+				<input type="text" class="personalData personalData__fio" name="sureName">
+				<input type="text" class="personalData personalData__fio" name="firstName">
+				<input type="text" class="personalData personalData__fio" name="middleName">
+				<input type="text" class="personalData personalData__phoneCode" maxlength="3">
+				<input type="text" class="personalData personalData__phoneNumber" maxlength="7">
 				
 				<div class="personalData personalData__label personalData__label_secondLine personalData__label_region">Регион:</div>
 				<div class="personalData personalData__label personalData__label_secondLine personalData__label_state">Населённый пункт:</div>
@@ -70,9 +70,9 @@
 						<option value="2">dummy2</option>
 					</select>
 					<lebel class="landData__secondLine landData__kadastr">23:47:</lebel>
-					<input type="text" class="landData__secondLine landData_quarter">
+					<input type="text" class="landData__secondLine landData_quarter" maxlength="7">
 					<lebel class="landData__secondLine landData__kadastr_dot">:</lebel>
-					<input type="text" class="landData__secondLine landData_number">
+					<input type="text" class="landData__secondLine landData_number" maxlength="4">
 				</div>	
 			</div>
 			<div class="wrap2">
@@ -89,6 +89,7 @@
 				<input type="submit" value="Создать"  class="main-button">
 				<input type="reset" value="Очистить" class="main-button">
 			</div>
+
 	</form>
 </body>
 </html>

@@ -145,7 +145,7 @@ fieldset {
 
 .landData {
 	margin-top: 20px;
-	padding-top: 20px;
+	/*padding-top: 20px;*/
 	position: relative;
 }
 .landData__label {
@@ -187,10 +187,11 @@ fieldset {
 }
 .landData_quarter {
 	width: 90px;
+	font-size: 1.1em;
 }
 .landData_number {
 	width: 60px;
-	font-size: 1.2em;
+	font-size: 1.1em;
 }
 .landData__kadastr_dot {
 	margin-left: 0px;
@@ -220,9 +221,9 @@ fieldset {
 }
 .main-button {
 	margin-top: 30px;
-	width: 80px;
-	height: 50px;
-	margin-left: 100px;
+	width: 180px;
+	height: 60px;
+	margin-left: 120px;
 }
 .main-button_apply {
 
