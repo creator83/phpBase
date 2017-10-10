@@ -6,10 +6,6 @@ echo date('H:i:s'), ' Create new PhpWord object', EOL;
 $phpWord = new \PhpOffice\PhpWord\PhpWord();
 
 // New portrait section
-$text = "Привет Медвед";
-$fontStyle = array('name'=>'Arial', 'size'=>36, 'color'=>'075776', 'bold'=>TRUE, 'italic'=>TRUE);
-
-$parStyle = array('align'=>'right','spaceBefore'=>10);
 $section = $phpWord->addSection(array('borderColor' => '00FF00', 'borderSize' => 12));
 $section->addText('I am placed on a default section.');
 
