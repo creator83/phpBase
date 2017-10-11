@@ -24,14 +24,14 @@
 				<input type="text" class="personalData personalData__fio" name="sureName">
 				<input type="text" class="personalData personalData__fio" name="firstName">
 				<input type="text" class="personalData personalData__fio" name="middleName">
-				<input type="text" class="personalData personalData__phoneCode" maxlength="3">
-				<input type="text" class="personalData personalData__phoneNumber" maxlength="7">
+				<input type="text" class="personalData personalData__phoneCode" maxlength="3", name="phoneCod">
+				<input type="text" class="personalData personalData__phoneNumber" maxlength="7", name="phoneNumber">
 				
 				<div class="personalData personalData__label personalData__label_secondLine personalData__label_region">Регион:</div>
 				<div class="personalData personalData__label personalData__label_secondLine personalData__label_state">Населённый пункт:</div>
 							
 				<div class="personalData personalData__secondLine">
-					<select id="reg" class="personalData personalData__secondLine personalData__secondLine__region" onchange="foo()">
+					<select id="reg" class="personalData personalData__secondLine personalData__secondLine__region">
 						<?php
 							$sql = "SELECT * FROM region";
 							createCombobox ($sql, "region", "Краснодарский край");
@@ -59,9 +59,9 @@
 						<option value="2">dummy2</option>
 					</select>
 					<input type="button" class="personalData personalData__button" value="+">
-					<input type="text" class="personalData personalData__thirdLine personalData__houseNumber">
-					<input type="text" class="personalData personalData__thirdLine personalData__corpNumber">
-					<input type="text" class="personalData personalData__thirdLine personalData__appNumber">
+					<input type="text" class="personalData personalData__thirdLine personalData__houseNumber", name="houseNumber">
+					<input type="text" class="personalData personalData__thirdLine personalData__corpNumber", name="corpNumber">
+					<input type="text" class="personalData personalData__thirdLine personalData__appNumber", name="appNumber">
 				</div>
 		</fieldset>
 

@@ -6,6 +6,10 @@ function foo() {
     sItem.map (x => x.removeAttribute("selected"));
     sItem[combo.value].setAttribute ("selected", "true");
 }
+
+var regionOption = document.createElement ("option");
+
+
 /*
 for (var i=0;i<sItem.length;++i){
     console.log (sItem[i]);

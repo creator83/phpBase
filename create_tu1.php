@@ -1,11 +1,89 @@
 <?php
+require 'vendor/autoload.php';
+
+// Перезапрашиваем страницу, чтобы избавиться от информации, переданной через форму
+/*header('Location: ' . $_SERVER['PHP_SELF']);
+exit;*/
+/*
 $sureName = $_POST['sureName'];
 $firstName = $_POST['firstName'];
 $middleName = $_POST['middleName'];
-$phoneNumber;
+$numPhone = $_POST['phoneCod'].$_POST['phoneNumber'];
+$numHouse = $_POST['houseNumber'];
+$numCorp = $_POST['corpNumber'];
+$numAp = $_POST['appNumber'];
 $region;
 $state;
+$street;
+$filePlace;
+$typeTu;*/
+$data = array (
+	/*'sureName'=>'',
+	'firstName'=>'',
+	'middleName'=>'',
+	'phoneCod'=>'',
+	'phoneNumber'=>'',
+	'numPhone'=>'',
+	'numHouse'=>'',
+	'numCorp'=>'',
+	'numApp'=> '',
+	'region'=>'',
+	'state'=>'',
+	'street'=>'',
+	'filePlace'=>'',
+	'typeTu'=>''*/
+);
+foreach ($_POST as $index => $value) {
+	if (isset ($_POST[$index])) {
+		$data [$index]= $value;
+	}
+}
 
+define ('TEMPLATE_PATH', "D:\\Технические условия\\");
+if (isset ($_POST)) {
+
+}
+class tuData {
+	private $sureName;
+	private $firstName;
+	private $middleName;
+	private $numPhone;
+	private $numHouse;
+	private $numCorp;
+	private $numAp;
+	private $region;
+	private $state;
+	private $street;
+	private $fiePlace;
+	private $typeTu;
+	public $data = array (
+		'sureName'=>'',
+		'firstName'=>'',
+		'middleName'=>'',
+		'phoneCod'=>'',
+		'phoneNumber'=>'',
+		'numPhone'=>'',
+		'numHouse'=>'',
+		'numCorp'=>'',
+		'numApp'=> '',
+		'region'=>'',
+		'state'=>'',
+		'street'=>'',
+		'filePlace'=>'',
+		'typeTu'=>''
+	);
+	public function __construct () {
+
+	}
+
+	function setName ($data, $cont) {
+		$cont = $data;
+	}
+
+	
+}
+
+$data = new tuData();
 function checkName ($name) {
 	$name = trim ($name);
 	echo "$name <br />";
