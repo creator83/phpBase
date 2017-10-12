@@ -9,7 +9,7 @@
 	<title>Регистрация ТУ</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="create_tu.css" />
-
+	<script src="app.js"></script>
 </head>
 <body>
 	<form action="create_tu.php" method="post" >
@@ -31,15 +31,15 @@
 				<div class="personalData personalData__label personalData__label_secondLine personalData__label_state">Населённый пункт:</div>
 							
 				<div class="personalData personalData__secondLine">
-					<select id="reg" class="personalData personalData__secondLine personalData__secondLine__region">
+					<select id="reg" name="reg" class="personalData personalData__secondLine personalData__secondLine__region">
 						<?php
 							$sql = "SELECT * FROM region";
 							createCombobox ($sql, "region", "Краснодарский край");
 						?>
 					</select>
-					<script src="app.js"></script>
+					<!-- <script src="app.js"></script> -->
 					<input type="button" class="personalData personalData__secondLine personalData__button" value="+">
-					<select class="personalData personalData__secondLine personalData__secondLine__state">
+					<select id="state" name="state" class="personalData personalData__secondLine personalData__secondLine__state">
 						<?php
 							$sql = "SELECT name FROM statereg WHERE region = 'Краснодарский край'";
 							createCombobox ($sql, "state");
@@ -54,9 +54,7 @@
 					<div class="personalData personalData__label personalData__label_thirdLine personalData__label_app">кв:</div>
 					
 				<div class="personalData personalData__thirdLine personalData__thirdLine">
-					<select class="personalData personalData__thirdLine personalData__thirdLine_street ">
-						<option value="1">dummy1</option>
-						<option value="2">dummy2</option>
+					<select id="street" class="personalData personalData__thirdLine personalData__thirdLine_street ">
 					</select>
 					<input type="button" class="personalData personalData__button" value="+">
 					<input type="text" class="personalData personalData__thirdLine personalData__houseNumber", name="houseNumber">
@@ -75,8 +73,7 @@
 				
 				<div class="landData__secondLine">
 					<select class="landData__district landData__secondLine">
-						<option value="1">dummy1</option>
-						<option value="2">dummy2</option>
+						<!-- выборка из базы -->
 					</select>
 					<lebel class="landData__secondLine landData__kadastr">23:47:</lebel>
 					<input type="text" class="landData__secondLine landData_quarter" maxlength="7">
