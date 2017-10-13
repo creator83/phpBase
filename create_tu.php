@@ -12,7 +12,15 @@
 	<script src="app.js"></script>
 </head>
 <body>
-	<form action="create_tu.php" method="post" >
+	<div id="fon">
+	<form action="" method="post" >
+		<input type="text" class="personalData personalData__fio" id="addReg">
+		<input id="closeReg" type="submit" value="Добавить"  class="main-button">
+		<input  type="reset" value="Очистить" class="main-button">
+	</form>
+	</div>
+
+	<form action="" method="post" >
 		<fieldset class="personalData">
 			<legend>Данные заявителя</legend>
 
@@ -38,7 +46,7 @@
 						?>
 					</select>
 					<!-- <script src="app.js"></script> -->
-					<input type="button" class="personalData personalData__secondLine personalData__button" value="+">
+					<input type="button" id="openReg" name="regButton" class="personalData personalData__secondLine personalData__button" value="+">
 					<select id="state" name="state" class="personalData personalData__secondLine personalData__secondLine__state">
 						<?php
 							$sql = "SELECT name FROM statereg WHERE region = 'Краснодарский край'";

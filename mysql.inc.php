@@ -34,6 +34,40 @@ class Database extends mysqli{
 		if ($result = $this->query($sql)) {
 				while ($row = $result->fetch_row()) {
 					$buffer[] = $row[0];
+					// for ($i=0; $i < $num; $i++) { 
+					// 	$buffer[] = $row[i];
+					// }		
+				}
+				$result->close();
+			}
+		$this->commit();
+		$this->close();
+		return $buffer;
+	}
+	function putData ($sql) {
+		$this->open();
+		$this->begin_transaction(MYSQLI_TRANS_START_READ_ONLY);
+		if ($this->query($sql)===TRUE) {
+			$this->commit();
+			$this->close();
+			return "выпонено";
+		}
+		$this->commit();
+		$this->close();
+		return "Ошибка";
+	}
+	function getData2 ($sql, $num=1) {
+		$buffer = array ();
+		$this->open();
+		$this->begin_transaction(MYSQLI_TRANS_START_READ_ONLY);
+		if ($result = $this->query($sql)) {
+				while ($row = $result->fetch_row()) {
+					$buffer[] = $row[0];
+					$buffer[] = $row[1];
+					// for ($i=0; $i < $num; $i++) { 
+					// 	$buffer[] = $row[i];
+					// }
+					
 				}
 				$result->close();
 			}

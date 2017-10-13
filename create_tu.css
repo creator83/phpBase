@@ -2,6 +2,15 @@
 	margin: 0;
 	padding: 0;
 }
+#fon {
+	display: none;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: rgba(0, 0, 0, 0.8);
+}
 form {
 	width: 770px;
 	margin: auto;
