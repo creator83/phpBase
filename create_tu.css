@@ -21,7 +21,36 @@ fieldset {
 .personalData {
 	display: inline-block;	
 	margin-left: 10px;
+	
 
+}
+.close {
+	width: 30px;
+	height: 30px;
+	background: red;
+	margin-left: 270px;
+}
+.form__add-reg {
+	width: 300px;
+	height: 180px;
+	border: 10px solid rgb(49, 198, 218);
+	margin: 200px auto;
+	background: rgb(238, 231, 231);
+}
+
+.data__addreg {
+	display: block;
+	width: 250px;
+	border: 1px solid rgb(160, 236, 36);
+	margin: 10px auto;
+	font-size	: 1.3em;
+}
+
+.add-reg-button {
+	margin-top: 30px;
+	width: 100px;
+	height: 60px;
+	margin-left: 40px;
 }
 
 .personalData__label {	

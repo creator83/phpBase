@@ -13,11 +13,19 @@
 </head>
 <body>
 	<div id="fon">
-	<form action="" method="post" >
-		<input type="text" class="personalData personalData__fio" id="addReg">
-		<input id="closeReg" type="submit" value="Добавить"  class="main-button">
-		<input  type="reset" value="Очистить" class="main-button">
-	</form>
+		
+		<form action="" class="form__add-reg" method="post" >
+			<div class="close"></div>
+			<input type="text" class="personalData data__addreg" id="addReg" autocomplete="off">
+			<input id="closeReg" type="submit" value="Добавить"  class="add-reg-button">
+			<input  type="reset" value="Очистить" class="add-reg-button">
+		</form>
+		<form action="" class="form__add-state" method="post" >
+			<div class="close"></div>
+			<input type="text" class="personalData data__addreg" id="addReg" autocomplete="off">
+			<input id="closeReg" type="submit" value="Добавить"  class="add-reg-button">
+			<input  type="reset" value="Очистить" class="add-reg-button">
+		</form>
 	</div>
 
 	<form action="" method="post" >
