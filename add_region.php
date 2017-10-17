@@ -8,6 +8,5 @@ if (isset($_POST['addReg'])){
         $sql = 'INSERT INTO region (name) VALUES ("'.$_POST['addReg'].'")';
         $base->query ($sql);
         echo $sql;
-
 }
 ?>

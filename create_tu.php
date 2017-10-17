@@ -14,18 +14,24 @@
 <body>
 	<div id="fon">
 		
-		<form action="" class="form__add-reg" method="post" >
-			<div class="close"></div>
-			<input type="text" class="personalData data__addreg" id="addReg" autocomplete="off">
-			<input id="closeReg" type="submit" value="Добавить"  class="add-reg-button">
-			<input  type="reset" value="Очистить" class="add-reg-button">
-		</form>
-		<form action="" class="form__add-state" method="post" >
-			<div class="close"></div>
-			<input type="text" class="personalData data__addreg" id="addReg" autocomplete="off">
-			<input id="closeReg" type="submit" value="Добавить"  class="add-reg-button">
-			<input  type="reset" value="Очистить" class="add-reg-button">
-		</form>
+		<div class="form__add-reg">
+			<div class="close-button"></div>
+			<input type="text" class="data__addreg" id="addReg" autocomplete="off">
+			<div class="form__add-reg_button-wrapper">
+				<div class="buttonContainer">
+					<div class="button-wrapper" id="addReg-button">
+						<div class="buttons_label">Добавить</div>
+					</div>
+				</div>
+				<div class="buttonContainer">
+					<div class="button-wrapper" id="clearReg-button">
+					<div class="buttons_label">Очистить</div>
+				</div>
+				</div>	
+			</div>
+				<!-- <input id="closeReg" type="submit" value="Добавить"  class="add-reg-button">
+				<input  type="reset" value="Очистить" class="add-reg-button"> -->
+		</div>
 	</div>
 
 	<form action="" method="post" >
@@ -53,7 +59,6 @@
 							createCombobox ($sql, "region", "Краснодарский край");
 						?>
 					</select>
-					<!-- <script src="app.js"></script> -->
 					<input type="button" id="openReg" name="regButton" class="personalData personalData__secondLine personalData__button" value="+">
 					<select id="state" name="state" class="personalData personalData__secondLine personalData__secondLine__state">
 						<?php
@@ -69,7 +74,7 @@
 					<div class="personalData personalData__label personalData__label_thirdLine personalData__label_corp">Корп:</div>
 					<div class="personalData personalData__label personalData__label_thirdLine personalData__label_app">кв:</div>
 					
-				<div class="personalData personalData__thirdLine personalData__thirdLine">
+				<div class="personalData personalData__thirdLine">
 					<select id="street" class="personalData personalData__thirdLine personalData__thirdLine_street ">
 					</select>
 					<input type="button" class="personalData personalData__button" value="+">
@@ -82,26 +87,29 @@
 
 		<fieldset class="landData">
 			<legend>Информация об участке</legend>
-			<div class="wrap1">
-				<div class="landData__label landData__label_state">Район:</div>
-				<div class="landData__label landData__label_kadastr">Кадастровый номер:</div>
-				
-				
-				<div class="landData__secondLine">
-					<select class="landData__district landData__secondLine">
-						<!-- выборка из базы -->
+			<div class="landData__wrapp">
+				<div class="landData__district__wrapp">
+					<div class="landData__label landData__label_district">Район:</div>
+					<select class="landData__data__district ">
+					<?php
+						$sql = "SELECT name FROM district";
+						createCombobox ($sql, "state");
+					?>
 					</select>
-					<lebel class="landData__secondLine landData__kadastr">23:47:</lebel>
-					<input type="text" class="landData__secondLine landData_quarter" maxlength="7">
-					<lebel class="landData__secondLine landData__kadastr_dot">:</lebel>
-					<input type="text" class="landData__secondLine landData_number" maxlength="4">
-				</div>	
-			</div>
-			<div class="wrap2">
-				<div class="landData__label landData__label_address">Адрес:</div>
-				<textarea rows="3" cols="24" class="landData__secondLine landData__address"></textarea>
-			</div>
-			
+				</div>
+				<div class="landData__kadastr__wrapp">
+					<span class="landData__label landData__label_1stline">Кадастровый номер:</span> 
+					<lebel class="landData__label landData__secondline">23:47:</lebel>
+					<input type="text" class="landData__secondline landData__label landData__data_quarter" maxlength="7">
+					<lebel class="landData__secondline landData__label landData__kadastr_dot">:</lebel>
+					<input type="text" class="landData__secondline landData__label landData__data_number" maxlength="4">
+	
+				</div>
+				<div class="landData__address_wrapp">
+					<span class="landData__label">Адрес:</span> 
+					<textarea rows="3" cols="24" class="landData__address_data"  autocomplete="off"></textarea>
+				</div>
+			</div>			
 		</fieldset>
 			<div class="radio">
 				<input type="radio" name="project" value="wProject"><span>С проектом</span><br />

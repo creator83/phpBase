@@ -83,7 +83,8 @@ function init (){
        addRegForm.style.display = "block";
     });
 
-
+    var addReg_button = document.getElementById ("addReg-button");
+    var clearReg_button = document.getElementById ("clearReg-button");
     var closeRegion = document.getElementById ("closeReg");
        closeRegion.addEventListener ("click", function () {
        

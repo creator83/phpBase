@@ -20,37 +20,71 @@ fieldset {
 }
 .personalData {
 	display: inline-block;	
-	margin-left: 10px;
+	/*margin-left: 10px;*/
 	
 
 }
-.close {
+.close-button {
 	width: 30px;
 	height: 30px;
-	background: red;
-	margin-left: 270px;
+	/*background: linear-gradient(#B60D00, #FF8888);*/
+	background: url(pic/close_small.png) no-repeat center, linear-gradient(#B60D00, #FF8888);
+	border-radius: 8px;
+	border: 1px solid black;
+	margin-left: 249px;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
 }
 .form__add-reg {
-	width: 300px;
+	width: 280px;
 	height: 180px;
-	border: 10px solid rgb(49, 198, 218);
+	border: 2px solid rgb(109, 104, 104);
 	margin: 200px auto;
-	background: rgb(238, 231, 231);
+	background: linear-gradient(to bottom right, #9EE1FF, #4CA5FF);
+	border-radius: 10px;
+	box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
 }
 
 .data__addreg {
 	display: block;
 	width: 250px;
-	border: 1px solid rgb(160, 236, 36);
+	border: 1px solid rgb(109, 104, 104);
 	margin: 10px auto;
 	font-size	: 1.3em;
+}
+.form__add-reg_button-wrapper {
+	display: flex;
+	
+	/*border: 1px solid red;*/
+}
+
+.button-wrapper {
+	width: 90px;
+	height: 40px;
+	background: linear-gradient(#404040, #A0A0A0);
+	border-radius: 10px;
+	box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+	border: 1px solid rgb(34, 33, 33);
+	margin:0 auto;
+
+}
+.buttons_label {
+	margin:10px auto;
+	text-align: center;
+	font-weight: bold;
+	font-size: 1.1em;
+	color: white;
+}
+
+.buttonContainer {
+	flex-grow: 1;	
+	margin-top: 25px;	
 }
 
 .add-reg-button {
 	margin-top: 30px;
 	width: 100px;
 	height: 60px;
-	margin-left: 40px;
+
 }
 
 .personalData__label {	
@@ -58,7 +92,7 @@ fieldset {
 	width: 150px;
 	font-size: 1.3em;
 	border: 1px solid green;
-
+	margin-left: 10px;
 }
 .personalData__label_phone {
 	width: 165px;
@@ -105,6 +139,7 @@ fieldset {
 	margin-top: 5px;
 	display: inline-block;
 	font-size: 1.1em;
+	margin-left: 10px;
 }
 .personalData__secondLine__region {
 	margin-left: 0px;		
@@ -113,7 +148,7 @@ fieldset {
 }
 .personalData__secondLine__state {
 	width: 300px;
-	margin-left: 30px;
+	margin-left: 40px;
 	margin-top: 5px;
 }
 
@@ -133,12 +168,13 @@ legend {
 	margin-top: 5px;
 }
 
+
 .personalData__label_street{
-	width: 250px;
+	width: 300px;
 }
 
 .personalData__label_house {
-	margin-left: 80px;
+	margin-left: 90px;
 	width: 60px;
 }
 
@@ -156,8 +192,8 @@ legend {
 }
 
 .personalData__thirdLine_street {
-	width: 250px;
-	margin-left: 0px;	
+	width: 300px;
+	margin-left: 10px;	
 	margin-top: 5px;
 }
 
@@ -165,7 +201,7 @@ legend {
 .personalData__houseNumber {
 	width: 60px;
 	border: 1px solid red;
-	margin-left: 30px;
+	margin-left: 40px;
 	margin-top: 5px;
 }
 
@@ -183,16 +219,14 @@ fieldset {
 
 .landData {
 	margin-top: 20px;
-	/*padding-top: 20px;*/
-	position: relative;
+	/*position: relative;*/
 }
 .landData__label {
 	display: inline-block;	
 	border: 1px solid red;
-	margin-left: 10px;
-	margin-top: 5px;
+
+	/*margin-top: 5px;*/
 	font-size: 1.3em;
-	text-align: center;
 }
 .landData__label_state {
 	width: 248px;
@@ -235,9 +269,9 @@ fieldset {
 	margin-left: 0px;
 }
 
-.landData__address {
-	font-size: 1.0em;
-	margin-left: 20px;
+.landData__address_data {
+	font-size: 1.1em;
+	margin: 10px auto;
 	display: block;
 }
 
@@ -269,4 +303,48 @@ fieldset {
 
 .radio {
 	font-size: 1.2em;
+}
+.landData__wrapp {
+	display: flex;
+	align-items: flex-start;
+}
+.landData__secondline {
+	margin-top: 10px;
+}
+.landData__district__wrapp {
+	flex-grow: 0.7;
+	flex-basis: 200px;
+	border: 2px solid red;
+}
+.landData__label_district {
+	border: 2px solid red;
+	display: block;
+	text-align: center;
+}
+.landData__data__district {
+	display: block;
+	width: 250px;
+	font-size: 1.2em;
+	margin: 10px auto;
+
+	
+}
+.landData__kadastr__wrapp {
+	flex-grow: 0.8	;
+	border: 2px solid red;
+	text-align: center;
+}
+.landData__label_1stline {
+	display: block;
+}
+.landData__data_quarter {
+	width: 100px;
+}
+.landData__data_number {
+	width: 60px;
+}
+.landData__address_wrapp {
+	flex-grow: 1;
+	border: 2px solid red;
+	text-align: center;
 }
