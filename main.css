@@ -4,6 +4,14 @@ body{
 	background-size:/*contain*/cover;	
 	/*background-size: 100%;		*/
 	}
+#wrapp {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	background: rgba(20, 20, 20, 0.85);
+}
 section {
 	position: absolute;
 	width:400px;
@@ -56,11 +64,13 @@ form label {
 
 
 form input[type="text"] {
+	width: 200px;
 	margin-top: 20px;
 	margin-left: 10px;
 	font-size: 1.1em;
 }
 form input[type="password"]{
+	width: 200px;
 	margin-left: 10px;
 	margin-top: 10px;
 	font-size: 1.1em;
