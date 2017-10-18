@@ -3,40 +3,32 @@
 
 <head>
 	<title>Вход</title>
-	<meta charset=utf-8">
+	<meta charset="utf-8">
 	<link rel="stylesheet" href="main.css" />
-
+	<script src="main.js"></script>
 </head>
 <body>
-	<section>
-		<div class="container">
-			<a href="#" class="container_head container_head__ctu" >Создание&nbsp;ТУ</a>
+<section>
+<div id="substrate"></div>
+<form action="" method="post">
+	<div class="flex-container">
+		<div class="flex-container__part">
+			<label>Имя пользователя: </label>
+			<label>Пароль: </label>
+			<input type="submit" value="Подключится" id="sButton"/>
+			
 		</div>
-		<div class="container">
-				<a href="#" class="container_head" >Поиск&nbsp;ТУ</a>
+		<div class="flex-container__part">
+			<input type="text" name="login" value=""/><br/ >
+			<input type="password" name="pass"/><br/>
+			<input type="reset" value="очистить" id="cButton"/>
 		</div>
-		<div class="container">
-				<a href="#" class="container_head" >Создание&nbsp;писем</a>
-		</div>
-		<div class="container dummy">
-		</div>
-		<div class="wrapper">
-			<div class="createTu">
-				<p>Создание технических условий</p>
-			</div>
-			<div class="searchTu">
-				<p>Поиск технических условий</p>
-			</div>
-			<div class="createLetters">
-				<p>Создание писем</p>
-			</div>
-		</div>
-	</section>
-	<script type="text/javascript">
-		document.querySelector('.container_head__ctu') = function () {
-			document.getElementsByClassName('wrapper').style.display = "none";
-		}
-	</script>
+	</div>
+</form>
+</section>
+<?php
+
+?>
 </body>
 </html>
 <?php

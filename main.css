@@ -2,26 +2,90 @@
 body{
 	background:url("back.jpg") fixed no-repeat center;
 	background-size:/*contain*/cover;	
+	/*background-size: 100%;		*/
 	}
-.container {
-	display: table-cell;
-	width: 60px;
-	height: 50px;
-	border: 1px solid red;
+section {
+	position: absolute;
+	width:400px;
+	height: 170px;
+	left: 0;
+	right: 0;
+	top: 40%;
+	bottom: 60%;
+	margin: auto;
+	animation-name: anime;
+	animation-duration: 1.5s;
+	animation-timing-function: linear;
+}
+#substrate {
+	background: rgba(0,0,0,.7);
+	position: relative;	
+	width:400px;
+	height: 170px;
+	/*border-radius: 10px;*/
+	box-shadow: 55px 55px 65px rgba(0,0,0,.9);
 	
 }
-.container_head {
+@keyframes anime {
+	0% {transform: scale(0.2, 0.2);}
+	65% {transform: scale(1.1, 1.1);}
+	80% {transform: scale(0.8, 0.8);}
+    100% {transform: scale(1, 1);}
+}
+
+form{	
+	position: relative;	
+	font-family: Arial, sans-serif;
+	font-weight: bold;
+	color: white;
+	top: -170px;
+	/*color: lightgray;*/
+}
+.flex-container {
+	display: flex;
+}
+.flex-container__part {
+	flex-grow: 1;
+}
+form label {
 	display: block;
-	text-decoration: none;
-	height: 100%;
-	border: 1px solid green;
-	padding-top: 15px;
-	margin-left: 15px;
+	margin-top: 23px;
+	margin-left: 20px;
+	font-size: 1.2	em;	
 }
-.dummy {
-	width: 100%;
+
+
+form input[type="text"] {
+	margin-top: 20px;
+	margin-left: 10px;
+	font-size: 1.1em;
+}
+form input[type="password"]{
+	margin-left: 10px;
+	margin-top: 10px;
+	font-size: 1.1em;
+}
+form input[type="reset"]{
+	height: 40px; 
+	width: 150px;
+	margin-top: 30px;
+	margin-left: 40px;
+	background: linear-gradient(#FE5D4C, #97253D);
 	border: none;
-	border-bottom: 1px solid yellow;
+	color: white;
+	font-weight: bold;
+	font-size: 1.1em;
+	outline: none;
 }
-
-
+form input[type="submit"]{
+	height: 40px; 
+	width: 150px;
+	margin-left: 30px;
+	margin-top: 30px;
+	background: linear-gradient(#FE5D4C, #97253D);
+	border: none;
+	color: white;
+	font-weight: bold;
+	font-size: 1.1em;
+	outline: none;
+}

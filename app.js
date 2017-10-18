@@ -85,6 +85,16 @@ function init (){
 
     var addReg_button = document.getElementById ("addReg-button");
     var clearReg_button = document.getElementById ("clearReg-button");
+    addReg_button.addEventListener ("click", function () {
+        
+    });
+
+
+
+
+
+
+
     var closeRegion = document.getElementById ("closeReg");
        closeRegion.addEventListener ("click", function () {
        
