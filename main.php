@@ -4,11 +4,14 @@
 <head>
 	<title>Вход</title>
 	<meta charset="utf-8">
+	<link rel="stylesheet" href="substrate.css" />
 	<link rel="stylesheet" href="main.css" />
 	<script src="main.js"></script>
 </head>
 <body>
-<div id="wrapp"></div>
+<?php
+	include ("substrate.inc.php");
+?>
 <section>
 <div id="substrate"></div>
 <form action="" method="post">

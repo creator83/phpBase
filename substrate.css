@@ -1,0 +1,13 @@
+body{
+	background:url("back.jpg") fixed no-repeat center;
+	background-size:cover;	
+}
+    
+#wrapp {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: rgba(20, 20, 20, 0.55);
+}

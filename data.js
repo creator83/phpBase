@@ -1,0 +1,33 @@
+window.addEventListener ("DOMContentLoaded", init);
+
+
+function init (){
+    var majorLabel = document.getElementsByClassName ("majorMenu-label");
+    var subMenuTuContainer = document.getElementById ("subMenuTU-container");
+    for (var i=0;i< majorLabel.length;++i){
+        majorLabel[i].addEventListener ("click", function(){
+            for (var j= 0; j < majorLabel.length; j++){
+                majorLabel[j].style.background = "linear-gradient(#FE5D4C, #97253D)";
+            }
+            this.style.background = "rgba(0,0,0,.9)";
+            switch (index) {
+            case 0:
+            subMenuTuContainer.style.display = "flex";
+                break;
+        
+            default:
+                break;
+        }
+        });
+        
+    }
+    var subMenuTulabel = document.getElementsByClassName ("subMenuTU-container__element");
+    for (var i=0;i<subMenuTulabel.length;++i){
+        subMenuTulabel[i].addEventListener ("click", function(){
+            for (var j= 0; j < subMenuTulabel.length; j++){
+                subMenuTulabel[j].style.background = "linear-gradient(#FE5D4C, #97253D)";
+            }
+            this.style.background = "rgba(0,0,0,.9)";
+        });
+    }
+}

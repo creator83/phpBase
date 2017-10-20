@@ -1,17 +1,5 @@
 
-body{
-	background:url("back.jpg") fixed no-repeat center;
-	background-size:/*contain*/cover;	
-	/*background-size: 100%;		*/
-	}
-#wrapp {
-	position: absolute;
-	left: 0;
-	right: 0;
-	top: 0;
-	bottom: 0;
-	background: rgba(20, 20, 20, 0.85);
-}
+
 section {
 	position: absolute;
 	width:400px;
@@ -26,14 +14,14 @@ section {
 	animation-timing-function: linear;
 }
 #substrate {
-	background: rgba(0,0,0,.7);
-	position: relative;	
-	width:400px;
-	height: 170px;
-	/*border-radius: 10px;*/
-	box-shadow: 55px 55px 65px rgba(0,0,0,.9);
-	
+    background: rgba(0,0,0,.7);
+    position: relative;	
+    width:400px;
+    height: 170px;
+    /*border-radius: 10px;*/
+    box-shadow: 55px 55px 65px rgba(0,0,0,.9);
 }
+
 @keyframes anime {
 	0% {transform: scale(0.2, 0.2);}
 	65% {transform: scale(1.1, 1.1);}
@@ -86,6 +74,7 @@ form input[type="reset"]{
 	font-weight: bold;
 	font-size: 1.1em;
 	outline: none;
+	cursor: pointer;
 }
 form input[type="submit"]{
 	height: 40px; 
@@ -98,4 +87,5 @@ form input[type="submit"]{
 	font-weight: bold;
 	font-size: 1.1em;
 	outline: none;
+	cursor: pointer;
 }
