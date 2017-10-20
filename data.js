@@ -6,15 +6,37 @@ function init (){
     var subMenuTuContainer = document.getElementById ("subMenuTU-container");
     for (var i=0;i< majorLabel.length;++i){
         majorLabel[i].addEventListener ("click", function(){
+            var index;
             for (var j= 0; j < majorLabel.length; j++){
-                majorLabel[j].style.background = "linear-gradient(#FE5D4C, #97253D)";
+                majorLabel[j].style.background = 
+                "linear-gradient(#FE5D4C, #97253D)"
+                 //"background: linear-gradient(rgb(102, 206, 219), rgb(45, 15, 80));"
+                ;
+                if (majorLabel[j].textContent==this.textContent){
+                    index=j;
+                }
             }
-            this.style.background = "rgba(0,0,0,.9)";
+            this.style.background = 
+            "rgba(0,0,0,.9)"
+            //"rgba(204, 220, 228, 0.3)"
+            ;
             switch (index) {
             case 0:
+            
             subMenuTuContainer.style.display = "flex";
                 break;
-        
+            case 1:
+            
+            subMenuTuContainer.style.display = "none";
+                break;
+            case 2:
+            
+            subMenuTuContainer.style.display = "none";
+                break;  
+            case 3:
+                
+            subMenuTuContainer.style.display = "none";
+            break;    
             default:
                 break;
         }

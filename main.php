@@ -31,7 +31,10 @@
 </form>
 </section>
 <?php
-
+	if ($_SERVER["REQUEST_METHOD"] == "POST"){
+		header ("Location: data.php");
+	}
+	
 ?>
 </body>
 </html>
