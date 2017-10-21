@@ -23,6 +23,7 @@
             <div class="container-label__elements subMenuTU-container__element">Создание ТУ</div>
             <div class="container-label__elements subMenuTU-container__element">Просмотр ТУ</div>
         </div>
+         <div id="createTu"></div>
     </div>
 </section>
 </body>

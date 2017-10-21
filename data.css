@@ -14,21 +14,28 @@
     height: 40px;
 }
 #body-container {
+    position: relative;
+    top: 10px;
     width: 608px;
     height: 600px;
-   background: rgba(0,0,0,.7);
+    background: rgba(0,0,0,.7);
      /*background: rgba(76, 89, 95, 0.3);*/
     box-shadow: 25px 25px 15px rgba(0,0,0,.9);
     
 }
 #subMenuTU-container{
     display: none;
+    position: absolute;
     width: 600px;
     height: 100px;
     transform: rotate(270deg) translate(-252px, -302px);
 }
 
-
+#createTu {
+    width: 608px;
+    height: 600px;
+    border: 1px solid bisque;
+}
 
 .container-label__elements { 
     background: linear-gradient(#FE5D4C, #97253D);
@@ -39,9 +46,12 @@
     /*color: rgb(48, 38, 104);*/
     font-family: Helvetica;
     font-size: 1.2em;
-    font-weight: bold;
+    /*font-weight: bold;*/
     transition: all 0.7s;
     padding-top: 10px;
+}
+.container-label__elements::selection {
+    background: transparent;
 }
 .majorMenu-label {
     height: 40px; 

@@ -1,9 +1,14 @@
 window.addEventListener ("DOMContentLoaded", init);
 
+function clickLabel (val) {
+    
+}
+
 
 function init (){
     var majorLabel = document.getElementsByClassName ("majorMenu-label");
     var subMenuTuContainer = document.getElementById ("subMenuTU-container");
+    var subMenuTulabel = document.getElementsByClassName ("subMenuTU-container__element");
     for (var i=0;i< majorLabel.length;++i){
         majorLabel[i].addEventListener ("click", function(){
             var index;
@@ -22,8 +27,8 @@ function init (){
             ;
             switch (index) {
             case 0:
-            
-            subMenuTuContainer.style.display = "flex";
+                subMenuTuContainer.style.display = "flex";
+                subMenuTulabel[1].style.background = "rgba(0,0,0,.9)";
                 break;
             case 1:
             
@@ -43,7 +48,7 @@ function init (){
         });
         
     }
-    var subMenuTulabel = document.getElementsByClassName ("subMenuTU-container__element");
+    
     for (var i=0;i<subMenuTulabel.length;++i){
         subMenuTulabel[i].addEventListener ("click", function(){
             for (var j= 0; j < subMenuTulabel.length; j++){
