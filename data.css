@@ -36,6 +36,50 @@
     height: 600px;
     border: 1px solid bisque;
 }
+.data {
+    font-size: 1.1em;
+    height: 30px;
+    outline-color: orange;
+    outline-width: 10px;
+}
+.data__label {
+    border: 2px solid red;
+    font-family: Helvetica;
+    font-size: 1.1em;
+    color: white;
+    text-align: center;
+    width: 200px;
+
+}
+.sName {
+    
+}
+.data_name {
+    width: 190px;
+    margin-left: 3px;
+}
+.data_prfx-phone {
+    margin-left: 3px;
+    width: 32px;
+}
+.data_num-phone {
+    margin-left: 10px;
+    width: 100px;
+}
+#firstLineWrapper {
+    display: flex;
+    /*justify-content: space-around;*/
+}
+#secondLineWrapper{
+    display: flex;
+    margin-top: 15px;
+}
+.data_region{
+    width: 280px;
+}
+.data_state {
+    width: 280px;
+}
 
 .container-label__elements { 
     background: linear-gradient(#FE5D4C, #97253D);
