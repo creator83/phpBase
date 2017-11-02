@@ -43,30 +43,23 @@
     outline-width: 10px;
 }
 .data__label {
-    border: 2px solid red;
+    /*border: 2px solid red;*/
     font-family: Helvetica;
     font-size: 1.1em;
     color: white;
     text-align: center;
     width: 200px;
-
 }
-.sName {
+.data__label_sName {
     
 }
 .data_name {
     width: 190px;
     margin-left: 3px;
 }
-.data_prfx-phone {
-    margin-left: 3px;
-    width: 32px;
-}
-.data_num-phone {
-    margin-left: 10px;
-    width: 100px;
-}
+
 #firstLineWrapper {
+    margin-top: 50px;
     display: flex;
     /*justify-content: space-around;*/
 }
@@ -74,11 +67,129 @@
     display: flex;
     margin-top: 15px;
 }
+#thirdLineWrapper {
+    display: flex;
+    margin-top: 15px;
+}
+#fourthLineWrapper {
+    display: flex;
+    margin-top: 60px;
+}
+#buttonWrapper {
+    display: flex;
+    margin-top: 60px;
+    width: 600px;
+    border: 2px solid green;
+}
+.data__label_district {
+    margin-left: 3px;
+    width: 213px;
+}
+.data_district{
+    margin-left: 3px;
+    width: 178px;
+}
+.data__label_kadastr {
+    margin-left: 10px;
+    width: 225px;
+}
+.kadastr_prfx {
+    margin-left: 10px;
+    display: inline-block;
+    width: 60px;
+}
+.data_kadastr-dist {
+    margin-left: 0px;
+    width: 100px;
+}
+.data_kadastr-num {
+    margin-left: 3px;
+    width: 45px;
+}
+.data__label_address {
+    margin-left: 8px;
+    width: 140px;
+}
+.data_address {
+    margin-left: 8px;
+    width: 132px;
+    height: 70px;
+}
+.data__label_region {
+    margin-left: 3px;
+    width: 300px;
+}
 .data_region{
-    width: 280px;
+    margin-left: 3px;
+    width: 270px;
+}
+.arrow {
+    display: inline-block;
+    width: 30px;
+    height: 28px;
+    font-family: Helvetica;
+    font-size: 1.1em;
+    background:white;
+    text-align: center;
+    padding-top: 6px;
+    padding-bottom: -4px;
+    padding-left: 5px;
+    margin-left: -5px;
+    /*margin-bottom: 2px;*/
+    
+    /*margin: */
+}
+.data__label_state {
+    margin-left: 10px;
+    width: 275px;
 }
 .data_state {
-    width: 280px;
+    margin-left: 10px;
+    width: 245px;
+}
+.data__label_street {
+    margin-left: 3px;
+    width: 270px;
+}
+.data_street {
+    margin-left: 3px;
+    width: 240px;
+}
+.data__label_house {
+    margin-left: 5px;
+    width: 47px;
+}
+.data_house {
+    margin-left: 5px;
+    width: 47px;
+}
+.data__label_korp {
+    margin-left: 5px;
+    width: 47px;
+}
+.data_korp {
+    margin-left: 5px;
+    width: 47px;
+}
+.data__label_appartment {
+    margin-left: 5px;
+    width: 44px;
+}
+.data_apartment {
+    margin-left: 5px;
+    width: 44px;
+}
+.data__label_phone{
+    margin-left: 15px;
+    width: 132px;
+}
+.data_prfx-phone {
+    margin-left: 15px;
+    width: 32px;
+}
+.data_num-phone {
+    margin-left: 0px;
+    width: 100px;
 }
 
 .container-label__elements { 

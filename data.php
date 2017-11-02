@@ -29,7 +29,7 @@
             <form action="" method="post" >
                 <div id="firstLineWrapper">
                     <div class="sName">
-                        <div class="data__label">Фамилия:</div>
+                        <div class="data__label data__label_sName">Фамилия:</div>
                         <input type="text" class="data data_name" name="sureName">
                     </div>  
                     <div class="fName">                  
@@ -43,22 +43,64 @@
                     </div>
                 <div id="secondLineWrapper">
                     <div class="region">
-                        <div class="data__label">Регион:</div>
+                        <div class="data__label data__label_region">Регион:</div>
                         <input type="text" class="data data_region" name="region">
-                        <div class="arrow">&lt;</div>
+                        <div class="arrow">&gt;</div>
                     </div>
                     <div class="state">
-                        <div class="data__label">Нас. пункт:</div>
+                        <div class="data__label data__label_state">Нас. пункт:</div>
                         <input type="text" class="data data_state" name="state">
+                        <div class="arrow">&gt;</div>
                     </div>
                 </div>
                 <div id="thirdLineWrapper">
+                    <div class="street">
+                        <div class="data__label data__label_street">Улица:</div>
+                        <input type="text" class="data data_street" name="street">
+                        <div class="arrow">&gt;</div>
+                    </div>
+                    <div class="house">
+                        <div class="data__label data__label_house">Дом:</div>
+                        <input type="text" class="data data_house" name="house">
+                    </div>
+                    <div class="korp">
+                        <div class="data__label data__label_korp">Корп:</div>
+                        <input type="text" class="data data_korp" name="korp">
+                    </div>
+                    <div class="appartment">
+                        <div class="data__label data__label_appartment">Кв:</div>
+                        <input type="text" class="data data_apartment" name="apartment">
+                    </div>                    
                     <div class="phone">
-                        <div class="data__label">Телефон:</div>
+                        <div class="data__label data__label_phone">Телефон:</div>
                         <input type="text" class="data data_prfx-phone" name="prfxPhone">
                         <input type="text" class="data data_num-phone" name="numPhone">       
                     </div>
                 </div>
+                <div id="fourthLineWrapper">
+                    <div class="district">
+                        <div class="data__label data__label_district">Район:</div>
+                        <input type="text" class="data data_district" name="district">
+                        <div class="arrow">&gt;</div>
+                    </div>
+                    <div class="kadastr">
+                        <div class="data__label data__label_kadastr">Кадастровый номер:</div>
+                        <div class="data__label kadastr_prfx">23:47:</div>
+                        <input type="text" class="data data_kadastr-dist" name="kadastr-dist">
+                        <input type="text" class="data data_kadastr-num" name="kadastr-num">
+                    </div>
+                    <div class="address">
+                        <div class="data__label data__label_address">Адрес:</div>
+                        <textarea class="data data_address" name="address" rows="50"></textarea>
+                    </div>
+
+                </div>
+                <div id="buttonWrapper">
+                    <input type="submit" class="container-label__elements" value="Создать">
+                    <input type="reset" class="container-label__elements" value="Очистить">
+                </div>
+
+
             </form>
          </div>
     </div>
