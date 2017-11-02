@@ -25,6 +25,38 @@
             <div class="container-label__elements subMenuTU-container__element">Создание ТУ</div>
             <div class="container-label__elements subMenuTU-container__element">Просмотр ТУ</div>
         </div>
+        <div id="region_list_wrapper"  class="list_wrapper">
+            <ul id="region_list">
+                <li class="list_items region_item">Первый</li>
+                <li class="list_items region_item">Второй</li>
+                <li class="list_items region_item">Третий</li>
+                <li class="list_items region_item">Четвёртый</li>
+            </ul>
+        </div>
+        <div id="state_list_wrapper"  class="list_wrapper">
+            <ul id="state_list">
+                <li class="list_items state_item">Первый</li>
+                <li class="list_items state_item">Второй</li>
+                <li class="list_items state_item">Третий</li>
+                <li class="list_items state_item">Четвёртый</li>
+            </ul>
+        </div>
+        <div id="street_list_wrapper" class="list_wrapper">
+            <ul id="street_list">
+                <li class="list_items street_item">Первый</li>
+                <li class="list_items street_item">Второй</li>
+                <li class="list_items street_item">Третий</li>
+                <li class="list_items street_item">Четвёртый</li>
+            </ul>
+        </div>
+        <div id="district_list_wrapper"  class="list_wrapper">
+            <ul id="district_list">
+                <li class="list_items district_item">Первый</li>
+                <li class="list_items district_item">Второй</li>
+                <li class="list_items district_item">Третий</li>
+                <li class="list_items district_item">Четвёртый</li>
+            </ul>
+        </div>
          <div id="createTu">
             <form action="" method="post" >
                 <div id="firstLineWrapper">
@@ -96,8 +128,12 @@
 
                 </div>
                 <div id="buttonWrapper">
-                    <input type="submit" class="container-label__elements" value="Создать">
-                    <input type="reset" class="container-label__elements" value="Очистить">
+                    <div class="b-wrapp">
+                        <input type="submit" class="container-label__elements tu-buttons" value="Создать">
+                    </div>
+                    <div class="b-wrapp">
+                        <input type="reset" class="container-label__elements tu-buttons" value="Очистить">
+                    </div>
                 </div>
 
 

@@ -23,6 +23,41 @@
     box-shadow: 25px 25px 15px rgba(0,0,0,.9);
     
 }
+#region_list_wrapper {
+    position: absolute;
+    display: none;
+    /*border: 2px solid red;*/
+    background: white;
+    left: 5px;
+    top: 180px;
+    width: 307px;
+}
+.list_wrapper {
+    position: absolute;
+     background: white;
+}
+#state_list_wrapper{ 
+    left: 324px;
+    top: 180px;
+    width: 282px;
+}
+.list_items {
+    border: 1px solid darkgray;
+    margin-bottom: -1px;
+}
+#street_list_wrapper{
+    display: none;
+    left: 5px;
+    top: 254px;
+    width: 277px;
+}
+#district_list_wrapper {
+    left: 5px;
+    top: 370px;
+    width: 215px;
+}
+
+
 #subMenuTU-container{
     display: none;
     position: absolute;
@@ -33,7 +68,7 @@
 
 #createTu {
     width: 608px;
-    height: 600px;
+    height: 590px;
     border: 1px solid bisque;
 }
 .data {
@@ -46,7 +81,7 @@
     /*border: 2px solid red;*/
     font-family: Helvetica;
     font-size: 1.1em;
-    color: white;
+    color: bisque;
     text-align: center;
     width: 200px;
 }
@@ -78,8 +113,8 @@
 #buttonWrapper {
     display: flex;
     margin-top: 60px;
-    width: 600px;
-    border: 2px solid green;
+    width: 606px;
+
 }
 .data__label_district {
     margin-left: 3px;
@@ -122,6 +157,8 @@
 .data_region{
     margin-left: 3px;
     width: 270px;
+
+
 }
 .arrow {
     display: inline-block;
@@ -135,6 +172,9 @@
     padding-bottom: -4px;
     padding-left: 5px;
     margin-left: -5px;
+    border-top: 1px solid gray;
+    border-right: 1px solid gray;
+    border-bottom: 1px solid gray;
     /*margin-bottom: 2px;*/
     
     /*margin: */
@@ -191,7 +231,9 @@
     margin-left: 0px;
     width: 100px;
 }
-
+.b-wrapp {
+    width: 303px;
+}
 .container-label__elements { 
     background: linear-gradient(#FE5D4C, #97253D);
    /* background: linear-gradient(rgb(102, 206, 219), rgb(45, 15, 80));*/
@@ -220,6 +262,17 @@
 
 .container-label__elements:hover {
     cursor: pointer;
+}
+.tu-buttons {
+    height: 60px; 
+    width: 150px;
+    /*margin-left: 75px;*/
+}
+input[type=submit] {
+    margin-left: 120px;
+}
+input[type=reset] {
+    margin-left: 20px;
 }
 /*
 .container-label__elements_text {
