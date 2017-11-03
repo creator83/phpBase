@@ -18,7 +18,8 @@ function init (){
         arrow[i].addEventListener ("click", function(){
             this.style.transform = "rotate(90deg)";
             var pStr = this.parentNode.parentNode.getAttribute("class");
-            var list = document.getElementById (pStr+"_list_wrapper");
+            var list = document.getElementById (pStr+"_list_wrapper
+            ");
             list.style.display = "flex";
         });
         // var attr = this.attributes;
