@@ -77,19 +77,19 @@
                     <div class="region">
                         <div class="data__label data__label_region">Регион:</div>
                         <input type="text" class="data data_region" name="region">
-                        <div class="arrow">&gt;</div>
+                        <div class="wrapp-arrow"><div class="arrow">&gt;</div></div>
                     </div>
                     <div class="state">
                         <div class="data__label data__label_state">Нас. пункт:</div>
                         <input type="text" class="data data_state" name="state">
-                        <div class="arrow">&gt;</div>
+                        <div class="wrapp-arrow"><div class="arrow">&gt;</div></div>
                     </div>
                 </div>
                 <div id="thirdLineWrapper">
                     <div class="street">
                         <div class="data__label data__label_street">Улица:</div>
                         <input type="text" class="data data_street" name="street">
-                        <div class="arrow">&gt;</div>
+                        <div class="wrapp-arrow"><div class="arrow">&gt;</div></div>
                     </div>
                     <div class="house">
                         <div class="data__label data__label_house">Дом:</div>
@@ -113,7 +113,7 @@
                     <div class="district">
                         <div class="data__label data__label_district">Район:</div>
                         <input type="text" class="data data_district" name="district">
-                        <div class="arrow">&gt;</div>
+                        <div class="wrapp-arrow"><div class="arrow">&gt;</div></div>
                     </div>
                     <div class="kadastr">
                         <div class="data__label data__label_kadastr">Кадастровый номер:</div>

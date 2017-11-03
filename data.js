@@ -3,12 +3,28 @@ window.addEventListener ("DOMContentLoaded", init);
 function clickLabel (val) {
     
 }
+class CustomList {
+    constructor(str) {
 
+    }
+}
 
 function init (){
+    var arrow = document.getElementsByClassName ("arrow");
     var majorLabel = document.getElementsByClassName ("majorMenu-label");
     var subMenuTuContainer = document.getElementById ("subMenuTU-container");
     var subMenuTulabel = document.getElementsByClassName ("subMenuTU-container__element");
+    for (var i=0;i< arrow.length;++i){
+        arrow[i].addEventListener ("click", function(){
+            this.style.transform = "rotate(90deg)";
+            var pStr = this.parentNode.parentNode.getAttribute("class");
+            var list = document.getElementById (pStr+"_list_wrapper");
+            list.style.display = "flex";
+        });
+        // var attr = this.attributes;
+        
+        // var list = document.getElementById ();
+    }
     for (var i=0;i< majorLabel.length;++i){
         majorLabel[i].addEventListener ("click", function(){
             var index;
@@ -57,4 +73,5 @@ function init (){
             this.style.background = "rgba(0,0,0,.9)";
         });
     }
+
 }
