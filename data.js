@@ -1,52 +1,41 @@
+
+
 window.addEventListener ("DOMContentLoaded", init);
 
-function clickLabel (val) {
-    
+function subscribeList (l){
+    var allList = document.getElementsByClassName ("list_items");
+    for (var i=0;i< allList.length;++i){
+        allList[i].addEventListener ("click", function(){
+            var str = this.parentNode.getAttribute("id").split ("_")[0];
+            var inputValue = document.getElementsByClassName("data_"+str);
+            var tempFlag = false;
+            var inputValues = document.getElementsByClassName ("inputValue");
+            for (var j=0;j<inputValues.length;++j){
+                if (inputValues[j].getAttribute("class").split(" ")[1] == "data_"+str){
+                    inputValues[j].value = this.innerHTML;
+                    tempFlag = true;
+                    continue;
+                }
+                if (tempFlag == true){
+                    inputValues[j].value = '';
+                }  
+            }
+            
+            for (var j=0;j<l.length;++j){
+                if (l[j].name == str){
+                    l[j].hideList();
+                    break;
+                }
+            }
+        });
+    }
 }
-class CustomList {
-    constructor(str) {
 
-    }
-}
-function listClose (list){
+function refrashList (l){
 
 }
-class listS {
-    constructor (list){
-        this.flag = false;
-        this.list = list;
-        this.name = this.list.parentNode.parentNode.getAttribute("class");
-    }
-    setFlag (){
-        this.flag = true;
-    }
-    clearFlag(){
-        this.flag = false;
-    }
-    showList(){
-        this.list.style.transform = "rotate(90deg)";
-        var pStr = this.list.parentNode.parentNode.getAttribute("class");
-        var list = document.getElementById (pStr+"_list_wrapper");
-        list.style.display = "flex";
-        
-        setTimeout (function(){
-            list.style.transform = "rotateX(0deg)";
-        }, 10);
-        this.flag = true;
-    }
-    hideList(){
-        this.list.style.transform = "rotate(0deg)";
-        var pStr = this.list.parentNode.parentNode.getAttribute("class");
-        var list = document.getElementById (pStr+"_list_wrapper");
-        list.style.transform = "rotateX(90deg)";
-        setTimeout (function(){
-            list.style.display = "none";
-        }, 500);
-        
-        this.flag = false;
-    }
-}
-var flagArrow = false;
+
+
 
 function init (){
     var arrow = document.getElementsByClassName ("arrow");
@@ -54,20 +43,29 @@ function init (){
     var subMenuTuContainer = document.getElementById ("subMenuTU-container");
     var subMenuTulabel = document.getElementsByClassName ("subMenuTU-container__element");
     var lists = [];
-    var regionList = document.getElementsByClassName ("list_items");
-    var inputValues = document.getElementsByClassName ("inputValue");
+    subscribeList();
+    // var inputValues = document.getElementsByClassName ("inputValue");
     for (var i=0;i< arrow.length;++i){
         lists[i] = new listS(arrow[i]);
     }
-    
-    for (var i=0;i< regionList.length;++i){
-        regionList[i].addEventListener ("click", function(){
+    subscribeList (lists);
+    /*
+    var allList = document.getElementsByClassName ("list_items");
+    for (var i=0;i< allList.length;++i){
+        allList[i].addEventListener ("click", function(){
             var str = this.parentNode.getAttribute("id").split ("_")[0];
             var inputValue = document.getElementsByClassName("data_"+str);
+            var tempFlag = false;
             for (var j=0;j<inputValues.length;++j){
-                inputValues[j].value = undefined;
+                if (inputValues[j].getAttribute("class").split(" ")[1] == "data_"+str){
+                    inputValues[j].value = this.innerHTML;
+                    tempFlag = true;
+                    continue;
+                }
+                if (tempFlag == true){
+                    inputValues[j].value = '';
+                }  
             }
-            inputValue[0].value = this.innerHTML;
             
             for (var j=0;j<lists.length;++j){
                 if (lists[j].name == str){
@@ -75,25 +73,8 @@ function init (){
                     break;
                 }
             }
-
-            var xmlhttp = new XMLHttpRequest();
-            xmlhttp.open('POST', 'request.php', true);
-            xmlhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded'); // Отправляем кодировку
-            xmlhttp.send(str+"="+encodeURIComponent(this.innerHTML)); // Отправляем POST-запрос
-            xmlhttp.onreadystatechange = function () {
-                if (xmlhttp.readyState == 4) {
-                    // removeOptions (street);
-                    var arr = xmlhttp.responseText.split (',');
-                    // fillOptions (street, arr);
-                    console.log (xmlhttp.responseText);
-                }
-            }
-
         });
-        
-    }
-
-
+    }*/
     for (var i=0;i< arrow.length;++i){
         arrow[i].addEventListener ("click", function(){
             var listPtr;
@@ -108,32 +89,11 @@ function init (){
             
             if (listPtr.flag == false){
                 listPtr.showList();
-                // this.style.transform = "rotate(90deg)";
-                // var pStr = this.parentNode.parentNode.getAttribute("class");
-                // var list = document.getElementById (pStr+"_list_wrapper");
-                // list.style.display = "flex";
-                
-                // setTimeout (function(){
-                //     list.style.transform = "rotateX(0deg)";
-                // }, 10);
-                // flagArrow = true;
             }
             else{
                 listPtr.hideList();
-                // this.style.transform = "rotate(0deg)";
-                // var pStr = this.parentNode.parentNode.getAttribute("class");
-                // var list = document.getElementById (pStr+"_list_wrapper");
-                // list.style.transform = "rotateX(90deg)";
-                // setTimeout (function(){
-                //     list.style.display = "none";
-                // }, 500);
-                
-                // flagArrow = false;
             }
         });
-        // var attr = this.attributes;
-        
-        // var list = document.getElementById ();
     }
     for (var i=0;i< majorLabel.length;++i){
         majorLabel[i].addEventListener ("click", function(){
@@ -182,6 +142,31 @@ function init (){
             }
             this.style.background = "rgba(0,0,0,.9)";
         });
+    }
+    var regionList = document.getElementById ("region_list");
+    // var regionItem = document.getElementsByClassName ("region_item");
+    while (regionList.hasChildNodes()){
+        regionList.removeChild(regionList.childNodes[0]);
+    }
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.open('POST', 'request.php', true);
+    xmlhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded'); // Отправляем кодировку
+    var request = "region="+encodeURIComponent("region");
+    xmlhttp.send(request); // Отправляем POST-запрос
+    xmlhttp.onreadystatechange = function () {
+        if (xmlhttp.readyState == 4) {
+            // removeOptions (street);
+            var arr = xmlhttp.responseText.split (',');
+            for (var j=0;j<arr.length;++j){
+                var el = document.createElement('li');
+                el.innerHTML = arr[j];
+                el.setAttribute ("class", "list_items region_item");
+                regionList.appendChild (el);
+            }
+            var dataRegion = document.getElementsByClassName ("data_region");
+            dataRegion[0].value = "Краснодарский край";
+            subscribeList(lists);
+        }
     }
 
 }

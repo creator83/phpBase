@@ -7,11 +7,13 @@
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="substrate.css" />
 	<link rel="stylesheet" href="data.css" />
-	<script src="data.js"></script>
+	<script src="customList.inc.js"></script>
+    <script src="data.js"></script>
 </head>
 <body>
 <?php
-	include "substrate.inc.php";
+    include "substrate.inc.php";
+    include "base.php";
 ?>
 <section id="main-container">
     <div class="container-label">

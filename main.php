@@ -10,7 +10,8 @@
 </head>
 <body>
 <?php
-	include ("substrate.inc.php");
+	include "substrate.inc.php";
+	include "base.php";
 ?>
 <section>
 <div id="substrate"></div>
