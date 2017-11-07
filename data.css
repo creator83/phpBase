@@ -31,16 +31,22 @@
     left: 5px;
     top: 180px;
     width: 307px;
+    z-index: 1;
 }
 .list_wrapper {
     position: absolute;
-     background: white;
+    background: white;
+    /*transition: all 1s;*/
+    transform: rotateX(60deg);
+    transform-origin: top;
+    transition: all 0.5s;
 }
 #state_list_wrapper{ 
     display: none;
     left: 324px;
     top: 180px;
     width: 282px;
+
 }
 .list_items {
     border: 1px solid darkgray;
@@ -112,6 +118,25 @@
     display: flex;
     margin-top: 60px;
 }
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    
+}
+li {
+    font-size: 1.1em;
+    
+}
+li:hover {
+    cursor: pointer;
+    background: rgb(201, 209, 209);
+}
+li::selection {
+    background: transparent;
+}
+
 #buttonWrapper {
     display: flex;
     margin-top: 60px;
@@ -168,7 +193,7 @@
     height: 28px;
     font-family: Helvetica;
     font-size: 1.1em;
-    background:white;
+    background:rgb(241, 229, 229);
     text-align: center;
     padding-top: 6px;
     padding-bottom: -4px;
@@ -177,6 +202,7 @@
     border-top: 1px solid gray;
     border-right: 1px solid gray;
     border-bottom: 1px solid gray;
+    
     
     /*margin-bottom: 2px;*/
     
@@ -188,6 +214,9 @@
 .arrow {
     border-radius: 50%;
     transition: all 0.4s;
+}
+.arrow::selection {
+    background: transparent;
 }
 .data__label_state {
     margin-left: 10px;
