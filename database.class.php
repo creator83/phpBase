@@ -19,10 +19,10 @@ class Database implements IDatabase{
     private function __clone(){}
     private function setCharset (){
         /* изменение набора символов на utf8 */
-        // if (!$this->_db->set_charset("utf8")) {
-        //     printf("Ошибка при загрузке набора символов utf8: %s\n", $mysqli->error);
-        //     exit();
-        // }    
+        if (!$this->_db->set_charset("utf8")) {
+            printf("Ошибка при загрузке набора символов utf8: %s\n", $mysqli->error);
+            exit();
+        }    
     }
     static function getInstance($login, $password){
         if(self::$_instance == null){
