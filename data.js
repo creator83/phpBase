@@ -143,11 +143,16 @@ function init (){
             this.style.background = "rgba(0,0,0,.9)";
         });
     }
-    var regionList = document.getElementById ("region_list");
+    var request= new HttpRequest ("POST", "request.php");
+    request.setRequest ("region", "region");
+    request.sendRequest();
+    request.receiveRequest();
+    /*var regionList = document.getElementById ("region_list");
     // var regionItem = document.getElementsByClassName ("region_item");
     while (regionList.hasChildNodes()){
         regionList.removeChild(regionList.childNodes[0]);
     }
+    
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.open('POST', 'request.php', true);
     xmlhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded'); // Отправляем кодировку
@@ -167,6 +172,6 @@ function init (){
             dataRegion[0].value = "Краснодарский край";
             subscribeList(lists);
         }
-    }
+    }*/
 
 }
