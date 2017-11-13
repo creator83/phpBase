@@ -46,7 +46,8 @@
     left: 324px;
     top: 180px;
     width: 282px;
-
+    max-height: 410px;
+    overflow: auto;
 }
 .list_items {
     border: 1px solid darkgray;
@@ -57,12 +58,16 @@
     left: 5px;
     top: 254px;
     width: 277px;
+    max-height: 330px;
+    overflow: auto;
 }
 #district_list_wrapper {
     display: none;
     left: 5px;
     top: 370px;
     width: 215px;
+    max-height: 220px;
+    overflow: auto;
 }
 
 

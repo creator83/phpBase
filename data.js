@@ -48,6 +48,7 @@ function init (){
         console.log (lists[i].name);
         lists[i].subscribe();
     }
+    console.log (lists);
     //показ и скрытие списков
     
     for (var i=0;i< arrow.length;++i){
@@ -129,4 +130,9 @@ function init (){
     request1.setRequest ("region", "Краснодарский край");
     request1.sendRequest();
     request1.receiveRequest(lists[1]);
+    var request2= new HttpRequest ("POST", "request.php");
+    request2.setRequest ("district", "");
+    request2.sendRequest();
+    request2.receiveRequest(lists[3]);
+    lists[3].subscribe();
 }

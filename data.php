@@ -30,34 +30,18 @@
         </div>
         <div id="region_list_wrapper"  class="list_wrapper">
             <ul id="region_list">
-                <li class="list_items region_item">Первый</li>
-                <li class="list_items region_item">Второй</li>
-                <li class="list_items region_item">Третий</li>
-                <li class="list_items region_item">Четвёртый</li>
             </ul>
         </div>
         <div id="state_list_wrapper"  class="list_wrapper">
             <ul id="state_list">
-                <li class="list_items state_item">Первый</li>
-                <li class="list_items state_item">Второй</li>
-                <li class="list_items state_item">Третий</li>
-                <li class="list_items state_item">Четвёртый</li>
             </ul>
         </div>
         <div id="street_list_wrapper" class="list_wrapper">
             <ul id="street_list">
-                <li class="list_items street_item">Первый</li>
-                <li class="list_items street_item">Второй</li>
-                <li class="list_items street_item">Третий</li>
-                <li class="list_items street_item">Четвёртый</li>
             </ul>
         </div>
         <div id="district_list_wrapper"  class="list_wrapper">
             <ul id="district_list">
-                <li class="list_items district_item">Первый</li>
-                <li class="list_items district_item">Второй</li>
-                <li class="list_items district_item">Третий</li>
-                <li class="list_items district_item">Четвёртый</li>
             </ul>
         </div>
          <div id="createTu">
@@ -115,7 +99,7 @@
                 <div id="fourthLineWrapper">
                     <div class="district">
                         <div class="data__label data__label_district">Район:</div>
-                        <input type="text" class="data data_district" name="district">
+                        <input type="text" class="data data_district inputValue" name="district">
                         <div class="wrapp-arrow"><div class="arrow">&gt;</div></div>
                     </div>
                     <div class="kadastr">

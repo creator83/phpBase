@@ -17,5 +17,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         $result = $base->getData ($sql);
         echo implode (',', $result);
     }
+    if (isset($_POST['district'])){
+        $sql = 'SELECT name FROM district';
+        $result = $base->getData ($sql);
+        echo implode (',', $result);
+    }
 }
 ?>

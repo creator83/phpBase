@@ -73,13 +73,14 @@ class listS {
                         key = val.split("_")[1];
                         continue;
                     }
-                    if (tempFlag == true){
+                    if (tempFlag == true && j<3){
                         var request = new HttpRequest ("POST", "request.php");
                         request.setRequest (key, sValue);
                         request.sendRequest();
                         request.receiveRequest(lists[j]);
                         val = inputValues[j].getAttribute("class").split(" ")[1];
                         inputValues[j].value = '';
+                        key = val.split("_")[1];
                     }  
                 }
                 objPtr.hideList();
