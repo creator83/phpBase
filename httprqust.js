@@ -6,7 +6,7 @@ class HttpRequest extends XMLHttpRequest{
         this.method = method;
         this.file = file;
         this.receiveFlag = false;
-        this.open (method, file, true);
+        this.open (this.method, this.file, true);
         this.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
         
     }
@@ -22,13 +22,13 @@ class HttpRequest extends XMLHttpRequest{
     clearFlag(){
         this.receiveFlag = false;
     }
-    receiveRequest (){
+    receiveRequest (callBack){
         var arr=[];
         this.onreadystatechange = function () {
             if (this.readyState == 4) {
                 arr = this.responseText.split (',');
                 console.log (arr);
-                this.setFlag();
+                callBack.fillList(arr);
             }
         }
     }

@@ -32,7 +32,7 @@ class Database implements IDatabase{
         return self::$_instance;
     }
 	private function open () {
-        $this->setCharset();
+        // $this->setCharset();
 		// $this->__construct($this->host, $this->login, $this->password, $this->base);
         //parent::real_connect($host, $login, $password, $base);
         $this->_db->real_connect("localhost", $this->login, $this->password, "workbase");
@@ -40,6 +40,7 @@ class Database implements IDatabase{
 	function getData ($sql) {
 		$buffer = array ();
 		$this->open();
+		$this->_db->query("SET NAMES utf8 COLLATE utf8_unicode_ci");
 		$this->_db->begin_transaction(MYSQLI_TRANS_START_READ_ONLY);
 		if ($result = $this->_db->query($sql)) {
 				while ($row = $result->fetch_row()) {

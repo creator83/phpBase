@@ -20,7 +20,6 @@ function subscribeList (l){
                     inputValues[j].value = '';
                 }  
             }
-            
             for (var j=0;j<l.length;++j){
                 if (l[j].name == str){
                     l[j].hideList();
@@ -35,46 +34,22 @@ function refrashList (l){
 
 }
 
-
+var lists = [];
+var reg = ["one", "two", "three", "four"];
 
 function init (){
     var arrow = document.getElementsByClassName ("arrow");
     var majorLabel = document.getElementsByClassName ("majorMenu-label");
     var subMenuTuContainer = document.getElementById ("subMenuTU-container");
     var subMenuTulabel = document.getElementsByClassName ("subMenuTU-container__element");
-    var lists = [];
-    subscribeList();
-    // var inputValues = document.getElementsByClassName ("inputValue");
+
     for (var i=0;i< arrow.length;++i){
         lists[i] = new listS(arrow[i]);
+        console.log (lists[i].name);
+        lists[i].subscribe();
     }
-    subscribeList (lists);
-    /*
-    var allList = document.getElementsByClassName ("list_items");
-    for (var i=0;i< allList.length;++i){
-        allList[i].addEventListener ("click", function(){
-            var str = this.parentNode.getAttribute("id").split ("_")[0];
-            var inputValue = document.getElementsByClassName("data_"+str);
-            var tempFlag = false;
-            for (var j=0;j<inputValues.length;++j){
-                if (inputValues[j].getAttribute("class").split(" ")[1] == "data_"+str){
-                    inputValues[j].value = this.innerHTML;
-                    tempFlag = true;
-                    continue;
-                }
-                if (tempFlag == true){
-                    inputValues[j].value = '';
-                }  
-            }
-            
-            for (var j=0;j<lists.length;++j){
-                if (lists[j].name == str){
-                    lists[j].hideList();
-                    break;
-                }
-            }
-        });
-    }*/
+    //показ и скрытие списков
+    
     for (var i=0;i< arrow.length;++i){
         arrow[i].addEventListener ("click", function(){
             var listPtr;
@@ -143,35 +118,15 @@ function init (){
             this.style.background = "rgba(0,0,0,.9)";
         });
     }
-    var request= new HttpRequest ("POST", "request.php");
-    request.setRequest ("region", "region");
-    request.sendRequest();
-    request.receiveRequest();
-    /*var regionList = document.getElementById ("region_list");
-    // var regionItem = document.getElementsByClassName ("region_item");
-    while (regionList.hasChildNodes()){
-        regionList.removeChild(regionList.childNodes[0]);
-    }
-    
-    var xmlhttp = new XMLHttpRequest();
-    xmlhttp.open('POST', 'request.php', true);
-    xmlhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded'); // Отправляем кодировку
-    var request = "region="+encodeURIComponent("region");
-    xmlhttp.send(request); // Отправляем POST-запрос
-    xmlhttp.onreadystatechange = function () {
-        if (xmlhttp.readyState == 4) {
-            // removeOptions (street);
-            var arr = xmlhttp.responseText.split (',');
-            for (var j=0;j<arr.length;++j){
-                var el = document.createElement('li');
-                el.innerHTML = arr[j];
-                el.setAttribute ("class", "list_items region_item");
-                regionList.appendChild (el);
-            }
-            var dataRegion = document.getElementsByClassName ("data_region");
-            dataRegion[0].value = "Краснодарский край";
-            subscribeList(lists);
-        }
-    }*/
 
+    var request= new HttpRequest ("POST", "request.php");
+    request.setRequest ("region", "");
+    request.sendRequest();
+    request.receiveRequest(lists[0]);
+    var dataRegion = document.getElementsByClassName ("data_region");
+    dataRegion[0].value = "Краснодарский край";
+    var request1= new HttpRequest ("POST", "request.php");
+    request1.setRequest ("region", "Краснодарский край");
+    request1.sendRequest();
+    request1.receiveRequest(lists[1]);
 }
