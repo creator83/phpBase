@@ -127,7 +127,7 @@ function init (){
     var dataRegion = document.getElementsByClassName ("data_region");
     dataRegion[0].value = "Краснодарский край";
     var request1= new HttpRequest ("POST", "request.php");
-    request1.setRequest ("region", "Краснодарский край");
+    request1.setRequest ("region", dataRegion[0].value);
     request1.sendRequest();
     request1.receiveRequest(lists[1]);
     var request2= new HttpRequest ("POST", "request.php");

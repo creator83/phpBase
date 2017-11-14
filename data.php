@@ -44,6 +44,20 @@
             <ul id="district_list">
             </ul>
         </div>
+        <div id="black-wrapper">
+            <div id="addRegion">
+                <div class="button-exit"></div>
+                <input type="text" class="data data_addRegion" name="addRegion">
+                <div id="addRegion_buttonWrapper">
+                    <div class="addRegion_b-wrapp">
+                        <div class="container-label__elements addRegion_button">Добавить</div>
+                    </div>
+                    <div class="addRegion_b-wrapp">
+                        <div class="container-label__elements addRegion_button">Очистить</div>
+                    </div>
+                </div>
+            </div>
+        </div>
          <div id="createTu">
             <form action="" method="post" >
                 <div id="firstLineWrapper">
@@ -65,11 +79,13 @@
                         <div class="data__label data__label_region">Регион:</div>
                         <input type="text" class="data data_region inputValue" name="region">
                         <div class="wrapp-arrow"><div class="arrow">&gt;</div></div>
+                        <div class="add"><div class="plus">+</div></div>
                     </div>
                     <div class="state">
                         <div class="data__label data__label_state">Нас. пункт:</div>
                         <input type="text" class="data data_state inputValue" name="state">
                         <div class="wrapp-arrow"><div class="arrow">&gt;</div></div>
+                        <div class="add"><div class="plus">+</div></div>
                     </div>
                 </div>
                 <div id="thirdLineWrapper">
@@ -77,6 +93,7 @@
                         <div class="data__label data__label_street">Улица:</div>
                         <input type="text" class="data data_street inputValue" name="street">
                         <div class="wrapp-arrow"><div class="arrow">&gt;</div></div>
+                        <div class="add"><div class="plus">+</div></div>
                     </div>
                     <div class="house">
                         <div class="data__label data__label_house">Дом:</div>
@@ -116,10 +133,10 @@
                 </div>
                 <div id="buttonWrapper">
                     <div class="b-wrapp">
-                        <input type="submit" class="container-label__elements tu-buttons" value="Создать">
+                        <input type="submit" class="container-label__elements tu-buttons tu-button_submit" value="Создать">
                     </div>
                     <div class="b-wrapp">
-                        <input type="reset" class="container-label__elements tu-buttons" value="Очистить">
+                        <input type="reset" class="container-label__elements tu-buttons tu-button_reset" value="Очистить">
                     </div>
                 </div>
 

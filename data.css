@@ -17,7 +17,7 @@
     position: relative;
     top: 10px;
     width: 608px;
-    height: 600px;
+    height: 590px;
     background: rgba(0,0,0,.7);
      /*background: rgba(76, 89, 95, 0.3);*/
     box-shadow: 25px 25px 15px rgba(0,0,0,.9);
@@ -30,22 +30,22 @@
     background: white;
     left: 5px;
     top: 180px;
-    width: 307px;
+    width: 257px;
     z-index: 1;
 }
 .list_wrapper {
     position: absolute;
-    background: white;
-    /*transition: all 1s;*/
+    background: wheat;
     transform: rotateX(60deg);
     transform-origin: top;
     transition: all 0.5s;
+
 }
 #state_list_wrapper{ 
     display: none;
     left: 324px;
     top: 180px;
-    width: 282px;
+    width: 231px;
     max-height: 410px;
     overflow: auto;
 }
@@ -57,7 +57,7 @@
     display: none;
     left: 5px;
     top: 254px;
-    width: 277px;
+    width: 217px;
     max-height: 330px;
     overflow: auto;
 }
@@ -70,6 +70,27 @@
     overflow: auto;
 }
 
+#black-wrapper {
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,.7);
+}
+#addRegion {
+    /* display: none; */
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 300px;
+    height: 200px;
+    background: white;
+}
 
 #subMenuTU-container{
     display: none;
@@ -125,9 +146,11 @@
 }
 
 ul {
+    
     list-style-type: none;
     margin: 0;
     padding: 0;
+
     
 }
 li {
@@ -147,6 +170,15 @@ li::selection {
     margin-top: 60px;
     width: 606px;
 
+}
+#addRegion_buttonWrapper {
+    display: flex;
+    margin-top: 60px;
+    width: 300px;
+    /* border: 2px solid green; */
+}   
+.addRegion_b-wrapp {
+    width: 50%;
 }
 .data__label_district {
     margin-left: 3px;
@@ -185,12 +217,36 @@ li::selection {
 .data__label_region {
     margin-left: 3px;
     width: 300px;
+    /* border: 2px solid yellow; */
+}
+.region{
+    /* border: 2px solid yellow; */
 }
 .data_region{
     margin-left: 3px;
-    width: 270px;
+    width: 220px;
+    /* border: 2px solid rgb(189, 189, 60); */
+}
+.add {
+    display: inline-block;
+    width: 35px;
+    height: 26px;
+    background:rgb(241, 229, 229);
+    padding-top: 8px;
+    padding-bottom: -2px;
+    margin-left: -5px;
+    text-align: center;
+    margin-left: 5px;
+    
+ /* padding-top: 10px; */
+}
+.add:hover {
+    cursor: pointer;
+}
 
 
+.plus::selection {
+    background: transparent;    
 }
 .wrapp-arrow {
     display: inline-block;
@@ -229,7 +285,7 @@ li::selection {
 }
 .data_state {
     margin-left: 10px;
-    width: 245px;
+    width: 200px;
 }
 .data__label_street {
     margin-left: 3px;
@@ -237,7 +293,7 @@ li::selection {
 }
 .data_street {
     margin-left: 3px;
-    width: 240px;
+    width: 180px;
 }
 .data__label_house {
     margin-left: 5px;
@@ -291,6 +347,7 @@ li::selection {
     transition: all 0.7s;
     padding-top: 10px;
 }
+
 .container-label__elements::selection {
     background: transparent;
 }
@@ -312,10 +369,30 @@ li::selection {
     width: 150px;
     /*margin-left: 75px;*/
 }
-input[type=submit] {
+
+.addRegion_button {
+    margin-left: 25px;
+    height: 35px; 
+    width: 100px;
+}
+.data_addRegion {
+    display: block;
+    width: 250px;
+    margin: 50px auto;
+}
+.addRegion_button:hover {
+    cursor: pointer;
+}
+.button-exit {
+    float: right;
+    width: 30px;
+    height: 30px;
+    background: linear-gradient(#FE5D4C, #97253D);
+}
+.tu-button_submit {
     margin-left: 120px;
 }
-input[type=reset] {
+.tu-button_reset {
     margin-left: 20px;
 }
 /*
