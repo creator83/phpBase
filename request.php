@@ -1,6 +1,20 @@
 <?php
+
     include "base.php";
     header('Content-type: text/html; charset=utf-8');
+    function splitArray($arr){
+        $temp = array_chunk ($arr, 2);
+        $res = array();
+        foreach ($temp as $index){
+            $str="";
+            foreach ($index as $value){
+                $str .= $value." ";
+            }
+            $res[] = $str;
+        }
+        return $res;
+    }
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     if (isset($_POST['region']) and $_POST['region']==''){
         $sql = 'SELECT name FROM region';
@@ -8,14 +22,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         echo implode (',', $result);
     }
     if (isset($_POST['region']) and $_POST['region']!=''){
-        $sql = 'SELECT name FROM statereg WHERE region ="'.$_POST['region'].'"';
-        $result = $base->getData ($sql);
-        echo implode (',', $result);
+        $sql = 'SELECT prfx, name FROM stateReg WHERE region ="'.$_POST['region'].'"';
+        echo implode (',', splitArray ($base->getData ($sql, 2)));
     }
     if (isset($_POST['state']) and $_POST['state']!=''){
-        $sql = 'SELECT name FROM street WHERE stateReg ="'.$_POST['state'].'"';
-        $result = $base->getData ($sql);
-        echo implode (',', $result);
+        $state = explode (" ", $_POST['state']);
+        $sql = 'SELECT prfxStreet, name FROM street WHERE stateReg ="'.$state[1].'"';
+        echo implode (',', splitArray ($base->getData ($sql, 2)));
     }
     if (isset($_POST['district'])){
         $sql = 'SELECT name FROM district';

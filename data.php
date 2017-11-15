@@ -45,15 +45,49 @@
             </ul>
         </div>
         <div id="black-wrapper">
-            <div id="addRegion">
+            <div class="addData addData_region">
+                <div class="header">добавление региона</div>
                 <div class="button-exit"></div>
-                <input type="text" class="data data_addRegion" name="addRegion">
-                <div id="addRegion_buttonWrapper">
-                    <div class="addRegion_b-wrapp">
-                        <div class="container-label__elements addRegion_button">Добавить</div>
+                <input type="text" class="data add_input data_addRegion" name="addRegion">
+                <div class="add_buttonWrapper">
+                    <div class="addWindow_b-wrapp">
+                        <div class="container-label__elements add_button">Добавить</div>
                     </div>
-                    <div class="addRegion_b-wrapp">
-                        <div class="container-label__elements addRegion_button">Очистить</div>
+                    <div class="addWindow_b-wrapp">
+                        <div class="container-label__elements add_button">Очистить</div>
+                    </div>
+                </div>
+            </div>
+            <div class="addData addData_state">
+                <div class="header">добавление города</div>
+                <div class="button-exit"></div>
+                <input type="text" disabled class="data add_input data_addState" name="addState_region">
+                <div id="sub-state-prfx-list" class="list_wrapper">
+                    <ul id="sub_state_list">
+                    </ul>
+                </div>
+                <input type="text" class="data add_input data_statePrfx" name="addState_prfx">
+                <div class="wrapp-arrow"><div class="arrow state-window">&gt;</div></div>
+                <input type="text" class="data add_input data_stateName" name="addState_name">
+                <div class="add_buttonWrapper">
+                    <div class="addWindow_b-wrapp">
+                        <div class="container-label__elements add_button">Добавить</div>
+                    </div>
+                    <div class="addWindow_b-wrapp">
+                        <div class="container-label__elements add_button">Очистить</div>
+                    </div>
+                </div>
+            </div>
+            <div class="addData addData_street">
+                <div class="header">добавление улицы</div>
+                <div class="button-exit"></div>
+                <input type="text" class="data add_input data_addStreet" name="addStreet">
+                <div class="add_buttonWrapper">
+                    <div class="addWindow_b-wrapp">
+                        <div class="container-label__elements add_button">Добавить</div>
+                    </div>
+                    <div class="addWindow_b-wrapp">
+                        <div class="container-label__elements add_button">Очистить</div>
                     </div>
                 </div>
             </div>
@@ -78,13 +112,13 @@
                     <div class="region">
                         <div class="data__label data__label_region">Регион:</div>
                         <input type="text" class="data data_region inputValue" name="region">
-                        <div class="wrapp-arrow"><div class="arrow">&gt;</div></div>
+                        <div class="wrapp-arrow"><div class="arrow main-window">&gt;</div></div>
                         <div class="add"><div class="plus">+</div></div>
                     </div>
                     <div class="state">
                         <div class="data__label data__label_state">Нас. пункт:</div>
                         <input type="text" class="data data_state inputValue" name="state">
-                        <div class="wrapp-arrow"><div class="arrow">&gt;</div></div>
+                        <div class="wrapp-arrow"><div class="arrow main-window">&gt;</div></div>
                         <div class="add"><div class="plus">+</div></div>
                     </div>
                 </div>
@@ -92,7 +126,7 @@
                     <div class="street">
                         <div class="data__label data__label_street">Улица:</div>
                         <input type="text" class="data data_street inputValue" name="street">
-                        <div class="wrapp-arrow"><div class="arrow">&gt;</div></div>
+                        <div class="wrapp-arrow"><div class="arrow main-window">&gt;</div></div>
                         <div class="add"><div class="plus">+</div></div>
                     </div>
                     <div class="house">
@@ -117,7 +151,7 @@
                     <div class="district">
                         <div class="data__label data__label_district">Район:</div>
                         <input type="text" class="data data_district inputValue" name="district">
-                        <div class="wrapp-arrow"><div class="arrow">&gt;</div></div>
+                        <div class="wrapp-arrow"><div class="arrow main-window">&gt;</div></div>
                     </div>
                     <div class="kadastr">
                         <div class="data__label data__label_kadastr">Кадастровый номер:</div>

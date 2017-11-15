@@ -24,22 +24,18 @@
     
 }
 #region_list_wrapper {
-    position: absolute;
     display: none;
     /*border: 2px solid red;*/
-    background: white;
     left: 5px;
     top: 180px;
     width: 257px;
-    z-index: 1;
 }
 .list_wrapper {
     position: absolute;
-    background: wheat;
+    background: white;
     transform: rotateX(60deg);
     transform-origin: top;
     transition: all 0.5s;
-
 }
 #state_list_wrapper{ 
     display: none;
@@ -48,6 +44,18 @@
     width: 231px;
     max-height: 410px;
     overflow: auto;
+}
+#sub-state-list_wrapper {
+    left: 10px;
+    top: 95px;
+    width: 238px;
+    max-height: 650px;
+}
+#sub-state-prfx-list {
+    left: 284px;
+    top: 95px;
+    width: 72px;
+    max-height: 650px;
 }
 .list_items {
     border: 1px solid darkgray;
@@ -77,19 +85,42 @@
     bottom: 0;
     left: 0;
     right: 0;
-    background: rgba(0,0,0,.7);
+    background: rgba(0,0,0,.3);
 }
-#addRegion {
-    /* display: none; */
+.header {
+    text-align: center;
+    border-bottom: 1px solid rgb(233, 144, 144);
+    width: 100%;
+    height: 24px;
+    font-family: Helvetica;
+    font-size: 1.2em;
+    padding-top: 5px;
+    color: whitesmoke;
+    background: rgba(0,0,0,.95);
+}
+
+.addData {
+    display: none;
     position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
     margin: auto;
+    
+    background: rgba(0,0,0,.85);
+}
+.addData_region {
     width: 300px;
     height: 200px;
-    background: white;
+}
+
+.addData_state {
+    width: 600px;
+    height: 200px;
+}
+.button-exit:hover {
+    cursor: pointer;
 }
 
 #subMenuTU-container{
@@ -150,12 +181,11 @@ ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-
-    
+    width: 100%;
 }
 li {
     font-size: 1.1em;
-    
+    display: block;
 }
 li:hover {
     cursor: pointer;
@@ -171,13 +201,13 @@ li::selection {
     width: 606px;
 
 }
-#addRegion_buttonWrapper {
+.add_buttonWrapper {
     display: flex;
-    margin-top: 60px;
-    width: 300px;
+    margin-top: 30px;
+    width: 100%;
     /* border: 2px solid green; */
 }   
-.addRegion_b-wrapp {
+.addWindow_b-wrapp {
     width: 50%;
 }
 .data__label_district {
@@ -263,11 +293,6 @@ li::selection {
     border-top: 1px solid gray;
     border-right: 1px solid gray;
     border-bottom: 1px solid gray;
-    
-    
-    /*margin-bottom: 2px;*/
-    
-    /*margin: */
 }
 .wrapp-arrow:hover {
     cursor: pointer;
@@ -278,7 +303,35 @@ li::selection {
 }
 .arrow::selection {
     background: transparent;
+}/* 
+.wrapp-subArrow {
+    display: inline-block;
+    width: 30px;
+    height: 28px;
+    font-family: Helvetica;
+    font-size: 1.1em;
+    background:rgb(241, 229, 229);
+    text-align: center;
+    padding-top: 6px;
+    padding-bottom: -4px;
+    padding-left: 5px;
+    margin-left: -5px;
+    border-top: 1px solid gray;
+    border-right: 1px solid gray;
+    border-bottom: 1px solid gray;
 }
+.wrapp-subArrow:hover {
+    cursor: pointer;
+}
+.subArrow_state {
+    border-radius: 50%;
+    transition: all 0.4s;
+}
+.subArrow_state::selection {
+    background: transparent;
+} */
+
+
 .data__label_state {
     margin-left: 10px;
     width: 275px;
@@ -370,21 +423,43 @@ li::selection {
     /*margin-left: 75px;*/
 }
 
-.addRegion_button {
+.add_button {
     margin-left: 25px;
     height: 35px; 
     width: 100px;
 }
+.add_input {
+    display: block;
+    margin-top: 30px;
+}
 .data_addRegion {
     display: block;
     width: 250px;
-    margin: 50px auto;
+    margin: 30px auto;
 }
+.data_addState {
+    display: inline-block;
+    width: 200px;
+    margin-left: 10px;
+}
+.data_statePrfx {
+    display: inline-block;
+    width: 35px;
+    margin-left: 30px;
+}
+.data_stateName {
+    display: inline-block;
+    width: 200px;
+    margin-left: 5px;
+}
+
 .addRegion_button:hover {
     cursor: pointer;
 }
 .button-exit {
-    float: right;
+    position: absolute;
+    bottom: calc(100% - 30px);
+    left: calc(100% - 30px);
     width: 30px;
     height: 30px;
     background: linear-gradient(#FE5D4C, #97253D);

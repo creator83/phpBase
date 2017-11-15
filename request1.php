@@ -22,7 +22,16 @@ if (isset($_POST['reg']) || isset($_POST['state'])|| isset($_POST['addReg'])){
     else if (isset($_POST['state'])){
         $sql = 'SELECT prfxStreet, name FROM street WHERE stateReg ="'.$_POST['state'].'"';
         $result = $base->getData2 ($sql, 2);
-        $array1 = array ();
+        $arr = array_chunk ($result, 2);
+        $res = array();
+        foreach ($arr as $index){
+            $str="";
+            foreach ($index as $value){
+                $str .= $value." ";
+            }
+            $res[] = $str;
+        }
+        /*$array1 = array ();
         $array2 = array ();
         $array = array ();
         for ($i=0; $i < count($result) ; $i++) { 
@@ -35,8 +44,8 @@ if (isset($_POST['reg']) || isset($_POST['state'])|| isset($_POST['addReg'])){
         }
         for ($i=0; $i < count ($array1); $i++) { 
             $array [] = $array1[$i]." ".$array2[$i];
-        }
-        echo implode (',', $array);
+        }*/
+        echo implode (',', $res);
     }
     else if (isset($_POST['addReg'])){
         $sql = 'INSERT INTO region (name) VALUE ("'.$_POST['addReg'].'")';

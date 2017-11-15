@@ -1,9 +1,16 @@
 class listS {
-    constructor (list){
+    constructor (list, obj, foo, foo1){
         this.flag = false;
         this.list = list;
         this.iValue;
         this.name = this.list.parentNode.parentNode.getAttribute("class");
+        this.pList = obj;
+        this.showListFunction = foo;
+        this.subscribeListFunction = foo1;
+        this.currentValue;
+    }
+    setParentList(arr) {
+        this.pList = arr;
     }
     setFlag (){
         this.flag = true;
@@ -13,15 +20,15 @@ class listS {
     }
     showList(){
         this.list.style.transform = "rotate(90deg)";
-        var pStr = this.list.parentNode.parentNode.getAttribute("class");
-        var list = document.getElementById (pStr+"_list_wrapper");
-        list.style.display = "flex";
-        
+        var list = this.showListFunction();
+        list.style.display = "block";
         setTimeout (function(){
             list.style.transform = "rotateX(0deg)";
+            list.style.zIndex = '1';
         }, 10);
         this.flag = true;
     }
+
     hideList(){
         this.list.style.transform = "rotate(0deg)";
         var pStr = this.list.parentNode.parentNode.getAttribute("class");
@@ -29,6 +36,7 @@ class listS {
         list.style.transform = "rotateX(90deg)";
         setTimeout (function(){
             list.style.display = "none";
+            list.style.zIndex = '0';
         }, 500);
         this.flag = false;
     }
@@ -56,6 +64,7 @@ class listS {
     }
     subscribe (){
         var list = document.getElementsByClassName (this.name + "_item");
+        // var list = this.subscribeListFunction();
         var str = "data_"+this.name;
         var sValue;
         var key;
@@ -68,6 +77,7 @@ class listS {
                     var val = inputValues[j].getAttribute("class").split(" ")[1];
                     if (val == str){
                         inputValues[j].value = this.innerHTML;
+                        objPtr.currentValue = this.innerHTML;
                         sValue = this.innerHTML;
                         tempFlag = true;
                         key = val.split("_")[1];
@@ -77,7 +87,9 @@ class listS {
                         var request = new HttpRequest ("POST", "request.php");
                         request.setRequest (key, sValue);
                         request.sendRequest();
-                        request.receiveRequest(lists[j]);
+                        request.receiveRequest(objPtr.pList[j]);
+                        // console.log (objPtr.pList);
+                        // request.receiveRequest(lists[j]);
                         val = inputValues[j].getAttribute("class").split(" ")[1];
                         inputValues[j].value = '';
                         key = val.split("_")[1];
@@ -102,6 +114,7 @@ class listS {
             var el = document.createElement('li');
             el.innerHTML = arr[j];
             el.setAttribute ("class", "list_items "+this.name+"_item");
+            // el.style.display = 'inline- block';
             list.appendChild (el);
         }
         this.subscribe();

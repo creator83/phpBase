@@ -35,24 +35,11 @@ function refrashList (l){
 }
 
 var lists = [];
+var listStateWindow = [];
 var reg = ["one", "two", "three", "four"];
-
-function init (){
-    var arrow = document.getElementsByClassName ("arrow");
-    var majorLabel = document.getElementsByClassName ("majorMenu-label");
-    var subMenuTuContainer = document.getElementById ("subMenuTU-container");
-    var subMenuTulabel = document.getElementsByClassName ("subMenuTU-container__element");
-
-    for (var i=0;i< arrow.length;++i){
-        lists[i] = new listS(arrow[i]);
-        console.log (lists[i].name);
-        lists[i].subscribe();
-    }
-    console.log (lists);
-    //показ и скрытие списков
-    
-    for (var i=0;i< arrow.length;++i){
-        arrow[i].addEventListener ("click", function(){
+function showCombobox(item) {
+    for (var i=0;i< item.length;++i){
+        item[i].addEventListener ("click", function(){
             var listPtr;
             for (var j=0;j<lists.length;++j){
                 if (lists[j].name == this.parentNode.parentNode.getAttribute("class")){
@@ -71,6 +58,104 @@ function init (){
             }
         });
     }
+}
+
+var showMainList = function (){
+    var list = document.getElementById (this.name+"_list_wrapper");
+    return list;
+}
+
+var showSubList = function (){
+    var list = document.getElementById ("sub-"+this.name+"-list_wrapper");
+    return list;
+}
+var subscribeMainList = function(){
+    var list = document.getElementsByClassName (this.name + "_item");
+    return list;
+
+}
+
+function init (){
+    // var arrow = document.getElementsByClassName ("arrow");
+    var mArrow = document.getElementsByClassName ("main-window");
+    var subArrowState = document.getElementsByClassName ('state-window');
+    var majorLabel = document.getElementsByClassName ("majorMenu-label");
+    var subMenuTuContainer = document.getElementById ("subMenuTU-container");
+    var subMenuTulabel = document.getElementsByClassName ("subMenuTU-container__element");
+    var buttonsAdd= document.getElementsByClassName ('add');
+    var menuAdd = document.getElementsByClassName ('addData');
+    var blackWrapper = document.getElementById ('black-wrapper');
+    var btnExit = document.getElementsByClassName ("button-exit");
+
+    // открытие окон добавления
+    for (var i=0;i<buttonsAdd.length;++i){
+        buttonsAdd[i].addEventListener ("click", function(){
+            //затенение фона
+            blackWrapper.style.display = 'block';
+            blackWrapper.style.zIndex = '1';
+
+            var str = "data_add" + this.parentNode.getAttribute('class').charAt(0).toUpperCase() + this.parentNode.getAttribute('class').substr(1);
+            console.log (str);
+            console.log (this.parentNode.getAttribute('class'));
+            var menu = document.getElementsByClassName (str);
+            console.log (menu[0].parentNode);
+            menu[0].parentNode.style.display = 'block';
+            var inputEl;
+            for (var i=0;i<this.parentNode.childNodes.length;++i){
+                if (this.parentNode.childNodes[i].hasAttribute("name")){
+                    inputEl.push (this.parentNode.childNodes[i]);
+                }
+            }
+
+            inputEl[0].value = "Hello";
+        });
+    }
+
+    // Закрытие окон добавления
+    for (var i=0;i<btnExit.length;++i){
+        btnExit[i].addEventListener ("click", function(){
+            console.log (this.parentNode);
+            this.parentNode.style.display = 'none';
+            blackWrapper.style.display = 'none';
+        });
+    }
+    
+    // подписка на выпадающие меню в основном окне
+    for (var i=0;i< mArrow.length;++i){
+        lists[i] = new listS(mArrow[i], lists, showMainList, subscribeMainList);
+        console.log (lists[i].name);
+        lists[i].subscribe();
+    }
+    // подписка на выпадающие меню в дополнительных окнах
+   
+    for (var i=0;i< subArrowState.length;++i){
+        listStateWindow[i] = new listS(subArrowState[i], listStateWindow);
+        console.log (lists[i].name);
+        listStateWindow[i].subscribe();
+    }    
+    //показ и скрытие списков в основном окне
+    
+    for (var i=0;i< mArrow.length;++i){
+        mArrow[i].addEventListener ("click", function(){
+            var listPtr;
+            for (var j=0;j<lists.length;++j){
+                if (lists[j].name == this.parentNode.parentNode.getAttribute("class")){
+                    listPtr = lists[j];
+                }
+                else{
+                    lists[j].hideList();
+                }            
+            }
+            
+            if (listPtr.flag == false){
+                listPtr.showList();
+            }
+            else{
+                listPtr.hideList();
+            }
+        });
+    }
+    // showCombobox (mArrow);
     for (var i=0;i< majorLabel.length;++i){
         majorLabel[i].addEventListener ("click", function(){
             var index;

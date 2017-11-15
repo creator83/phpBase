@@ -37,21 +37,19 @@ class Database implements IDatabase{
         //parent::real_connect($host, $login, $password, $base);
         $this->_db->real_connect("localhost", $this->login, $this->password, "workbase");
 	}
-	function getData ($sql) {
+	function getData ($sql, $n=1) {
 		$buffer = array ();
 		$this->open();
 		$this->_db->query("SET NAMES utf8 COLLATE utf8_unicode_ci");
 		$this->_db->begin_transaction(MYSQLI_TRANS_START_READ_ONLY);
 		if ($result = $this->_db->query($sql)) {
 				while ($row = $result->fetch_row()) {
-					$buffer[] = $row[0];
-					// for ($i=0; $i < $num; $i++) { 
-					// 	$buffer[] = $row[i];
-					// }		
+					for ($i=0; $i < $n; $i++) { 
+						$buffer[] = $row[$i];
+					}		
 				}
 				$result->close();
 			}
-		// $this->commit();
 		$this->_db->close();
 		return $buffer;
 	}
