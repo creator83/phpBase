@@ -16,39 +16,39 @@
     include "substrate.inc.php";
     include "base.php";
 ?>
-<section id="main-container">
-    <div class="container-label">
-        <div class="container-label__elements majorMenu-label">ТУ</div>
-        <div class="container-label__elements majorMenu-label">ПИСЬМА</div>
-        <div class="container-label__elements majorMenu-label">ОБЪЕКТЫ</div>
-        <div class="container-label__elements majorMenu-label">ОТЧЁТЫ</div>
+<section class="main-container">
+    <div class="major-menu-container-header">
+        <div class="header__elements major-menu-header">ТУ</div>
+        <div class="header__elements major-menu-header">ПИСЬМА</div>
+        <div class="header__elements major-menu-header">ОБЪЕКТЫ</div>
+        <div class="header__elements major-menu-header">ОТЧЁТЫ</div>
     </div>
     <div id="body-container">
         <div id="subMenuTU-container">
-            <div class="container-label__elements subMenuTU-container__element">Создание ТУ</div>
-            <div class="container-label__elements subMenuTU-container__element">Просмотр ТУ</div>
+            <div class="header__elements create-tu-header">Создание ТУ</div>
+            <div class="header__elements create-tu-header">Просмотр ТУ</div>
         </div>
-        <div id="region_list_wrapper"  class="list_wrapper">
-            <ul id="region_list">
+        <div class="create-tu-list-container create-tu-list-container_region">
+            <ul class="create-tu-list create-tu-list_region">
             </ul>
         </div>
-        <div id="state_list_wrapper"  class="list_wrapper">
-            <ul id="state_list">
+        <div class="create-tu-list-container create-tu-list-container_state">
+            <ul class="create-tu-list create-tu-list_state">
             </ul>
         </div>
-        <div id="street_list_wrapper" class="list_wrapper">
-            <ul id="street_list">
+        <div class="create-tu-list-container create-tu-list-container_street">
+            <ul class="create-tu-list create-tu-list_street">
             </ul>
         </div>
-        <div id="district_list_wrapper"  class="list_wrapper">
-            <ul id="district_list">
+        <div class="create-tu-list-container create-tu-list-container_district">
+            <ul class="create-tu-list create-tu-list_district">
             </ul>
         </div>
         <div id="black-wrapper">
-            <div class="addData addData_region">
-                <div class="header">добавление региона</div>
-                <div class="button-exit"></div>
-                <input type="text" class="data add_input data_addRegion" name="addRegion">
+            <div class="create-tu-add-menu create-tu-add-menu_region">
+                <div class="create-tu-add-menu__header create-tu-add-menu__header_region">добавление региона</div>
+                <div class="button_exit"></div>
+                <input type="text" class="data create-tu-add-menu__input create-tu-add-menu__input_region" name="add-region">
                 <div class="add_buttonWrapper">
                     <div class="addWindow_b-wrapp">
                         <div class="container-label__elements add_button">Добавить</div>
@@ -58,11 +58,11 @@
                     </div>
                 </div>
             </div>
-            <div class="addData addData_state">
-                <div class="header">добавление города</div>
-                <div class="button-exit"></div>
+            <div class="create-tu-add-menu create-tu-add-menu_state">
+                <div class="create-tu-add-menu__header create-tu-add-menu__header_state">добавление города</div>
+                <div class="button_exit"></div>
                 <input type="text" disabled class="data add_input data_addState" name="addState_region">
-                <div id="sub-state-prfx-list" class="list_wrapper">
+                <div id="sub-state-prfx-list" class="list-container">
                     <ul id="sub_state_list">
                     </ul>
                 </div>
@@ -78,7 +78,7 @@
                     </div>
                 </div>
             </div>
-            <div class="addData addData_street">
+            <div class="create-tu-add-menu create-tu-add-menu_street">
                 <div class="header">добавление улицы</div>
                 <div class="button-exit"></div>
                 <input type="text" class="data add_input data_addStreet" name="addStreet">
