@@ -1,0 +1,23 @@
+
+
+//проверка папки
+git status
+
+//удаление последнего комита
+reset --hard HEAD~
+
+//создание новой ветки
+git checkout -b new_branch
+
+//переключение веток
+git checkout branch
+
+//просмотр удалённых веток
+remote show
+
+//просмотр локальных веток
+branch
+
+//удаление ветки
+branch -d
+
