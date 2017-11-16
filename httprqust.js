@@ -27,7 +27,7 @@ class HttpRequest extends XMLHttpRequest{
         this.onreadystatechange = function () {
             if (this.readyState == 4) {
                 arr = this.responseText.split (',');
-                console.log (arr);
+                // console.log (arr);
                 callBack.fillList(arr);
             }
         }

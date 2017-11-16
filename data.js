@@ -29,6 +29,24 @@ function fillList (list, header, value){
     request.receiveRequest (list);
 }
 
+function openCombobox (comboArray, name){
+    for (var i=0;i<comboArray.length;++i){
+        if (comboArray[i].name == name){
+            if (comboArray[i].flag == false){
+                comboArray[i].showList();
+            }
+            else{
+                comboArray[i].hideList();
+            }
+        }
+        else {
+            comboArray[i].hideList();
+        }
+    }
+}
+
+
+
 function init (){
     var createTuBtn = document.getElementsByClassName ("create-tu__button");
     var combobox = document.getElementsByClassName ('create-tu-list-container');
@@ -38,20 +56,22 @@ function init (){
     for (var i=0;i<combobox.length;++i){
         var nWords = combobox[i].getAttribute ('class');
         if (nWords.split ('-').length>7) {
-            var el = new listS (combobox[i], combobox, getArrowObjCreateTu);
+            var el = new listS (combobox[i], createTuSubMenuList, getArrowObjCreateTu);
             createTuSubMenuList.push (el);
         }
         else {
-            var el = new listS (combobox[i], combobox, getArrowObjCreateTu);
+            var el = new listS (combobox[i], createTuList, getArrowObjCreateTu);
             createTuList.push (el);
         }
     }
 
     
     fillList (createTuList[0], "region");
-    createTuList[0].showList();
-    createTuList[0].hideList();
-    
+    createTuList[0].setInputValue('Краснодарский край');
+    fillList (createTuList[1], "region", 'Краснодарский край');
+    fillList (createTuList[3], "district");
+    // createTuList[0].hideList();
+    // openCombobox (createTuList, "district");
     // нажатие на главное меню
     for (var i=0;i< mainMenu.length;++i){
         mainMenu[i].addEventListener ("click", function(){

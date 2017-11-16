@@ -30,11 +30,6 @@
         </div>
         <div class="create-tu-list-container create-tu-list-container_region">
             <ul class="create-tu-list create-tu-list_region">
-                <li>hfp</li>
-                <li>sdaf</li>
-                <li>asf</li>
-                <li>adfa</li>
-                <li>dafad</li>
             </ul>
         </div>
         <div class="create-tu-list-container create-tu-list-container_state">

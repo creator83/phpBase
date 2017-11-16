@@ -2,18 +2,40 @@ class listS {
     constructor (list, obj, arrowPtr){
         this.flag = false;
         this.list = list;
-        
+        this.inputFieldValue;
         var temp = this.list.getAttribute ('class').split('_');
         this.name = temp[temp.length-1];
         this.arrow = arrowPtr(this.name);
-        console.log (this.arrow);
         this.iValue;
-        // this.name = this.list.parentNode.parentNode.getAttribute("class");
-        this.pList = obj;
-        // this.showListFunction = foo;
-        // this.subscribeListFunction = foo1;
+        this.arrPtr = obj;
         this.currentValue;
         this.flag = false;
+        this.subscribeArrow();
+        this.liPtr = this.list.getElementsByTagName ('li');
+        this.inputField = this.arrow[0].parentNode.previousElementSibling;
+        this.subscribeSelectItem ();
+    }
+    setInputValue (value) {
+        this.inputFieldValue = value;
+        this.inputField.value = value;
+    }
+    subscribeArrow () {
+        var objPtr = this;
+        this.arrow[0].parentNode.addEventListener ('click', function(){
+            if (objPtr.flag == false) {
+                objPtr.showList();
+                objPtr.flag = true;
+                for (var i=0;i<objPtr.arrPtr.length;++i){
+                    if (objPtr.arrPtr[i].name != objPtr.name){
+                        objPtr.arrPtr[i].hideList();
+                    }
+                }
+            }
+            else{
+                objPtr.hideList();
+                objPtr.flag = false;
+            }
+        });
     }
     setFlag (){
         this.flag = true;
@@ -30,6 +52,7 @@ class listS {
             listPtr.style.zIndex = '1';
             arrowPtr.style.transform = "rotate(90deg)";
         }, 10);
+        this.flag = true;
     }
 
     hideList(){
@@ -38,68 +61,32 @@ class listS {
         setTimeout (function(){
             listPtr.style.transform = "rotateX(90deg)";
             arrowPtr.style.transform = "rotate(0deg)";
-        }, 500);
+        }, 10);
         listPtr.style.zIndex = '0';
         this.flag = false;
     }
-    setInputValue (){
-        var tempFlag = false;
-        var str = "data_"+this.name;
-        var inputValues = document.getElementsByClassName ("inputValue");
-        for (var j=0;j<inputValues.length;++j){
-            var val = inputValues[j].getAttribute("class").split(" ")[1];
-            if (val == str){
-                if (this.innerHTML = undefined){
-                    inputValues[j].value = "";
-                }
-                else{
-                    inputValues[j].value = this.innerHTML;
-                }
-                tempFlag = true;
-                continue;
-            }
-            if (tempFlag == true){
-                inputValues[j].value = '';
-            }  
-        }
-
-    }
-    subscribe (){
-        var list = document.getElementsByClassName (this.name + "_item");
-        // var list = this.subscribeListFunction();
-        var str = "data_"+this.name;
-        var sValue;
-        var key;
-        for (var i=0;i< list.length;++i){
-            var objPtr = this;
-            list[i].addEventListener ("click", function(){
-                var tempFlag = false;
-                var inputValues = document.getElementsByClassName ("inputValue");
-                for (var j=0;j<inputValues.length;++j){
-                    var val = inputValues[j].getAttribute("class").split(" ")[1];
-                    if (val == str){
-                        inputValues[j].value = this.innerHTML;
-                        objPtr.currentValue = this.innerHTML;
-                        sValue = this.innerHTML;
-                        tempFlag = true;
-                        key = val.split("_")[1];
-                        continue;
-                    }
-                    if (tempFlag == true && j<3){
-                        var request = new HttpRequest ("POST", "request.php");
-                        request.setRequest (key, sValue);
-                        request.sendRequest();
-                        request.receiveRequest(objPtr.pList[j]);
-                        // console.log (objPtr.pList);
-                        // request.receiveRequest(lists[j]);
-                        val = inputValues[j].getAttribute("class").split(" ")[1];
-                        inputValues[j].value = '';
-                        key = val.split("_")[1];
-                    }  
-                }
+    subscribeSelectItem (){
+        var objPtr = this;
+        var parArr = this.arrPtr;
+        for (var i=0;i< this.liPtr.length;++i){ 
+            this.liPtr[i].addEventListener ("click", function(){
+                objPtr.setInputValue (this.innerHTML);
                 objPtr.hideList();
+                var flag = false;
+                for (var i=0;i<parArr.length;++i){
+                    if (parArr[i].name == objPtr.name){
+                        flag = true;
+                    }
+                    else {
+                        if (flag == true && i<3){
+                            fillList (parArr[i], parArr[i-1].name, parArr[i-1].inputFieldValue);
+                            parArr[i].setInputValue ('');
+                        }
+                    }
+                }
             });
         }
+
     }
     unsubcribe (){
         var list = document.getElementsByClassName (this.name + "_item");
@@ -114,10 +101,9 @@ class listS {
         for (var j=0;j<arr.length;++j){
             var el = document.createElement('li');
             el.innerHTML = arr[j];
-            el.setAttribute ("class", "list__items "+this.name+"__item");
-            // el.style.display = 'inline- block';
+            el.setAttribute ("class", this.name+"__item");
             this.list.appendChild (el);
         }
-        this.subscribe();
+        this.subscribeSelectItem();
     }
 }
