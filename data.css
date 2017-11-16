@@ -23,7 +23,7 @@
     transition: all 0.7s;
     padding-top: 10px;
 }
-.data {
+.input-data {
     font-size: 1.1em;
     height: 30px;
     outline-color: orange;
@@ -36,6 +36,38 @@
 .header__elements::selection {
     background: transparent;
 }
+.button__container {
+    display: flex;
+    margin-top: 30px;
+    width: 100%;
+} 
+
+.arrow-wrapper {
+    display: inline-block;
+    width: 30px;
+    height: 28px;
+    font-family: Helvetica;
+    font-size: 1.1em;
+    background:rgb(241, 229, 229);
+    text-align: center;
+    padding-top: 6px;
+    padding-bottom: -4px;
+    padding-left: 5px;
+    margin-left: -5px;
+    border-top: 1px solid gray;
+    border-right: 1px solid gray;
+    border-bottom: 1px solid gray;
+}
+.arrow-wrapper:hover {
+    cursor: pointer;
+}
+.arrow {
+    border-radius: 50%;
+    transition: all 0.4s;
+}
+.arrow::selection {
+    background: transparent;
+} 
 .major-menu-header {
     height: 40px; 
     width: 150px;
@@ -49,20 +81,18 @@
     position: relative;
     top: 10px;
     width: 608px;
-    height: 590px;
+    height: 500px;
     background: rgba(0,0,0,.7);
-     /*background: rgba(76, 89, 95, 0.3);*/
     box-shadow: 25px 25px 15px rgba(0,0,0,.9);  
 }
 .create-tu-list-container {
     position: absolute;
     background: white;
-    transform: rotateX(60deg);
+    transform: rotateX(90deg);
     transform-origin: top;
     transition: all 0.5s;
 }
 .create-tu-list-container_region {
-    display: none;
     /*border: 2px solid red;*/
     left: 5px;
     top: 180px;
@@ -151,6 +181,38 @@
 .button_exit:hover {
     cursor: pointer;
 }
+.button_add__wrapper {
+    display: inline-block;
+    width: 35px;
+    height: 26px;
+    background:rgb(241, 229, 229);
+    padding-top: 8px;
+    padding-bottom: -2px;
+    margin-left: -5px;
+    text-align: center;
+    margin-left: 5px;
+}
+.button_add__wrapper:hover {
+    cursor: pointer;
+}
+.button_add::selection {
+    background: transparent;    
+}
+
+.create-tu-add-menu__button-container {
+    text-align: center;
+    border-bottom: 1px solid rgb(233, 144, 144);
+    width: 100%;
+    height: 24px;
+    font-family: Helvetica;
+    font-size: 1.2em;
+    padding-top: 5px;
+    color: whitesmoke;
+    background: rgba(0,0,0,.95);
+}
+.create-tu-add-menu__button-container_region {
+
+}
 
 .create-tu-add-menu_region {
     width: 300px;
@@ -158,6 +220,9 @@
 }
 .create-tu-add-menu__header_region {
 
+}
+.create-tu-add-menu__button-wrapper_region {
+    width: 50%;
 }
 .create-tu-add-menu_state {
     width: 600px;
@@ -169,10 +234,6 @@
 
 }
 
-
-
-
-
 #subMenuTU-container{
     display: none;
     position: absolute;
@@ -181,44 +242,140 @@
     transform: rotate(270deg) translate(-252px, -302px);
 }
 
-#createTu {
+#create-tu {
     width: 608px;
-    height: 590px;
     border: 1px solid bisque;
 }
-
-.data__label {
-    /*border: 2px solid red;*/
+.create-tu__line-container {
+    display: flex;
+}
+.create-tu__label {
     font-family: Helvetica;
     font-size: 1.1em;
     color: bisque;
     text-align: center;
-    width: 200px;
+    width:100%;
 }
-.data__label_sName {
-    
-}
-.data_name {
-    width: 190px;
-    margin-left: 3px;
+.create-tu__data {
+    font-size: 1.1em;
+    height: 30px;
+    outline-color: orange;
+    outline-width: 10px;
+    width: 95%;
 }
 
-#firstLineWrapper {
-    margin-top: 50px;
-    display: flex;
-    /*justify-content: space-around;*/
+/* 1-я строка формы ТУ */
+.create-tu__first-line-container {
+    margin-top: 40px;
 }
-#secondLineWrapper{
-    display: flex;
-    margin-top: 15px;
+.create-tu__first-line-container__element {
+    width: 220px;
 }
-#thirdLineWrapper {
-    display: flex;
-    margin-top: 15px;
+.create-tu__first-line-container__element_sur-name {
+    margin-left: 5px;
 }
-#fourthLineWrapper {
-    display: flex;
-    margin-top: 60px;
+
+/* 2-я строка формы ТУ*/
+.create-tu__second-line-container {
+    margin-top: 25px;
+}
+.create-tu__second-line-container__element {
+    width: 50%;
+}
+.create-tu__second-line-container__element_region {
+    margin-left: 5px;
+}
+
+.create-tu__second-line-container__element_state {
+    margin-left: 10px;
+}
+.create-tu__data_region {
+    width: 210px;
+}
+
+.create-tu__data_state {
+    width: 200px;
+}
+
+/* 3-я строка формы ТУ */
+.create-tu__third-line-container {
+    margin-top: 25px;
+}
+.create-tu__third-line-container__element {
+    margin-left: 5px;
+}
+.create-tu__third-line-container__element_street {
+    width: 300px;
+}
+.create-tu__data_street {
+    width: 210px;
+}
+.create-tu__third-line-container__element_house {
+    width: 45px;
+}
+.create-tu__third-line-container__element_corps {
+    width: 45px;
+}
+.create-tu__third-line-container__element_apartment {
+    width: 45px;
+}
+.create-tu__third-line-container__element_phone {
+    padding-left: 10px;
+    width: 132px;
+}
+.create-tu__data_prfx-phone {
+    width: 35px;
+}
+.create-tu__data_num-phone {
+    width: 85px;
+}
+
+/* 4-я строка формы ТУ*/
+.create-tu__fourth-line-container {
+    margin-top: 25px;
+}
+.create-tu__fourth-line-container__element {
+    margin-left: 5px;
+}
+.create-tu__fourth-line-container__element_district {
+    width: 250px;
+}
+.create-tu__data_district {
+    width: 210px;
+}
+.create-tu__fourth-line-container__element_kadastr {
+    width: 200px;
+}
+.data__label_kadastr-prfx {
+    display: inline-block;
+    width: 50px;
+}
+.create-tu__data_kadastr-district {
+    width: 75px;
+}
+.create-tu__data_kadastr-number {
+    width: 45px;
+}
+.create-tu__fourth-line-container__element_address {
+    width: 135px;
+    padding-left: 3px;
+}
+.create-tu__data_address {
+    height: 75px;
+}
+/* кнопки форма ТУ */
+.create-tu__button-wrapper {
+    width: 50%;
+}
+.create-tu__button {
+    width: 150px;
+    height: 40px;
+}
+.create-tu__button-add {
+    margin-left: 110px;
+}
+.create-tu__button-reset {
+    margin-left: 40px;
 }
 
 ul {
@@ -239,250 +396,3 @@ li:hover {
 li::selection {
     background: transparent;
 }
-
-#buttonWrapper {
-    display: flex;
-    margin-top: 60px;
-    width: 606px;
-
-}
-.add_buttonWrapper {
-    display: flex;
-    margin-top: 30px;
-    width: 100%;
-    /* border: 2px solid green; */
-}   
-.addWindow_b-wrapp {
-    width: 50%;
-}
-.data__label_district {
-    margin-left: 3px;
-    width: 213px;
-}
-.data_district{
-    margin-left: 3px;
-    width: 178px;
-}
-.data__label_kadastr {
-    margin-left: 10px;
-    width: 225px;
-}
-.kadastr_prfx {
-    margin-left: 10px;
-    display: inline-block;
-    width: 60px;
-}
-.data_kadastr-dist {
-    margin-left: 0px;
-    width: 100px;
-}
-.data_kadastr-num {
-    margin-left: 3px;
-    width: 45px;
-}
-.data__label_address {
-    margin-left: 8px;
-    width: 140px;
-}
-.data_address {
-    margin-left: 8px;
-    width: 132px;
-    height: 70px;
-}
-.data__label_region {
-    margin-left: 3px;
-    width: 300px;
-    /* border: 2px solid yellow; */
-}
-.region{
-    /* border: 2px solid yellow; */
-}
-.data_region{
-    margin-left: 3px;
-    width: 220px;
-    /* border: 2px solid rgb(189, 189, 60); */
-}
-.add {
-    display: inline-block;
-    width: 35px;
-    height: 26px;
-    background:rgb(241, 229, 229);
-    padding-top: 8px;
-    padding-bottom: -2px;
-    margin-left: -5px;
-    text-align: center;
-    margin-left: 5px;
-    
- /* padding-top: 10px; */
-}
-.add:hover {
-    cursor: pointer;
-}
-
-
-.plus::selection {
-    background: transparent;    
-}
-.wrapp-arrow {
-    display: inline-block;
-    width: 30px;
-    height: 28px;
-    font-family: Helvetica;
-    font-size: 1.1em;
-    background:rgb(241, 229, 229);
-    text-align: center;
-    padding-top: 6px;
-    padding-bottom: -4px;
-    padding-left: 5px;
-    margin-left: -5px;
-    border-top: 1px solid gray;
-    border-right: 1px solid gray;
-    border-bottom: 1px solid gray;
-}
-.wrapp-arrow:hover {
-    cursor: pointer;
-}
-.arrow {
-    border-radius: 50%;
-    transition: all 0.4s;
-}
-.arrow::selection {
-    background: transparent;
-}/* 
-.wrapp-subArrow {
-    display: inline-block;
-    width: 30px;
-    height: 28px;
-    font-family: Helvetica;
-    font-size: 1.1em;
-    background:rgb(241, 229, 229);
-    text-align: center;
-    padding-top: 6px;
-    padding-bottom: -4px;
-    padding-left: 5px;
-    margin-left: -5px;
-    border-top: 1px solid gray;
-    border-right: 1px solid gray;
-    border-bottom: 1px solid gray;
-}
-.wrapp-subArrow:hover {
-    cursor: pointer;
-}
-.subArrow_state {
-    border-radius: 50%;
-    transition: all 0.4s;
-}
-.subArrow_state::selection {
-    background: transparent;
-} */
-
-
-.data__label_state {
-    margin-left: 10px;
-    width: 275px;
-}
-.data_state {
-    margin-left: 10px;
-    width: 200px;
-}
-.data__label_street {
-    margin-left: 3px;
-    width: 270px;
-}
-.data_street {
-    margin-left: 3px;
-    width: 180px;
-}
-.data__label_house {
-    margin-left: 5px;
-    width: 47px;
-}
-.data_house {
-    margin-left: 5px;
-    width: 47px;
-}
-.data__label_korp {
-    margin-left: 5px;
-    width: 47px;
-}
-.data_korp {
-    margin-left: 5px;
-    width: 47px;
-}
-.data__label_appartment {
-    margin-left: 5px;
-    width: 44px;
-}
-.data_apartment {
-    margin-left: 5px;
-    width: 44px;
-}
-.data__label_phone{
-    margin-left: 15px;
-    width: 132px;
-}
-.data_prfx-phone {
-    margin-left: 15px;
-    width: 32px;
-}
-.data_num-phone {
-    margin-left: 0px;
-    width: 100px;
-}
-.b-wrapp {
-    width: 303px;
-}
-
-
-
-.tu-buttons {
-    height: 60px; 
-    width: 150px;
-    /*margin-left: 75px;*/
-}
-
-.add_button {
-    margin-left: 25px;
-    height: 35px; 
-    width: 100px;
-}
-.create-tu-add-menu__input {
-    display: block;
-    margin-top: 30px;
-}
-.data_addRegion {
-    display: block;
-    width: 250px;
-    margin: 30px auto;
-}
-.data_addState {
-    display: inline-block;
-    width: 200px;
-    margin-left: 10px;
-}
-.data_statePrfx {
-    display: inline-block;
-    width: 35px;
-    margin-left: 30px;
-}
-.data_stateName {
-    display: inline-block;
-    width: 200px;
-    margin-left: 5px;
-}
-
-.addRegion_button:hover {
-    cursor: pointer;
-}
-
-.tu-button_submit {
-    margin-left: 120px;
-}
-.tu-button_reset {
-    margin-left: 20px;
-}
-/*
-.container-label__elements_text {
-    display: block;
-    padding-top: 50%;
-}*/

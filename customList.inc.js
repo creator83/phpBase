@@ -1,16 +1,19 @@
 class listS {
-    constructor (list, obj, foo, foo1){
+    constructor (list, obj, arrowPtr){
         this.flag = false;
         this.list = list;
+        
+        var temp = this.list.getAttribute ('class').split('_');
+        this.name = temp[temp.length-1];
+        this.arrow = arrowPtr(this.name);
+        console.log (this.arrow);
         this.iValue;
-        this.name = this.list.parentNode.parentNode.getAttribute("class");
+        // this.name = this.list.parentNode.parentNode.getAttribute("class");
         this.pList = obj;
-        this.showListFunction = foo;
-        this.subscribeListFunction = foo1;
+        // this.showListFunction = foo;
+        // this.subscribeListFunction = foo1;
         this.currentValue;
-    }
-    setParentList(arr) {
-        this.pList = arr;
+        this.flag = false;
     }
     setFlag (){
         this.flag = true;
@@ -19,25 +22,24 @@ class listS {
         this.flag = false;
     }
     showList(){
-        this.list.style.transform = "rotate(90deg)";
-        var list = this.showListFunction();
-        list.style.display = "block";
+        var listPtr = this.list;
+        var arrowPtr = this.arrow[0];
+        listPtr.style.display = "block";
         setTimeout (function(){
-            list.style.transform = "rotateX(0deg)";
-            list.style.zIndex = '1';
+            listPtr.style.transform = "rotateX(0deg)";
+            listPtr.style.zIndex = '1';
+            arrowPtr.style.transform = "rotate(90deg)";
         }, 10);
-        this.flag = true;
     }
 
     hideList(){
-        this.list.style.transform = "rotate(0deg)";
-        var pStr = this.list.parentNode.parentNode.getAttribute("class");
-        var list = document.getElementById (pStr+"_list_wrapper");
-        list.style.transform = "rotateX(90deg)";
+        var listPtr = this.list;
+        var arrowPtr = this.arrow[0];
         setTimeout (function(){
-            list.style.display = "none";
-            list.style.zIndex = '0';
+            listPtr.style.transform = "rotateX(90deg)";
+            arrowPtr.style.transform = "rotate(0deg)";
         }, 500);
+        listPtr.style.zIndex = '0';
         this.flag = false;
     }
     setInputValue (){
@@ -106,16 +108,15 @@ class listS {
         }
     }
     fillList(arr){
-        var list = document.getElementById (this.name + "_list");
-        while (list.hasChildNodes()){
-            list.removeChild(list.childNodes[0]);
+        while (this.list.hasChildNodes()){
+            this.list.removeChild(this.list.childNodes[0]);
         }
         for (var j=0;j<arr.length;++j){
             var el = document.createElement('li');
             el.innerHTML = arr[j];
-            el.setAttribute ("class", "list_items "+this.name+"_item");
+            el.setAttribute ("class", "list__items "+this.name+"__item");
             // el.style.display = 'inline- block';
-            list.appendChild (el);
+            this.list.appendChild (el);
         }
         this.subscribe();
     }
