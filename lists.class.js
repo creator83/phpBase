@@ -1,7 +1,6 @@
 class ListMenu {
     constructor (objArr,list, button){
         this.name;
-        this.iValue;
         this.inputFieldValue;
         this.flag = false;
         this.arrPtr = objArr;
@@ -40,24 +39,25 @@ class ListMenu {
     }
     showList(){
         var listPtr = this.list;
-        var arrowPtr = this.arrow;
+        var arrowPtr = this.arrow.firstElementChild;
         listPtr.style.display = "block";
         setTimeout (function(){
             listPtr.style.transform = "rotateX(0deg)";
             listPtr.style.zIndex = '1';
             arrowPtr.style.transform = "rotate(90deg)";
         }, 10);
+        
         this.flag = true;
     }
 
     hideList(){
         var listPtr = this.list;
-        var arrowPtr = this.arrow;
+        var arrowPtr = this.arrow.firstElementChild;
         setTimeout (function(){
             listPtr.style.transform = "rotateX(90deg)";
+            listPtr.style.zIndex = '0';
             arrowPtr.style.transform = "rotate(0deg)";
-        }, 10);
-        listPtr.style.zIndex = '0';
+        }, 10); 
         this.flag = false;
     }
 }
@@ -67,9 +67,6 @@ class CreateMenuList extends ListMenu {
         super (objArr, list, button, inputField);
         var temp = this.list.getAttribute ('class').split('_');
         this.name = temp[temp.length-1];
-        console.log (this.name);
-        console.log (this.list);
-        console.log (this.inputField);
         this.subscribeArrow();
         this.subscribeSelectItem ();
     }
@@ -108,3 +105,70 @@ class CreateMenuList extends ListMenu {
         this.subscribeSelectItem();
     }
 }
+
+class Form {
+    constructor (objArr, btnOpen, form){
+        this.name;
+        this.arrPtr = objArr;
+        this.btnOpen = btnOpen;
+        this.form = form;
+        this.wrapper = form.parentNode;
+        this.btnClose = this.form.getElementsByClassName ('button_exit')[0];
+        this.subscribeBtnOpen ();
+        this.subscribeBtnClose ();
+        this.subscribeBtnOpenMd();
+        this.subscribeBtnOpenMu();
+        this.subscribeBtnCloseMd();
+        this.subscribeBtnCloseMu();
+    }
+    
+    subscribeBtnCloseMd(){
+        var btnClosePtr = this.btnClose;
+        this.btnClose.addEventListener ('mousedown', function(){
+            btnClosePtr.style.background = "linear-gradient(#97253D, #FE5D4C)";
+        });
+    }
+    subscribeBtnCloseMu(){
+        var btnClosePtr = this.btnClose;
+        this.btnClose.addEventListener ('mouseup', function(){
+            btnClosePtr .style.background = "linear-gradient(#FE5D4C, #97253D)";
+        });
+    }
+
+    subscribeBtnOpenMd(){
+        var btnOpenPtr = this.btnOpen;
+        this.btnOpen.addEventListener ('mousedown', function(){
+            btnOpenPtr.style.background = "linear-gradient(#97253D, #FE5D4C)";  
+        });
+    }
+    subscribeBtnOpenMu(){
+        var btnOpenPtr = this.btnOpen;
+        this.btnOpen.addEventListener ('mouseup', function(){
+            btnOpenPtr.style.background = "linear-gradient(#FE5D4C, #97253D)";
+        });
+    }
+    subscribeBtnOpen () {
+        var objPtr = this;
+        this.btnOpen.addEventListener ('click', function(){
+          objPtr.openForm();  
+        });
+    }
+    subscribeBtnClose (){
+        var objPtr = this;
+        this.btnClose.addEventListener ('click', function(){
+          objPtr.closeForm();  
+        });
+    }
+    openForm(){
+        this.wrapper.style.display = 'block';
+        this.wrapper.style.zIndex = '1';
+        this.form.style.display = 'block';
+    }
+
+    closeForm(){
+        this.form.style.display = 'none';
+        this.wrapper.style.display = 'none';
+        this.wrapper.style.zIndex = '0';
+    }
+}
+

@@ -86,7 +86,7 @@
             <!-- подменю добавления улицы -->
             <div class="create-tu-add-menu create-tu-add-menu_street">
                 <div class="header">добавление улицы</div>
-                <div class="button-exit"></div>
+                <div class="button_exit"></div>
                 <input type="text" class="input-data create-tu-add-menu__input create-tu-add-menu__const_state" name="const-state">
                 <!-- список префикса улиц -->
                 <div class="create-tu-list-container create-tu-add-menu-list-container_street">
