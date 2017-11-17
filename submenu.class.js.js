@@ -9,6 +9,7 @@ class listS {
         this.iValue;
         this.arrPtr = obj;
         this.currentValue;
+        this.flag = false;
         this.subscribeArrow();
         this.liPtr = this.list.getElementsByTagName ('li');
         this.inputField = this.arrow[0].parentNode.previousElementSibling;

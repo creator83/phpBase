@@ -48,7 +48,8 @@
     height: 28px;
     font-family: Helvetica;
     font-size: 1.1em;
-    background:rgb(241, 229, 229);
+    background: linear-gradient(#FE5D4C, #97253D);
+    /* background:rgb(241, 229, 229); */
     text-align: center;
     padding-top: 6px;
     padding-bottom: -4px;
@@ -185,7 +186,8 @@
     display: inline-block;
     width: 35px;
     height: 26px;
-    background:rgb(241, 229, 229);
+    background: linear-gradient(#FE5D4C, #97253D);
+    /* background:rgb(241, 229, 229); */
     padding-top: 8px;
     padding-bottom: -2px;
     margin-left: -5px;

@@ -1,18 +1,14 @@
-class listS {
-    constructor (list, obj, arrowPtr){
-        this.flag = false;
-        this.list = list;
-        this.inputFieldValue;
-        var temp = this.list.getAttribute ('class').split('_');
-        this.name = temp[temp.length-1];
-        this.arrow = arrowPtr(this.name);
+class ListMenu {
+    constructor (objArr,list, button){
+        this.name;
         this.iValue;
-        this.arrPtr = obj;
-        this.currentValue;
-        this.subscribeArrow();
-        this.liPtr = this.list.getElementsByTagName ('li');
-        this.inputField = this.arrow[0].parentNode.previousElementSibling;
-        this.subscribeSelectItem ();
+        this.inputFieldValue;
+        this.flag = false;
+        this.arrPtr = objArr;
+        this.list = list;
+        this.liPtr = list.getElementsByTagName ('li');
+        this.arrow = button;
+        this.inputField = this.arrow.previousElementSibling;
     }
     setInputValue (value) {
         this.inputFieldValue = value;
@@ -20,7 +16,7 @@ class listS {
     }
     subscribeArrow () {
         var objPtr = this;
-        this.arrow[0].parentNode.addEventListener ('click', function(){
+        this.arrow.addEventListener ('click', function(){
             if (objPtr.flag == false) {
                 objPtr.showList();
                 objPtr.flag = true;
@@ -44,7 +40,7 @@ class listS {
     }
     showList(){
         var listPtr = this.list;
-        var arrowPtr = this.arrow[0];
+        var arrowPtr = this.arrow;
         listPtr.style.display = "block";
         setTimeout (function(){
             listPtr.style.transform = "rotateX(0deg)";
@@ -56,13 +52,26 @@ class listS {
 
     hideList(){
         var listPtr = this.list;
-        var arrowPtr = this.arrow[0];
+        var arrowPtr = this.arrow;
         setTimeout (function(){
             listPtr.style.transform = "rotateX(90deg)";
             arrowPtr.style.transform = "rotate(0deg)";
         }, 10);
         listPtr.style.zIndex = '0';
         this.flag = false;
+    }
+}
+
+class CreateMenuList extends ListMenu {
+    constructor (objArr,list, button, inputField){
+        super (objArr, list, button, inputField);
+        var temp = this.list.getAttribute ('class').split('_');
+        this.name = temp[temp.length-1];
+        console.log (this.name);
+        console.log (this.list);
+        console.log (this.inputField);
+        this.subscribeArrow();
+        this.subscribeSelectItem ();
     }
     subscribeSelectItem (){
         var objPtr = this;
@@ -84,13 +93,6 @@ class listS {
                     }
                 }
             });
-        }
-
-    }
-    unsubcribe (){
-        var list = document.getElementsByClassName (this.name + "_item");
-        for (var i=0;i< list.length;++i){
-            list[i].removeEventListener ("click", this.setInputValue());
         }
     }
     fillList(arr){

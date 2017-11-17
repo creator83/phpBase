@@ -7,7 +7,7 @@
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="substrate.css" />
 	<link rel="stylesheet" href="data.css" />
-	<script src="customList.inc.js"></script>
+    <script src="lists.class.js"></script>
     <script src="data.js"></script>
     <script src="httprqust.js"></script>
 </head>
@@ -28,21 +28,23 @@
             <div class="header__elements create-tu-header">Создание ТУ</div>
             <div class="header__elements create-tu-header">Просмотр ТУ</div>
         </div>
-        <div class="create-tu-list-container create-tu-list-container_region">
-            <ul class="create-tu-list create-tu-list_region">
-            </ul>
-        </div>
-        <div class="create-tu-list-container create-tu-list-container_state">
-            <ul class="create-tu-list create-tu-list_state">
-            </ul>
-        </div>
-        <div class="create-tu-list-container create-tu-list-container_street">
-            <ul class="create-tu-list create-tu-list_street">
-            </ul>
-        </div>
-        <div class="create-tu-list-container create-tu-list-container_district">
-            <ul class="create-tu-list create-tu-list_district">
-            </ul>
+        <div id="create-tu__all-lists">
+            <div class="create-tu-list-container create-tu-list-container_region">
+                <ul class="create-tu-list create-tu-list_region">
+                </ul>
+            </div>
+            <div class="create-tu-list-container create-tu-list-container_state">
+                <ul class="create-tu-list create-tu-list_state">
+                </ul>
+            </div>
+            <div class="create-tu-list-container create-tu-list-container_street">
+                <ul class="create-tu-list create-tu-list_street">
+                </ul>
+            </div>
+            <div class="create-tu-list-container create-tu-list-container_district">
+                <ul class="create-tu-list create-tu-list_district">
+                </ul>
+            </div>
         </div>
         <!-- подменю для добавления в создании ТУ-->
         <div id="black-wrapper">
