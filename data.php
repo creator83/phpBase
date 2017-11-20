@@ -67,7 +67,7 @@
                 <div class="create-tu-add-menu__header create-tu-add-menu__header_state">добавление города</div>
                 <div class="button_exit"></div>
                 <input type="text" disabled class="input-data create-tu-add-menu__input create-tu-add-menu__const_region" name="const-region">
-                <div class="create-tu-list-container create-tu-add-menu-list-container_state">
+                <div class="create-tu-list-container create-tu-add-menu-list-container_prfx-state">
                     <ul class="create-tu-list create-tu-list_prfx-state">
                     </ul>
                 </div>

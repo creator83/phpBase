@@ -172,3 +172,21 @@ class Form {
     }
 }
 
+
+class AdvanceForm extends Form {
+    constructor (objArr, btnOpen, form, inputName){
+        super (objArr, btnOpen, form);
+        this.sourceInput = document.getElementsByName (inputName)[0];
+        this.targetInput = this.form.getElementsByTagName ('input')[0];
+    }
+    setTargetInput (){
+        this.targetInput = this.sourceInput;
+    }
+    subscribeBtnOpen () {
+        var objPtr = this;
+        this.btnOpen.addEventListener ('click', function(){
+            objPtr.openForm();  
+            objPtr.setTargetInput();
+        });
+    }    
+}

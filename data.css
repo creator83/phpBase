@@ -227,10 +227,13 @@
     width: 50%;
 }
 .create-tu-add-menu_state {
-    width: 600px;
+    width: 493px;
     height: 200px;
 }
 .create-tu-add-menu__header_state {
+}
+.create-tu-add-menu__input_prfx-state {
+    width: 40px;
 }
 .create-tu-add-menu_street {
 

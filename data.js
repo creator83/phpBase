@@ -12,6 +12,7 @@ function fillList (list, header, value){
 
 var createTuList = [];
 var createTuAddStateMenu = [];
+var addMenuForm = [];
 var addMenuList = [];
 
 function init (){
@@ -31,10 +32,16 @@ function init (){
     // кнопки открытия
     var btnOpen__addForm = createTu.getElementsByClassName ('button_add__wrapper');
 
-    // наполнение списков
+    // наполнение списков главной формы создания ТУ
     for (var i=0;i<createTu__combobox.length;++i){
             var el = new CreateMenuList (createTuList, createTu__combobox[i], createTu__arrow[i]);
             createTuList.push (el);
+    }
+
+    //наполнение списков форм добавления создания ТУ
+    for (var i=0;i<createTuAddMenu__combobox.length;++i){
+        var item = new CreateMenuList (addMenuList, createTuAddMenu__combobox[i], createTuAddMenu__arrow[i]);
+        addMenuList.push (item);
     }
 
     fillList (createTuList[0], "region");
@@ -49,7 +56,7 @@ function init (){
     }
 
         for (var i=0;i<addForm.length;++i){
-            var item = new Form (addMenuList, btnOpen__addForm[i], addForm[i]);
-            addMenuList.push(item);
+            var item = new Form (addMenuForm, btnOpen__addForm[i], addForm[i]);
+            addMenuForm.push(item);
         }
 }
