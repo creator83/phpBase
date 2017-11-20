@@ -55,8 +55,10 @@ function init (){
         });
     }
 
-        for (var i=0;i<addForm.length;++i){
-            var item = new Form (addMenuForm, btnOpen__addForm[i], addForm[i]);
+        addMenuForm[0] = new SimpleForm (addMenuForm, btnOpen__addForm[0], addForm[0]);
+        
+        for (var i=1;i<addForm.length;++i){
+            var item = new AdvanceForm (addMenuForm, btnOpen__addForm[i], addForm[i]);
             addMenuForm.push(item);
         }
 }

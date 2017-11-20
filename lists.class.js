@@ -114,12 +114,19 @@ class Form {
         this.form = form;
         this.wrapper = form.parentNode;
         this.btnClose = this.form.getElementsByClassName ('button_exit')[0];
-        this.subscribeBtnOpen ();
+        this.btnSubmit = this.form.getElementsByClassName('create-tu-add-menu__button')[0];
+        this.btnReset = this.form.getElementsByClassName('create-tu-add-menu__button')[1];
+        this.targetInput = this.form.getElementsByTagName ('input')[0];
+        this.requestResult;
         this.subscribeBtnClose ();
         this.subscribeBtnOpenMd();
         this.subscribeBtnOpenMu();
         this.subscribeBtnCloseMd();
         this.subscribeBtnCloseMu();
+        this.subscribeBtnSubmitMd();
+        this.subscribeBtnSubmitMu();
+        this.subscribeBtnResetMd();
+        this.subscribeBtnResetMu();
     }
     
     subscribeBtnCloseMd(){
@@ -147,12 +154,31 @@ class Form {
             btnOpenPtr.style.background = "linear-gradient(#FE5D4C, #97253D)";
         });
     }
-    subscribeBtnOpen () {
-        var objPtr = this;
-        this.btnOpen.addEventListener ('click', function(){
-          objPtr.openForm();  
+    subscribeBtnSubmitMd(){
+        var btnSubmitPtr = this.btnSubmit;
+        this.btnSubmit.addEventListener ('mousedown', function(){
+            btnSubmitPtr.style.background = "linear-gradient(#97253D, #FE5D4C)";  
         });
     }
+    subscribeBtnSubmitMu(){
+        var btnSubmitPtr = this.btnSubmit;
+        this.btnSubmit.addEventListener ('mouseup', function(){
+            btnSubmitPtr.style.background = "linear-gradient(#FE5D4C, #97253D)";
+        });
+    }
+    subscribeBtnResetMd(){
+        var btnResetPtr = this.btnReset;
+        this.btnReset.addEventListener ('mousedown', function(){
+            btnResetPtr.style.background = "linear-gradient(#97253D, #FE5D4C)";  
+        });
+    }
+    subscribeBtnResetMu(){
+        var btnResetPtr = this.btnReset;
+        this.btnReset.addEventListener ('mouseup', function(){
+            btnResetPtr.style.background = "linear-gradient(#FE5D4C, #97253D)";
+        });
+    }
+    
     subscribeBtnClose (){
         var objPtr = this;
         this.btnClose.addEventListener ('click', function(){
@@ -170,14 +196,54 @@ class Form {
         this.wrapper.style.display = 'none';
         this.wrapper.style.zIndex = '0';
     }
+    setResult (value){
+        this.requestResult = value;
+        console.log (this.requestResult);
+    }
 }
 
+class SimpleForm extends Form {
+    constructor (objArr, btnOpen, form){
+        super(objArr, btnOpen, form);
+        this.subscribeBtnOpen ();
+        this.subscribeBtnSubmit();
+    }
+
+    subscribeBtnOpen () {
+        var objPtr = this;
+        this.btnOpen.addEventListener ('click', function(){
+          objPtr.openForm();
+        });
+    }
+    subscribeBtnSubmit(){
+        var objPtr = this;
+        this.btnSubmit.addEventListener ('click', function(){
+            if (objPtr.targetInput.value != ''){
+                // http запрос 
+                var request= new HttpRequest ("POST", "request.php");
+                request.setRequest ('add-region', objPtr.targetInput.value);
+                request.sendRequest();
+                // Получение результата операции БД
+                request.receiveBoolRequest (objPtr);
+                //Сохранить записать введенное значение в поле регион формы создания ТУ
+                // обновить все combobox формы создания ТУ
+                // закрыть форму добавления
+                objPtr.closeForm();
+            }
+            
+        });
+    }
+    subscribeBtnReset (){
+        // очистить поле регион
+        
+    }
+}
 
 class AdvanceForm extends Form {
-    constructor (objArr, btnOpen, form, inputName){
+    constructor (objArr, btnOpen, form/*, inputName*/){
         super (objArr, btnOpen, form);
-        this.sourceInput = document.getElementsByName (inputName)[0];
-        this.targetInput = this.form.getElementsByTagName ('input')[0];
+        /*this.sourceInput = document.getElementsByName (inputName)[0];
+        this.targetInput.value = this.sourceInput.value;*/
     }
     setTargetInput (){
         this.targetInput = this.sourceInput;

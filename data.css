@@ -93,6 +93,10 @@
     transform-origin: top;
     transition: all 0.5s;
 }
+.create-tu-add-menu__button {
+    width: 150px;
+    height: 40px;
+}
 .create-tu-list-container_region {
     /*border: 2px solid red;*/
     left: 7px;
@@ -123,7 +127,7 @@
     max-height: 134px;
     overflow: auto;
 }
-#sub-state-list_wrapper {
+/* #sub-state-list_wrapper {
     left: 10px;
     top: 95px;
     width: 238px;
@@ -134,7 +138,7 @@
     top: 95px;
     width: 72px;
     max-height: 650px;
-}
+} */
 
 .list__items {
     height: 30px;
@@ -158,6 +162,7 @@
     right: 0;
     margin: auto;   
     background: rgba(0,0,0,.85);
+    padding: 10px;
 }
 .create-tu-add-menu__header {
     text-align: center;
@@ -172,11 +177,11 @@
 }
 .button_exit {
     position: absolute;
-    bottom: calc(100% - 30px);
-    left: calc(100% - 30px);
+    bottom: calc(100% - 40px);
+    left: calc(100% - 40px);
     width: 30px;
     height: 30px;
-    background: linear-gradient(#FE5D4C, #97253D);
+    background: url(pic/close_small1.png) no-repeat center, linear-gradient(#FE5D4C, #97253D);
 }
 .button_exit:hover {
     cursor: pointer;
@@ -214,31 +219,50 @@
 .create-tu-add-menu__button-container_region {
 
 }
-
+.create-tu-add-menu_second-line{
+    margin-top: 20px;
+}
 .create-tu-add-menu_region {
     width: 300px;
-    height: 200px;
+    height: 170px;
 }
 .create-tu-add-menu__header_region {
 
 }
-.create-tu-add-menu__button-wrapper_region {
+.create-tu-add-menu__input_region {
+    width: 298px;
+}
+.create-tu-add-menu__button-wrapper {
     width: 50%;
 }
 .create-tu-add-menu_state {
-    width: 493px;
-    height: 200px;
+    width: 525px;
+    height: 170px;
 }
 .create-tu-add-menu__header_state {
 }
 .create-tu-add-menu__input_prfx-state {
     width: 40px;
 }
+.create-tu-add-menu__button-add_state {
+    margin-left: 70px;
+}
+.create-tu-add-menu__button-reset_state {
+    margin-left: 30px;
+}
 .create-tu-add-menu_street {
-    width: 493px;
+    width: 525px;
     height: 200px;
 }
-
+.create-tu-add-menu__input_prfx-street   {
+    width: 40px;
+}
+.create-tu-add-menu__button-add_street {
+    margin-left: 70px;
+}
+.create-tu-add-menu__button-reset_street {
+    margin-left: 30px;
+}
 #subMenuTU-container{
     display: none;
     position: absolute;

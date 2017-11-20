@@ -32,4 +32,14 @@ class HttpRequest extends XMLHttpRequest{
             }
         }
     }
+    receiveBoolRequest (callBack){
+        var result;
+        this.onreadystatechange = function () {
+            if (this.readyState == 4) {
+                result = this.responseText;
+                console.log (result);
+                // callBack.setResult(result);
+            }
+        }
+    }
 }

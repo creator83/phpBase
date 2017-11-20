@@ -35,5 +35,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         $result = $base->getData ($sql);
         echo implode (',', $result);
     }
+    if (isset($_POST['add-region'])){
+        $sql = 'INSERT INTO region (name) VALUES ("'.$_POST['add-region'].'")';
+        $result = $base->putData ($sql);
+        echo $result;
+        // echo $sql;
+    }
 }
 ?>

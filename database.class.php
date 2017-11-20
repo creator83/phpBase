@@ -53,16 +53,18 @@ class Database implements IDatabase{
 		$this->_db->close();
 		return $buffer;
 	}
+	function query ($sql){
+
+	}
 	function putData ($sql) {
 		$this->open();
-		$this->begin_transaction(MYSQLI_TRANS_START_READ_ONLY);
-		if ($this->query($sql)===TRUE) {
-			$this->commit();
-			$this->close();
-			return "выпонено";
+		$this->_db->query("SET NAMES utf8 COLLATE utf8_unicode_ci");
+		// $this->_db->begin_transaction(MYSQLI_TRANS_START_READ_ONLY);
+		if ($this->_db->query($sql)===TRUE) {
+			$this->_db->close();
+			return "Выпонено";
 		}
-		$this->commit();
-		$this->close();
+		$this->_db->close();
 		return "Ошибка";
 	}
 	function getData2 ($sql, $num=1) {
