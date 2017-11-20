@@ -99,7 +99,7 @@ class CreateMenuList extends ListMenu {
         for (var j=0;j<arr.length;++j){
             var el = document.createElement('li');
             el.innerHTML = arr[j];
-            el.setAttribute ("class", this.name+"__item");
+            el.setAttribute ("class", this.name+"__item list__items");
             this.list.appendChild (el);
         }
         this.subscribeSelectItem();

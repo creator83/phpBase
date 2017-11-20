@@ -95,33 +95,32 @@
 }
 .create-tu-list-container_region {
     /*border: 2px solid red;*/
-    left: 5px;
-    top: 180px;
-    width: 257px;
+    left: 7px;
+    top: 182px;
+    width: 248px;
+    max-height: 300px;
+    overflow: auto;
 }
 
 .create-tu-list-container_state{ 
-    display: none;
-    left: 324px;
-    top: 180px;
-    width: 231px;
-    max-height: 410px;
+    left: 313px;
+    top: 182px;
+    width: 238px;
+    max-height: 300px;
     overflow: auto;
 }
 .create-tu-list-container_street{
-    display: none;
-    left: 5px;
-    top: 254px;
-    width: 217px;
-    max-height: 330px;
+    left: 7px;
+    top: 265px;
+    width: 248px;
+    max-height: 217px;
     overflow: auto;
 }
 .create-tu-list-container_district {
-    display: none;
-    left: 5px;
-    top: 370px;
-    width: 215px;
-    max-height: 220px;
+    left: 7px;
+    top: 348px;
+    width: 248px;
+    max-height: 134px;
     overflow: auto;
 }
 #sub-state-list_wrapper {
@@ -136,9 +135,9 @@
     width: 72px;
     max-height: 650px;
 }
-.list_items {
-    border: 1px solid darkgray;
-    margin-bottom: -1px;
+
+.list__items {
+    height: 30px;
 }
 
 #black-wrapper {
@@ -236,7 +235,8 @@
     width: 40px;
 }
 .create-tu-add-menu_street {
-
+    width: 493px;
+    height: 200px;
 }
 
 #subMenuTU-container{
