@@ -9,6 +9,12 @@ class ListMenu {
         this.arrow = button;
         this.inputField = this.arrow.previousElementSibling;
     }
+    
+    closeAll(){
+        for (var i=0;i<this.arrPtr.length;++i){
+            this.arrPtr[i].hideList();
+        }
+    }
     getObject (name){
         for (var i=0;i<this.arrPtr.length;++i){
             if (this.arrPtr[i].name = name){
@@ -25,7 +31,14 @@ class ListMenu {
         }
         return false;
     }
-
+    getIndexObject(){
+        for (var i=0;i<this.arrPtr.length;++i){
+            if (this.arrPtr[i].name = this.name){
+                return i;
+            }
+        }
+        return false;
+    }
     setInputValue (value) {
         this.inputFieldValue = value;
         this.inputField.value = value;
@@ -121,6 +134,14 @@ class CreateMenuList extends ListMenu {
         }
         this.subscribeSelectItem();
     }
+    updateFrom (index){
+        for (var i=index;i<this.arrPtr.length;++i){
+                if (i<3){
+                    fillList (this.arrPtr[i], this.arrPtr[i-1].name, this.arrPtr[i-1].inputFieldValue);
+                }
+            }
+    }
+    
 }
 
 class Form {
@@ -230,7 +251,8 @@ class SimpleForm extends Form {
     subscribeBtnOpen () {
         var objPtr = this;
         this.btnOpen.addEventListener ('click', function(){
-          objPtr.openForm();
+            objPtr.sourceList.closeAll();
+            objPtr.openForm();
         });
     }
     subscribeBtnSubmit(){
@@ -248,6 +270,7 @@ class SimpleForm extends Form {
                 // обновить все combobox формы создания ТУ
                 // закрыть форму добавления
                 objPtr.closeForm();
+                objPtr.sourceList.updateFrom (objPtr.sourceList.getIndexObject);
             }
             
         });
@@ -275,6 +298,7 @@ class AdvanceForm extends Form {
     subscribeBtnOpen () {
         var objPtr = this;
         this.btnOpen.addEventListener ('click', function(){
+            objPtr.sourceList.closeAll();
             objPtr.openForm();
             objPtr.setTargetInput();
         });
@@ -292,10 +316,11 @@ class AdvanceForm extends Form {
                 // Получение результата операции БД
                 request.receiveBoolRequest (objPtr);
                 //Сохранить записать введенное значение в поле регион формы создания ТУ
-                // objPtr.sourceList.setInputValue (objPtr.targetInput.value);
+                objPtr.sourceList.setInputValue (objPtr.targetInput.value);
                 // обновить все combobox формы создания ТУ
                 // закрыть форму добавления
                 objPtr.closeForm();
+                objPtr.sourceList.updateFrom (objPtr.sourceList.getIndexObject);
             }
             
         });
