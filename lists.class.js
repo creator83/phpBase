@@ -9,6 +9,23 @@ class ListMenu {
         this.arrow = button;
         this.inputField = this.arrow.previousElementSibling;
     }
+    getObject (name){
+        for (var i=0;i<this.arrPtr.length;++i){
+            if (this.arrPtr[i].name = name){
+                return this.arrPtr[i];
+            }
+        }
+        return false;
+    }
+    getNextObject (){
+        for (var i=0;i<this.arrPtr.length;++i){
+            if (this.arrPtr[i].name = this.name){
+                return this.arrPtr[i+1];
+            }
+        }
+        return false;
+    }
+
     setInputValue (value) {
         this.inputFieldValue = value;
         this.inputField.value = value;
@@ -107,7 +124,7 @@ class CreateMenuList extends ListMenu {
 }
 
 class Form {
-    constructor (objArr, btnOpen, form){
+    constructor (objArr, btnOpen, form, sourceList){
         this.name;
         this.arrPtr = objArr;
         this.btnOpen = btnOpen;
@@ -118,6 +135,7 @@ class Form {
         this.btnReset = this.form.getElementsByClassName('create-tu-add-menu__button')[1];
         this.targetInput = this.form.getElementsByTagName ('input')[0];
         this.requestResult;
+        this.sourceList = sourceList;
         this.subscribeBtnClose ();
         this.subscribeBtnOpenMd();
         this.subscribeBtnOpenMu();
@@ -203,8 +221,8 @@ class Form {
 }
 
 class SimpleForm extends Form {
-    constructor (objArr, btnOpen, form){
-        super(objArr, btnOpen, form);
+    constructor (objArr, btnOpen, form, sourceList){
+        super(objArr, btnOpen, form, sourceList);
         this.subscribeBtnOpen ();
         this.subscribeBtnSubmit();
     }
@@ -226,6 +244,7 @@ class SimpleForm extends Form {
                 // Получение результата операции БД
                 request.receiveBoolRequest (objPtr);
                 //Сохранить записать введенное значение в поле регион формы создания ТУ
+                objPtr.sourceList.setInputValue (objPtr.targetInput.value);
                 // обновить все combobox формы создания ТУ
                 // закрыть форму добавления
                 objPtr.closeForm();
@@ -240,19 +259,45 @@ class SimpleForm extends Form {
 }
 
 class AdvanceForm extends Form {
-    constructor (objArr, btnOpen, form/*, inputName*/){
-        super (objArr, btnOpen, form);
-        /*this.sourceInput = document.getElementsByName (inputName)[0];
-        this.targetInput.value = this.sourceInput.value;*/
+    constructor (objArr, btnOpen, form, sourceList){
+        super (objArr, btnOpen, form, sourceList);
+        this.sourceInput = sourceList.inputField;
+        this.targetInputMainForm = this.sourceList.getNextObject().inputField;
+        this.addInput = this.form.getElementsByTagName ('input')[2];
+        this.addInputName = this.addInput.getAttribute('name');
+        this.prfxInput = this.form.getElementsByTagName ('input')[1];
+        this.subscribeBtnOpen ();
+        this.subscribeBtnSubmit();
     }
     setTargetInput (){
-        this.targetInput = this.sourceInput;
+        this.targetInput.value = this.sourceInput.value;
     }
     subscribeBtnOpen () {
         var objPtr = this;
         this.btnOpen.addEventListener ('click', function(){
-            objPtr.openForm();  
+            objPtr.openForm();
             objPtr.setTargetInput();
         });
     }    
+    subscribeBtnSubmit(){
+        var objPtr = this;
+        this.btnSubmit.addEventListener ('click', function(){
+            if (objPtr.targetInput.value != '' && objPtr.addInput.value!='' && objPtr.prfxInput.value!=''){
+                // http запрос 
+                var request= new HttpRequest ("POST", "request.php");
+                var str = objPtr.addInput.value+','+objPtr.targetInput.value+','+objPtr.prfxInput.value;
+                // console.log (str);
+                request.setRequest (objPtr.addInputName, str);
+                request.sendRequest();
+                // Получение результата операции БД
+                request.receiveBoolRequest (objPtr);
+                //Сохранить записать введенное значение в поле регион формы создания ТУ
+                // objPtr.sourceList.setInputValue (objPtr.targetInput.value);
+                // обновить все combobox формы создания ТУ
+                // закрыть форму добавления
+                objPtr.closeForm();
+            }
+            
+        });
+    }
 }

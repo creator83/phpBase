@@ -39,7 +39,25 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         $sql = 'INSERT INTO region (name) VALUES ("'.$_POST['add-region'].'")';
         $result = $base->putData ($sql);
         echo $result;
-        // echo $sql;
+    }
+    if (isset($_POST['add-state'])){
+        $arr = explode (',', $_POST['add-state']);
+        $sql = 'INSERT INTO stateReg (name, region, prfx) VALUES ("'.$arr[0].'","'.$arr[1].'","'.$arr[2].'")';
+        $result = $base->putData ($sql);
+        echo $result;
+    }
+    if (isset($_POST['add-street'])){
+        $arr = explode (',', $_POST['add-street']);
+        $arr[1] = trim($arr[1]);
+        $state = explode (' ', $arr[1]);
+        $str='';
+        for ($i=1;$i<count($state);++$i){
+            $str .= $state[$i]." ";
+        }
+        $str = trim($str);
+        $sql = 'INSERT INTO street (name, stateReg, prfxStreet) VALUES ("'.$arr[0].'","'.$str.'","'.$arr[2].'")';
+        $result = $base->putData ($sql);
+        echo $result;
     }
 }
 ?>

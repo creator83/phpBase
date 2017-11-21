@@ -1,5 +1,7 @@
 window.addEventListener ("DOMContentLoaded", init);
-
+String.prototype.trim = function(str) { 
+    return str.replace(/^\s+|\s+$/g, ""); 
+}
 function fillList (list, header, value){
     if (value == undefined){
         value = '';
@@ -37,6 +39,10 @@ function init (){
             var el = new CreateMenuList (createTuList, createTu__combobox[i], createTu__arrow[i]);
             createTuList.push (el);
     }
+    fillList (createTuList[0], "region");
+    createTuList[0].setInputValue('Краснодарский край');
+    fillList (createTuList[1], "region", 'Краснодарский край');
+    fillList (createTuList[3], "district");
 
     //наполнение списков форм добавления создания ТУ
     for (var i=0;i<createTuAddMenu__combobox.length;++i){
@@ -44,21 +50,16 @@ function init (){
         addMenuList.push (item);
     }
 
-    fillList (createTuList[0], "region");
-    createTuList[0].setInputValue('Краснодарский край');
-    fillList (createTuList[1], "region", 'Краснодарский край');
-    fillList (createTuList[3], "district");
-
     for (var i=0;i< mainMenu.length;++i){
         mainMenu[i].addEventListener ("click", function(){
             selectItem (this.textContent, mainMenu, "rgba(0,0,0,.9)", "linear-gradient(#FE5D4C, #97253D)");
         });
     }
 
-        addMenuForm[0] = new SimpleForm (addMenuForm, btnOpen__addForm[0], addForm[0]);
+        addMenuForm[0] = new SimpleForm (addMenuForm, btnOpen__addForm[0], addForm[0], createTuList[0]);
         
         for (var i=1;i<addForm.length;++i){
-            var item = new AdvanceForm (addMenuForm, btnOpen__addForm[i], addForm[i]);
+            var item = new AdvanceForm (addMenuForm, btnOpen__addForm[i], addForm[i], createTuList[i-1]);
             addMenuForm.push(item);
         }
 }

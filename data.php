@@ -72,6 +72,12 @@
                     <input type="text" disabled class="input-data create-tu-add-menu__input create-tu-add-menu__const_region" name="const-region">
                     <div class="create-tu-list-container create-tu-add-menu-list-container_prfx-state">
                         <ul class="create-tu-list create-tu-list_prfx-state">
+                            <li class="list__items">г.</li>
+                            <li class="list__items">с.</li>
+                            <li class="list__items">х.</li>
+                            <li class="list__items">п.</li>
+                            <li class="list__items">ст.</li>
+                            <li class="list__items">д.</li>
                         </ul>
                     </div>
                     <input type="text" class="input-data create-tu-add-menu__input create-tu-add-menu__input_prfx-state" name="add-prfx-state">
@@ -96,6 +102,10 @@
                     <!-- список префикса улиц -->
                     <div class="create-tu-list-container create-tu-add-menu-list-container_prfx-street">
                         <ul class="create-tu-list create-tu-list_prfx-street">
+                            <li class="list__items">ул.</li>
+                            <li class="list__items">проезд</li>
+                            <li class="list__items">пр-т.</li>
+                            <li class="list__items">пер.</li>
                         </ul>
                     </div>
                     <input type="text" class="input-data create-tu-add-menu__input create-tu-add-menu__input_prfx-street" name="add-prfx-street">
