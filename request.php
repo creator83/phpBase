@@ -14,6 +14,22 @@
         }
         return $res;
     }
+    define ('SUR_NAME',0);
+    define ('FIRST_NAME',1);
+    define ('MID_NAME',2);
+    define ('REGION',3);
+    define ('STATE',4);
+    define ('STREET',5);
+    define ('HOUSE',6);
+    define ('CORP',7);
+    define ('APP',8);
+    define ('PRFX_PHONE',9);
+    define ('NUM_PHONE',10);
+    define ('DISTRICT',11);
+    define ('DISTRICT_KADASTR',12);
+    define ('NUM_KADASTR',13);
+    define ('ADDRESS',14);
+
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     if (isset($_POST['region']) and $_POST['region']==''){
@@ -58,6 +74,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         $sql = 'INSERT INTO street (name, stateReg, prfxStreet) VALUES ("'.$arr[0].'","'.$str.'","'.$arr[2].'")';
         $result = $base->putData ($sql);
         echo $result;
+    }
+    if (isset($_POST['create-tu'])){
+        $data = explode (',', $_POST['create-tu']);
+        $numPhone = $data[PRFX_PHONE].$data[NUM_PHONE];
+        $numKadastr = $data[DISTRICT_KADASTR].$data[NUM_KADASTR];
+        /*$sql = 'INSERT INTO tu (nDate, firstName, midleName, sureName, numHouse, numAp, numPhone, reg, address, numKadastr, fileplace, typeTu, street) VALUES
+                                ("'.$data[FIRST_NAME].'","'.$data[MID_NAME].'","'.$data[SUR_NAME].
+                                '","'.$data[HOUSE].'","'.$data[APP].'","'.$numPhone.'","'.;
+                                $data[DISTRICT].'","'.$data[ADDRESS].'","'.*/
     }
 }
 ?>

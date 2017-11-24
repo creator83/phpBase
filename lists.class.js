@@ -68,26 +68,17 @@ class ListMenu {
         this.flag = false;
     }
     showList(){
-        var listPtr = this.list;
-        var arrowPtr = this.arrow.firstElementChild;
-        listPtr.style.display = "block";
-        setTimeout (function(){
-            listPtr.style.transform = "rotateX(0deg)";
-            listPtr.style.zIndex = '1';
-            arrowPtr.style.transform = "rotate(90deg)";
-        }, 10);
-        
+        this.list.style.display = "block";
+        this.list.style.transform = "rotateX(0deg)";
+        this.list.style.zIndex = '1';
+        this.arrow.firstElementChild.style.transform = "rotate(90deg)";
         this.flag = true;
     }
 
     hideList(){
-        var listPtr = this.list;
-        var arrowPtr = this.arrow.firstElementChild;
-        setTimeout (function(){
-            listPtr.style.transform = "rotateX(90deg)";
-            listPtr.style.zIndex = '0';
-            arrowPtr.style.transform = "rotate(0deg)";
-        }, 10); 
+        this.list.style.transform = "rotateX(90deg)";
+        this.list.style.zIndex = '0';
+        this.arrow.firstElementChild.style.transform = "rotate(0deg)";
         this.flag = false;
     }
 }
