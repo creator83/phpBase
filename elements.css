@@ -1,0 +1,54 @@
+
+.combobox-wrapper {
+    width: 210px;
+    height: 40px;
+    border: 1px solid green;
+}
+
+.arrow-wrapper {
+    display: inline-block;
+    position: relative;
+    top:3px;
+    right: 4px;
+    width: 35px;
+    height: 35px;
+    font-family: Helvetica;
+    font-size: 1.1em;
+    background: linear-gradient(#FE5D4C, #97253D);
+    /* background:rgb(241, 229, 229); */
+    border-top: 1px solid gray;
+    border-right: 1px solid gray;
+    border-bottom: 1px solid gray;
+}
+.arrow-wrapper:hover {
+    cursor: pointer;
+}
+.arrow {
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+    transition: all 0.4s;
+}
+.arrow::selection {
+    background: transparent;
+} 
+
+.create-tu__data {
+    display: inline-block;
+    font-size: 1.1em;
+    height: 30px;
+    width: 160px;
+    outline-color: orange;
+    outline-width: 10px;
+    padding-left: 5px;
+}
+.create-tu-list-container {
+    position: relative;
+    background: white;
+    height: 60px;
+    transform: rotateX(90deg);
+    transform-origin: top;
+    transition: all 0.5s;
+    border: 1px solid red;
+    /* background: blue; */
+}
