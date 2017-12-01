@@ -5,7 +5,7 @@
     border: 1px solid green;
 }
 
-.arrow-wrapper {
+.button-wrapper {
     display: inline-block;
     position: relative;
     top:3px;
@@ -20,7 +20,7 @@
     border-right: 1px solid gray;
     border-bottom: 1px solid gray;
 }
-.arrow-wrapper:hover {
+.button-wrapper:hover {
     cursor: pointer;
 }
 .arrow {
@@ -42,13 +42,16 @@
     outline-width: 10px;
     padding-left: 5px;
 }
-.create-tu-list-container {
+.list-container {
     position: relative;
     background: white;
-    height: 60px;
+    /* height: 60px; */
     transform: rotateX(90deg);
     transform-origin: top;
     transition: all 0.5s;
     border: 1px solid red;
     /* background: blue; */
+}
+li:hover {
+    cursor: pointer;
 }

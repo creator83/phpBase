@@ -42,7 +42,7 @@
     width: 100%;
 } 
 
-.arrow-wrapper {
+.button-wrapper {
     display: inline-block;
     width: 30px;
     height: 28px;
@@ -59,7 +59,7 @@
     border-right: 1px solid gray;
     border-bottom: 1px solid gray;
 }
-.arrow-wrapper:hover {
+.button-wrapper:hover {
     cursor: pointer;
 }
 .arrow {
