@@ -1,17 +1,21 @@
+html, body {
+    height: 100%;
+}
 .main-container {
     width: 608px;
-    height: 42px;
+    /* height: 42px; */
     position: absolute;
     left: 0;
     right: 0;   
     top: 0;
     bottom: 0;
-    margin: 20px auto;
+    margin: 20px auto 0;
 }
 .major-menu-container-header {
     display: flex;
-    width: 800px;
+    /* width: 800px; */
     height: 40px;
+    border: 1px solid red;
 }
 .header__elements { 
     background: linear-gradient(#FE5D4C, #97253D);
@@ -21,7 +25,8 @@
     font-family: Helvetica;
     font-size: 1.2em;
     transition: all 0.7s;
-    padding-top: 10px;
+    line-height: 40px;
+    /* padding-top: 10px; */
 }
 .input-data {
     font-size: 1.1em;
@@ -41,28 +46,38 @@
     margin-top: 30px;
     width: 100%;
 } 
-
+.button__container {
+    display: flex;
+    
+    width: 100%;
+} 
+.button-container_create-tu {
+    margin-top: 40px;
+}
+.combobox-wrapper {
+    display: inline-block;
+}
 .button-wrapper {
     display: inline-block;
-    width: 30px;
-    height: 28px;
+    position: relative;
+    top:3px;
+    right: 4px; 
+    width: 35px;
+    height: 35px;
     font-family: Helvetica;
     font-size: 1.1em;
     background: linear-gradient(#FE5D4C, #97253D);
     /* background:rgb(241, 229, 229); */
-    text-align: center;
-    padding-top: 6px;
-    padding-bottom: -4px;
-    padding-left: 5px;
-    margin-left: -5px;
-    border-top: 1px solid gray;
+    /* border-top: 1px solid gray;
     border-right: 1px solid gray;
-    border-bottom: 1px solid gray;
+    border-bottom: 1px solid gray; */
 }
 .button-wrapper:hover {
     cursor: pointer;
 }
 .arrow {
+    line-height: 40px;
+    text-align: center;
     border-radius: 50%;
     transition: all 0.4s;
 }
@@ -80,14 +95,12 @@
 
 #body-container {
     position: relative;
-    top: 10px;
     width: 608px;
-    height: 500px;
     background: rgba(0,0,0,.7);
     box-shadow: 25px 25px 15px rgba(0,0,0,.9);  
 }
 .create-tu-list-container {
-    position: absolute;
+    position: relative;
     background: white;
     transform: rotateX(90deg);
     transform-origin: top;
@@ -177,18 +190,21 @@
 }
 .button_add__wrapper {
     display: inline-block;
+    position: relative;
+    bottom: 10px;
     width: 35px;
-    height: 26px;
+    height: 35px;
     background: linear-gradient(#FE5D4C, #97253D);
     /* background:rgb(241, 229, 229); */
-    padding-top: 8px;
-    padding-bottom: -2px;
-    margin-left: -5px;
     text-align: center;
-    margin-left: 5px;
 }
 .button_add__wrapper:hover {
     cursor: pointer;
+}
+.button_add {
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
 }
 .button_add::selection {
     background: transparent;    
@@ -270,7 +286,8 @@
 
 #create-tu {
     width: 608px;
-    border: 1px solid bisque;
+    border: 1px solid transparent;
+    padding-bottom: 20px;
 }
 .create-tu__line-container {
     display: flex;
@@ -284,10 +301,7 @@
 }
 .create-tu__data {
     font-size: 1.1em;
-    height: 30px;
-    outline-color: orange;
-    outline-width: 10px;
-    width: 95%;
+    height: 29px;
 }
 
 /* 1-я строка формы ТУ */
@@ -299,6 +313,15 @@
 }
 .create-tu__first-line-container__element_sur-name {
     margin-left: 5px;
+}
+.create-tu__data_first-name {
+    width: 95%;
+}
+.create-tu__data_sur-name {
+    width: 95%;
+}
+.create-tu__data_mid-name {
+    width: 95%;
 }
 
 /* 2-я строка формы ТУ*/
@@ -313,7 +336,7 @@
 }
 
 .create-tu__second-line-container__element_state {
-    margin-left: 10px;
+    margin-left: 17px;
 }
 .create-tu__data_region {
     width: 210px;
@@ -335,6 +358,15 @@
 }
 .create-tu__data_street {
     width: 210px;
+}
+.create-tu__data_house {
+    width: 45px;
+}
+.create-tu__data_corps {
+    width: 45px;
+}
+.create-tu__data_apartment {
+    width: 40px;
 }
 .create-tu__third-line-container__element_house {
     width: 45px;
@@ -364,7 +396,7 @@
     margin-left: 5px;
 }
 .create-tu__fourth-line-container__element_district {
-    width: 250px;
+    width: 260px;
 }
 .create-tu__data_district {
     width: 210px;
@@ -383,11 +415,12 @@
     width: 45px;
 }
 .create-tu__fourth-line-container__element_address {
-    width: 135px;
+    width: 120px;
     padding-left: 3px;
 }
 .create-tu__data_address {
     height: 75px;
+    width: 120px;
 }
 /* кнопки форма ТУ */
 .create-tu__button-wrapper {
@@ -402,6 +435,9 @@
 }
 .create-tu__button-reset {
     margin-left: 40px;
+}
+.create-tu__label_radio {
+    display: inline-block;
 }
 
 ul {

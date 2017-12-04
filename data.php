@@ -28,11 +28,6 @@
             <div class="header__elements create-tu-header">Создание ТУ</div>
             <div class="header__elements create-tu-header">Просмотр ТУ</div>
         </div>
-        <div id="create-tu__all-lists">
-            
-            
-            
-        </div>
         <!-- подменю для добавления в создании ТУ-->
         <div id="black-wrapper">
             <!-- подменю добавления региона -->
@@ -111,7 +106,6 @@
         </div>
         <!-- основное окно ввода ТУ -->
          <div id="create-tu">
-            <form action="" method="post" >
                 <!-- первая строка -->
                 <div class="create-tu__line-container create-tu__first-line-container">
                     <div class="create-tu__first-line-container__element create-tu__first-line-container__element_sur-name">
@@ -133,7 +127,7 @@
                         <div class="create-tu__label data__label_region">Регион:</div>
                         <div class="combobox-wrapper combobox-wrapper_region">
                             <input type="text" class="create-tu__data create-tu__data_region" name="region">
-                            <div class="arrow-wrapper">
+                            <div class="button-wrapper">
                                 <div class="arrow create-tu__arrow_region">&gt;</div>
                             </div>
                             <div class="create-tu-list-container create-tu-list-container_region">
@@ -141,13 +135,15 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="button_add__wrapper"><div class="button_add">+</div></div>
+                        <div class="button_add__wrapper">
+                            <div class="button_add">+</div>
+                        </div>
                     </div>
                     <div class="create-tu__second-line-container__element create-tu__second-line-container__element_state">
                         <div class="create-tu__label data__label_state">Нас. пункт:</div>
                         <div class="combobox-wrapper combobox-wrapper_state">
                             <input type="text" class="create-tu__data create-tu__data_state" name="state">
-                            <div class="arrow-wrapper">
+                            <div class="button-wrapper">
                                 <div class="arrow create-tu__arrow_state">&gt;</div>
                             </div>
                             <div class="create-tu-list-container create-tu-list-container_state">
@@ -166,7 +162,7 @@
                         <div class="create-tu__label data__label_street">Улица:</div>
                         <div class="combobox-wrapper combobox-wrapper_street">
                             <input type="text" class="create-tu__data create-tu__data_street" name="street">
-                            <div class="arrow-wrapper">
+                            <div class="button-wrapper">
                                 <div class="arrow create-tu__arrow_street">&gt;</div>
                             </div>
                             <div class="create-tu-list-container create-tu-list-container_street">
@@ -174,7 +170,9 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="button_add__wrapper"><div class="button_add">+</div></div>
+                        <div class="button_add__wrapper">
+                            <div class="button_add">+</div>
+                        </div>
                     </div>
                     <div class="create-tu__third-line-container__element create-tu__third-line-container__element_house">
                         <div class="create-tu__label data__label_house">Дом:</div>
@@ -200,7 +198,7 @@
                         <div class="create-tu__label data__label_district">Район:</div>
                         <div class="combobox-wrapper combobox-wrapper_district">
                             <input type="text" class="create-tu__data create-tu__data_district" name="district">
-                            <div class="arrow-wrapper">
+                            <div class="button-wrapper">
                                 <div class="arrow create-tu__arrow_district">&gt;</div>
                             </div>
                             <div class="create-tu-list-container create-tu-list-container_district">
@@ -220,8 +218,15 @@
                         <textarea class="create-tu__data create-tu__data_address" name="address" rows="50"></textarea>
                     </div>
                 </div>
+                <!-- пятая строка -->
+                <div class="create-tu__line-container create-tu__five-line-container">
+                     <input type="radio" class="create-tu__data create-tu__data_type-tu" name="type-tu" value"with">
+                     <div class="create-tu__label create-tu__label_radio">С проектом</div>
+                     <input type="radio" class="create-tu__data create-tu__data_type-tu" name="type-tu" value"without" checked>
+                     <div class="create-tu__label create-tu__label_radio">Без проекта</div>
+                </div>
                 <!-- Кнопки создания и очистка формы -->
-                <div class="button__container create-tu__button-container">
+                <div class="button__container button-container_create-tu">
                     <div class="create-tu__button-wrapper create-tu__button-wrapper">
                         <div class="header__elements create-tu__button create-tu__button-add">Добавить</div>
                     </div>
@@ -229,7 +234,9 @@
                         <div class="header__elements create-tu__button create-tu__button-reset">Очистить</div>
                     </div>
                 </div>
-            </form>
+         </div>
+         <div id="search-tu">
+             
          </div>
     </div>
 </section>
