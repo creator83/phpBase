@@ -1,30 +1,23 @@
 
 .combobox-wrapper {
-    width: 210px;
+    width: 199px;
     height: 40px;
     border: 1px solid green;
 }
 
 .button-wrapper {
     display: inline-block;
-    position: relative;
-    top:3px;
-    right: 4px;
     width: 35px;
     height: 35px;
     font-family: Helvetica;
     font-size: 1.1em;
     background: linear-gradient(#FE5D4C, #97253D);
-    /* background:rgb(241, 229, 229); */
-    border-top: 1px solid gray;
-    border-right: 1px solid gray;
-    border-bottom: 1px solid gray;
 }
 .button-wrapper:hover {
     cursor: pointer;
 }
 .arrow {
-    line-height: 40px;
+    line-height: 200%;
     text-align: center;
     border-radius: 50%;
     transition: all 0.4s;
@@ -34,13 +27,12 @@
 } 
 
 .create-tu__data {
-    display: inline-block;
     font-size: 1.1em;
-    height: 30px;
+    height: 29px;
     width: 160px;
     outline-color: orange;
     outline-width: 10px;
-    padding-left: 5px;
+    float: left;
 }
 .list-container {
     position: relative;
