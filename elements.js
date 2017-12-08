@@ -22,6 +22,9 @@ function init (){
         comboElement.fillList(arr);
         createTuList.addElement (comboElement);
     });
+    var date = document.getElementsByClassName('calendar-wrapper')[0];
+    console.log (date.getElementsByTagName('table')[0]);
+    var cal = new Calendar (date);
     /*var combobox1 = new Combobox (combo1[0], update(combobox1, createTuList));
     var combobox2 = new Combobox (combo1[1], update(combobox2, createTuList));
     combobox1.fillList(arr);

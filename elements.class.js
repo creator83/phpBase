@@ -34,6 +34,7 @@ class Combobox {
         this.buttonWrapper.addEventListener ('click', function(){
             if (objectPtr.flagOpen == false){
                 objectPtr.openList();
+                // objectPtr.collection.callBackRequest(objectPtr.name);
                 objectPtr.collection.callBackOpen(objectPtr.name);
             }
             else {
@@ -48,8 +49,7 @@ class Combobox {
             listItem[i].addEventListener ('click', function(){
                 objPtr.setInputValue (this.innerHTML);
                 objPtr.closeList();
-                objPtr.collection.callBack(objPtr.name);
-                
+                objPtr.collection.callBackFillOther(objPtr.name);
             });
         }
     }
@@ -75,7 +75,7 @@ class Combobox {
             item.setAttribute ("class", "list__items");
             this.list.appendChild (item);
         }
-        this.closeList ();
+        // this.closeList ();
         this.subscribeItemSelect();
     }
     clearList (){
@@ -114,7 +114,7 @@ class listObject {
     getItemByName (name){
         for (var i=0;i<this.list.length; ++i){
             if (this.list[i].name==name){
-                return item;
+                return this.list[i];
             }
         }
     }
@@ -123,14 +123,24 @@ class ComboboxList extends listObject {
     constructor (){
         super ();
     }
-    callBack (name){
+    callBackFillOther (name){
         var index = this.getIndexByName (name);
-        /*var request= new HttpRequest ("POST", "request.php");
+        var request= new HttpRequest ("POST", "request.php");
         request.setRequest (this.list[index].name, this.list[index].inputFieldValue);
         request.sendRequest();
-        request.receiveRequest (this.list[index]);*/
+        request.receiveRequest (this.list[index+1]);
+        for (var i=index+2;i<this.list.length-1;++i){
+            this.list[i].clearList ();
+        }
+    }
+    callBackRequest (name){
+        var index = this.getIndexByName (name);
+        var request= new HttpRequest ("POST", "request.php");
+        request.setRequest (this.list[index].name, this.list[index].inputFieldValue);
+        request.sendRequest();
+        request.receiveRequest (this.list[index]);
 
-        for (var i=index+1;i<this.list.length;++i){
+        for (var i=index+1;i<this.list.length-1;++i){
             this.list[i].clearList ();
         }
     }
@@ -141,7 +151,82 @@ class ComboboxList extends listObject {
             }
         }
     }
+    fillCombobox(name, value){
+        var index = this.getIndexByName (name);
+        var request= new HttpRequest ("POST", "request.php");
+        request.setRequest (this.list[index].name);
+        request.sendRequest();
+        request.receiveRequest (this.list[index]);
+    }
+}
+class ListFunction {
+    constructor(){
+        this.list = [];
+    }
+    addFunction(func){
+        this.list.push(func);
+    }
+    iterate(){
+        for (var i=0;i<this.list.length;++i){
+            this.list[i]();
+        }
+    }
+}
+class Calendar{
+    constructor(wrapper){
+        this.wrapper = wrapper;
+        this. currentDate = new Date();
+        this.month = this.currentDate.getMonth();
+        this.days = this.currentDate.getDate();
+        this.fMonth = [];
+        this.fillCalendar();
+        this.tabCalendar = this.wrapper.getElementsByTagName("table")[0];
+        this.createCalendar();
+    }
+    fillCalendar(){
+        var tempDate = new Date (this.currentDate.getFullYear(), this.month);
+        while (tempDate.getMonth()==this.month){
+            this.fMonth.push (new Date(tempDate));
+            tempDate.setDate(tempDate.getDate()+1);
+        }
+    }
+    nextMonth(){
+        currentDate.setMonth(currentDate.getMonth()+1);
+    }
+    prevMonth(){
+        currentDate.setMonth(currentDate.getMonth()+1);
+    }
+    createCalendar(){
+        var dayWeek = this.fMonth[0].getDay();
+        console.log(dayWeek);
+        var dayPtr = new Date (this.fMonth[0]);
+        
+        for (var i=1;i<=6;++i){
+            if (dayPtr.getMonth()==this.month){
+                var raw = document.createElement ('tr');
+                this.tabCalendar.appendChild (raw);
+                for(var j=1;j<7;++j){
+                    if (dayPtr.getMonth()==this.month){
+                        var el = document.createElement('td');
+                            el.setAttribute('class', 'date-item');
+                        if (dayPtr.getDay()==j){
+                            el.appendChild(document.createTextNode(i*j));
+                        }
+                        else{
+                            el.appendChild(document.createTextNode(""));
+                        }
+                        raw.appendChild (el);
+                        dayPtr.setDate(dayPtr.getDate()+1);
+                    }
+                }
+            }
+            else{
+                break;
+            }
+            
+            
+        }
+    }
 }
 class Form {
-
 }

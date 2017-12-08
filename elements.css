@@ -44,6 +44,19 @@
     border: 1px solid red;
     /* background: blue; */
 }
+.list_item{
+    list-style: none;
+}
 li:hover {
     cursor: pointer;
+}
+.date-item {
+    border: 1px solid black;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    vertical-align: center;
+}
+.day-header {
+    text-align: center;
 }

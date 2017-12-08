@@ -7,9 +7,10 @@
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="substrate.css" />
 	<link rel="stylesheet" href="data.css" />
-    <script src="lists.class.js"></script>
+    <!-- <script src="lists.class.js"></script> -->
     <script src="data.js"></script>
     <script src="httprqust.js"></script>
+    <script src="elements.class.js"></script>
 </head>
 <body>
 <?php
@@ -52,7 +53,7 @@
                 <div class="button_exit"></div>
                 <div class="create-tu-add-menu_second-line">
                     <input type="text" disabled class="input-data create-tu-add-menu__input create-tu-add-menu__const_region" name="const-region">
-                    <div class="create-tu-list-container create-tu-add-menu-list-container_prfx-state">
+                    <div class="list-container create-tu-add-menu-list-container_prfx-state">
                         <ul class="create-tu-list create-tu-list_prfx-state">
                             <li class="list__items">г.</li>
                             <li class="list__items">с.</li>
@@ -82,7 +83,7 @@
                 <div class="create-tu-add-menu_second-line">
                     <input type="text" disabled class="input-data create-tu-add-menu__input create-tu-add-menu__const_state" name="const-state">
                     <!-- список префикса улиц -->
-                    <div class="create-tu-list-container create-tu-add-menu-list-container_prfx-street">
+                    <div class="list-container create-tu-add-menu-list-container_prfx-street">
                         <ul class="create-tu-list create-tu-list_prfx-street">
                             <li class="list__items">ул.</li>
                             <li class="list__items">проезд</li>
@@ -130,7 +131,7 @@
                             <div class="button-wrapper">
                                 <div class="arrow create-tu__arrow_region">&gt;</div>
                             </div>
-                            <div class="create-tu-list-container create-tu-list-container_region">
+                            <div class="list-container list-container_region">
                                 <ul class="create-tu-list create-tu-list_region">
                                 </ul>
                             </div>
@@ -146,7 +147,7 @@
                             <div class="button-wrapper">
                                 <div class="arrow create-tu__arrow_state">&gt;</div>
                             </div>
-                            <div class="create-tu-list-container create-tu-list-container_state">
+                            <div class="list-container list-container_state">
                                 <ul class="create-tu-list create-tu-list_state">
                                 </ul>
                             </div>
@@ -165,7 +166,7 @@
                             <div class="button-wrapper">
                                 <div class="arrow create-tu__arrow_street">&gt;</div>
                             </div>
-                            <div class="create-tu-list-container create-tu-list-container_street">
+                            <div class="list-container list-container_street">
                                 <ul class="create-tu-list create-tu-list_street">
                                 </ul>
                             </div>
@@ -201,7 +202,7 @@
                             <div class="button-wrapper">
                                 <div class="arrow create-tu__arrow_district">&gt;</div>
                             </div>
-                            <div class="create-tu-list-container create-tu-list-container_district">
+                            <div class="list-container list-container_district">
                                 <ul class="create-tu-list create-tu-list_district">
                                 </ul>
                             </div>

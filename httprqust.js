@@ -11,6 +11,9 @@ class HttpRequest extends XMLHttpRequest{
         
     }
     setRequest (request, value){
+        if (value==undefined){
+            value = '';
+        }
         this.request = request+"="+encodeURIComponent(value);
     }
     sendRequest (){
@@ -24,6 +27,7 @@ class HttpRequest extends XMLHttpRequest{
     }
     receiveRequest (callBack){
         var arr=[];
+        // console.log(callBack);
         this.onreadystatechange = function () {
             if (this.readyState == 4) {
                 arr = this.responseText.split (',');

@@ -56,12 +56,10 @@ html, body {
 }
 .combobox-wrapper {
     display: inline-block;
+    position: relative;
 }
 .button-wrapper {
     display: inline-block;
-    position: relative;
-    top:3px;
-    right: 4px; 
     width: 35px;
     height: 35px;
     font-family: Helvetica;
@@ -99,47 +97,33 @@ html, body {
     background: rgba(0,0,0,.7);
     box-shadow: 25px 25px 15px rgba(0,0,0,.9);  
 }
-.create-tu-list-container {
-    position: relative;
+.list-container {
+    position: absolute;
+    width: 100%;
     background: white;
     transform: rotateX(90deg);
     transform-origin: top;
     transition: all 0.5s;
+    overflow: auto;
+}
+.list-container_region {
+    max-height: 350px;
+}
+
+.list-container_state{ 
+    max-height: 350px;
+}
+.list-container_street{
+    max-height: 260px;
+}
+.list-container_district {
+    max-height: 180px;
 }
 .create-tu-add-menu__button {
     width: 150px;
     height: 40px;
 }
-.create-tu-list-container_region {
-    /*border: 2px solid red;*/
-    left: 7px;
-    top: 182px;
-    width: 248px;
-    max-height: 300px;
-    overflow: auto;
-}
 
-.create-tu-list-container_state{ 
-    left: 313px;
-    top: 182px;
-    width: 238px;
-    max-height: 300px;
-    overflow: auto;
-}
-.create-tu-list-container_street{
-    left: 7px;
-    top: 265px;
-    width: 248px;
-    max-height: 217px;
-    overflow: auto;
-}
-.create-tu-list-container_district {
-    left: 7px;
-    top: 348px;
-    width: 248px;
-    max-height: 134px;
-    overflow: auto;
-}
 
 .list__items {
     height: 30px;
@@ -190,13 +174,10 @@ html, body {
 }
 .button_add__wrapper {
     display: inline-block;
-    position: relative;
-    bottom: 10px;
     width: 35px;
     height: 35px;
     background: linear-gradient(#FE5D4C, #97253D);
     /* background:rgb(241, 229, 229); */
-    text-align: center;
 }
 .button_add__wrapper:hover {
     cursor: pointer;
@@ -297,9 +278,10 @@ html, body {
     font-size: 1.1em;
     color: bisque;
     text-align: center;
-    width:100%;
+    /* width:100%; */
 }
 .create-tu__data {
+    float: left;
     font-size: 1.1em;
     height: 29px;
 }
@@ -438,6 +420,7 @@ html, body {
 }
 .create-tu__label_radio {
     display: inline-block;
+    /* border: 1px solid yellow; */
 }
 
 ul {

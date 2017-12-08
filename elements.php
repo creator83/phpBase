@@ -30,5 +30,21 @@
             </ul>
         </div>
     </div>
+    <div class="calendar-wrapper">
+        <input type="text" class="create-tu__data" name="date">
+        <div class="date-container">
+            <table class="calendar">
+                <tr class="calendar-header">
+                    <th class="day-header">пн.</th>
+                    <th class="day-header">вт.</th>
+                    <th class="day-header">ср.</th>
+                    <th class="day-header">чт.</th>
+                    <th class="day-header">пт.</th>
+                    <th class="day-header">сб.</th>
+                    <th class="day-header">вс.</th>
+                </tr>
+            </table>
+        </div>
+    </div>
 </body>
 </html>
