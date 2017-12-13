@@ -34,7 +34,6 @@ class Combobox {
         this.buttonWrapper.addEventListener ('click', function(){
             if (objectPtr.flagOpen == false){
                 objectPtr.openList();
-                // objectPtr.collection.callBackRequest(objectPtr.name);
                 objectPtr.collection.callBackOpen(objectPtr.name);
             }
             else {
@@ -75,7 +74,6 @@ class Combobox {
             item.setAttribute ("class", "list__items");
             this.list.appendChild (item);
         }
-        // this.closeList ();
         this.subscribeItemSelect();
     }
     clearList (){
@@ -128,9 +126,11 @@ class ComboboxList extends listObject {
         var request= new HttpRequest ("POST", "request.php");
         request.setRequest (this.list[index].name, this.list[index].inputFieldValue);
         request.sendRequest();
-        request.receiveRequest (this.list[index+1]);
-        for (var i=index+2;i<this.list.length-1;++i){
-            this.list[i].clearList ();
+        if (index<2){
+            request.receiveRequest (this.list[index+1]);
+            for (var i=index+2;i<this.list.length-1;++i){
+                this.list[i].clearList ();
+            }
         }
     }
     callBackRequest (name){
@@ -228,5 +228,63 @@ class Calendar{
         }
     }
 }
+class Button{
+    constructor(wrapper){
+        this.wrapper = wrapper;
+        this.subscribeBtnOpenMd();
+        this.subscribeBtnOpenMu();
+    }
+    subscribeBtnOpenMd(){
+        this.wrapper.addEventListener ('mousedown', function(){
+            this.style.background = "linear-gradient(#97253D, #FE5D4C)";  
+        });
+    }
+    subscribeBtnOpenMu(){
+        this.wrapper.addEventListener ('mouseup', function(){
+            this.style.background = "linear-gradient(#FE5D4C, #97253D)";
+        });
+    }
+}
 class Form {
+    constructor (wrapper){
+        this.wrapper = wrapper;
+        this.blackWrapper = this.wrapper.getElementsByClassName('black-wrapper')[0];
+        this.btnOpen = this.wrapper.getElementsByClassName('button_add__wrapper')[0];
+        this.form = this.wrapper.getElementsByClassName('add-form')[0];
+        this.btnClose = this.form.getElementsByClassName ('button_exit')[0];
+        this.btnSubmit = this.form.getElementsByClassName('create-tu-add-menu__button')[0];
+        this.btnReset = this.form.getElementsByClassName('create-tu-add-menu__button')[1];
+        this.targetInput = this.form.getElementsByTagName ('input')[0];
+        this.requestResult;
+        this.subscribeBtnClose ();
+        this.subscribeBtnOpen ();
+    }    
+
+    subscribeBtnOpen (){
+        var objPtr = this;
+        this.btnOpen.addEventListener ('click', function(){
+          objPtr.openForm();  
+        });
+    }
+    subscribeBtnClose (){
+        var objPtr = this;
+        this.btnClose.addEventListener ('click', function(){
+          objPtr.closeForm();  
+        });
+    }
+    openForm(){
+        this.blackWrapper.style.display = 'block';
+        this.blackWrapper.style.zIndex = '1';
+        this.form.style.display = 'block';
+    }
+
+    closeForm(){
+        this.form.style.display = 'none';
+        this.blackWrapper.style.display = 'none';
+        this.blackWrapper.style.zIndex = '0';
+    }
+    setResult (value){
+        this.requestResult = value;
+        console.log (this.requestResult);
+    }
 }

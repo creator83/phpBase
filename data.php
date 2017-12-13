@@ -29,82 +29,6 @@
             <div class="header__elements create-tu-header">Создание ТУ</div>
             <div class="header__elements create-tu-header">Просмотр ТУ</div>
         </div>
-        <!-- подменю для добавления в создании ТУ-->
-        <div id="black-wrapper">
-            <!-- подменю добавления региона -->
-            <div class="create-tu-add-menu create-tu-add-menu_region">
-                <div class="create-tu-add-menu__header create-tu-add-menu__header_region">добавление региона</div>
-                <div class="button_exit"></div>
-                <div class="create-tu-add-menu_second-line">
-                    <input type="text" class="input-data create-tu-add-menu__input create-tu-add-menu__input_region" name="add-region">
-                    <div class="button__container create-tu-add-menu__button-container_region">
-                        <div class="create-tu-add-menu__button-wrapper create-tu-add-menu__button-wrapper_region">
-                            <div class="header__elements create-tu-add-menu__button create-tu-add-menu__button-add_region">Добавить</div>
-                        </div>
-                        <div class="create-tu-add-menu__button-wrapper create-tu-add-menu__button-wrapper_region">
-                            <div class="header__elements create-tu-add-menu__button create-tu-add-menu__button-reset_region">Очистить</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- подменю добавления населённого пункта -->
-            <div class="create-tu-add-menu create-tu-add-menu_state">
-                <div class="create-tu-add-menu__header create-tu-add-menu__header_state">Населённый пункт</div>
-                <div class="button_exit"></div>
-                <div class="create-tu-add-menu_second-line">
-                    <input type="text" disabled class="input-data create-tu-add-menu__input create-tu-add-menu__const_region" name="const-region">
-                    <div class="list-container create-tu-add-menu-list-container_prfx-state">
-                        <ul class="create-tu-list create-tu-list_prfx-state">
-                            <li class="list__items">г.</li>
-                            <li class="list__items">с.</li>
-                            <li class="list__items">х.</li>
-                            <li class="list__items">п.</li>
-                            <li class="list__items">ст.</li>
-                            <li class="list__items">д.</li>
-                        </ul>
-                    </div>
-                    <input type="text" class="input-data create-tu-add-menu__input create-tu-add-menu__input_prfx-state" name="add-prfx-state">
-                    <div class="arrow-wrapper"><div class="arrow create-tu-add-menu__arrow_prfx-state">&gt;</div></div>
-                    <input type="text" class="input-data create-tu-add-menu__input create-tu-add-menu__input_state" name="add-state">
-                    <div class="button__container create-tu-add-menu__button-container_state">
-                        <div class="create-tu-add-menu__button-wrapper create-tu-add-menu__button-wrapper_state">
-                            <div class="header__elements create-tu-add-menu__button create-tu-add-menu__button-add_state">Добавить</div>
-                        </div>
-                        <div class="create-tu-add-menu__button-wrapper create-tu-add-menu__button-wrapper_state">
-                            <div class="header__elements create-tu-add-menu__button create-tu-add-menu__button-reset_state">Очистить</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- подменю добавления улицы -->
-            <div class="create-tu-add-menu create-tu-add-menu_street">
-                <div class="create-tu-add-menu__header create-tu-add-menu__header_street">добавление улицы</div>
-                <div class="button_exit"></div>
-                <div class="create-tu-add-menu_second-line">
-                    <input type="text" disabled class="input-data create-tu-add-menu__input create-tu-add-menu__const_state" name="const-state">
-                    <!-- список префикса улиц -->
-                    <div class="list-container create-tu-add-menu-list-container_prfx-street">
-                        <ul class="create-tu-list create-tu-list_prfx-street">
-                            <li class="list__items">ул.</li>
-                            <li class="list__items">проезд</li>
-                            <li class="list__items">пр-т.</li>
-                            <li class="list__items">пер.</li>
-                        </ul>
-                    </div>
-                    <input type="text" class="input-data create-tu-add-menu__input create-tu-add-menu__input_prfx-street" name="add-prfx-street">
-                    <div class="arrow-wrapper"><div class="arrow create-tu-add-menu__arrow_prfx-street">&gt;</div></div>
-                    <input type="text" class="input-data create-tu-add-menu__input create-tu-add-menu__input_street" name="add-street">
-                    <div class="button__container create-tu-add-menu__button-container_state">
-                        <div class="create-tu-add-menu__button-wrapper create-tu-add-menu__button-wrapper_street">
-                            <div class="header__elements create-tu-add-menu__button create-tu-add-menu__button-add_street">Добавить</div>
-                        </div>
-                        <div class="create-tu-add-menu__button-wrapper create-tu-add-menu__button-wrapper_street">
-                            <div class="header__elements create-tu-add-menu__button create-tu-add-menu__button-reset_street">Очистить</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
         <!-- основное окно ввода ТУ -->
          <div id="create-tu">
                 <!-- первая строка -->
@@ -136,10 +60,30 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="button_add__wrapper">
-                            <div class="button_add">+</div>
+                        <div class="add-form__wrapper add-form__wrapper_region">
+                            <div class="button button_add__wrapper button_add__wrapper_region">
+                                <div class="button_add">+</div>
+                            </div>
+                            <div class="black-wrapper">
+                                <!-- форма добавления региона -->
+                                <div class="add-form create-tu-add-menu create-tu-add-menu_region">
+                                    <div class="create-tu-add-menu__header create-tu-add-menu__header_region">добавление региона</div>
+                                    <div class="button button_exit"></div>
+                                    <div class="create-tu-add-menu_second-line">
+                                        <input type="text" class="input-data create-tu-add-menu__input create-tu-add-menu__input_region" name="add-region">
+                                        <div class="button__container create-tu-add-menu__button-container_region">
+                                            <div class="create-tu-add-menu__button-wrapper create-tu-add-menu__button-wrapper_region">
+                                                <div class="button header__elements create-tu-add-menu__button create-tu-add-menu__button-add_region">Добавить</div>
+                                            </div>
+                                            <div class="create-tu-add-menu__button-wrapper create-tu-add-menu__button-wrapper_region">
+                                                <div class="button header__elements create-tu-add-menu__button create-tu-add-menu__button-reset_region">Очистить</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                    </div>    
                     <div class="create-tu__second-line-container__element create-tu__second-line-container__element_state">
                         <div class="create-tu__label data__label_state">Нас. пункт:</div>
                         <div class="combobox-wrapper combobox-wrapper_state">
@@ -152,8 +96,41 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="button_add__wrapper">
-                            <div class="button_add">+</div>
+                        <div class="add-form__wrapper add-form__wrapper_state">
+                            <div class="button button_add__wrapper button_add__wrapper_state">
+                                <div class="button_add">+</div>   
+                            </div>
+                            <div class="black-wrapper">
+                                <!-- форма добавления населённого пункта -->
+                                <div class="add-form create-tu-add-menu create-tu-add-menu_state">
+                                <div class="create-tu-add-menu__header create-tu-add-menu__header_state">Населённый пункт</div>
+                                <div class="button_exit"></div>
+                                <div class="create-tu-add-menu_second-line">
+                                    <input type="text" disabled class="input-data create-tu-add-menu__input create-tu-add-menu__const_region" name="const-region">
+                                    <div class="list-container create-tu-add-menu-list-container_prfx-state">
+                                        <ul class="create-tu-list create-tu-list_prfx-state">
+                                            <li class="list__items">г.</li>
+                                            <li class="list__items">с.</li>
+                                            <li class="list__items">х.</li>
+                                            <li class="list__items">п.</li>
+                                            <li class="list__items">ст.</li>
+                                            <li class="list__items">д.</li>
+                                        </ul>
+                                    </div>
+                    <input type="text" class="input-data create-tu-add-menu__input create-tu-add-menu__input_prfx-state" name="add-prfx-state">
+                    <div class="arrow-wrapper"><div class="arrow create-tu-add-menu__arrow_prfx-state">&gt;</div></div>
+                    <input type="text" class="input-data create-tu-add-menu__input create-tu-add-menu__input_state" name="add-state">
+                    <div class="button__container create-tu-add-menu__button-container_state">
+                        <div class="create-tu-add-menu__button-wrapper create-tu-add-menu__button-wrapper_state">
+                            <div class="header__elements create-tu-add-menu__button create-tu-add-menu__button-add_state">Добавить</div>
+                        </div>
+                        <div class="create-tu-add-menu__button-wrapper create-tu-add-menu__button-wrapper_state">
+                            <div class="header__elements create-tu-add-menu__button create-tu-add-menu__button-reset_state">Очистить</div>
+                        </div>
+                    </div>
+                </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -171,8 +148,40 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="button_add__wrapper">
-                            <div class="button_add">+</div>
+                        <div class="add-form__wrapper add-form__wrapper_state">
+                            <div class="button button_add__wrapper button_add__wrapper_street">
+                                <div class="button_add">+</div>
+                            </div>
+                            <div class="black-wrapper">
+                                <!-- форма добавления улицы -->
+                                <div class="add-form create-tu-add-menu create-tu-add-menu_state">
+                                <div class="create-tu-add-menu__header create-tu-add-menu__header_street">добавление улицы</div>
+                <div class="button_exit"></div>
+                <div class="create-tu-add-menu_second-line">
+                    <input type="text" disabled class="input-data create-tu-add-menu__input create-tu-add-menu__const_state" name="const-state">
+                    <!-- список префикса улиц -->
+                    <div class="list-container create-tu-add-menu-list-container_prfx-street">
+                        <ul class="create-tu-list create-tu-list_prfx-street">
+                            <li class="list__items">ул.</li>
+                            <li class="list__items">проезд</li>
+                            <li class="list__items">пр-т.</li>
+                            <li class="list__items">пер.</li>
+                        </ul>
+                    </div>
+                    <input type="text" class="input-data create-tu-add-menu__input create-tu-add-menu__input_prfx-street" name="add-prfx-street">
+                    <div class="arrow-wrapper"><div class="arrow create-tu-add-menu__arrow_prfx-street">&gt;</div></div>
+                    <input type="text" class="input-data create-tu-add-menu__input create-tu-add-menu__input_street" name="add-street">
+                    <div class="button__container create-tu-add-menu__button-container_state">
+                        <div class="create-tu-add-menu__button-wrapper create-tu-add-menu__button-wrapper_street">
+                            <div class="header__elements create-tu-add-menu__button create-tu-add-menu__button-add_street">Добавить</div>
+                        </div>
+                        <div class="create-tu-add-menu__button-wrapper create-tu-add-menu__button-wrapper_street">
+                            <div class="header__elements create-tu-add-menu__button create-tu-add-menu__button-reset_street">Очистить</div>
+                        </div>
+                    </div>
+                </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="create-tu__third-line-container__element create-tu__third-line-container__element_house">
@@ -228,11 +237,11 @@
                 </div>
                 <!-- Кнопки создания и очистка формы -->
                 <div class="button__container button-container_create-tu">
-                    <div class="create-tu__button-wrapper create-tu__button-wrapper">
-                        <div class="header__elements create-tu__button create-tu__button-add">Добавить</div>
+                    <div class="create-tu__button-wrapper">
+                        <div class="button header__elements create-tu__button create-tu__button-add">Добавить</div>
                     </div>
-                    <div class="create-tu__button-wrapper create-tu__button-wrapper">
-                        <div class="header__elements create-tu__button create-tu__button-reset">Очистить</div>
+                    <div class="create-tu__button-wrapper">
+                        <div class="button header__elements create-tu__button create-tu__button-reset">Очистить</div>
                     </div>
                 </div>
          </div>

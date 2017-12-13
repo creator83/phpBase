@@ -60,6 +60,8 @@ html, body {
 }
 .button-wrapper {
     display: inline-block;
+    vertical-align: top;
+    margin-left: -4px;
     width: 35px;
     height: 35px;
     font-family: Helvetica;
@@ -129,8 +131,11 @@ html, body {
     height: 30px;
     font-size: 1.2em;
 }
-
-#black-wrapper {
+.add-form__wrapper{
+    display: inline-block;
+    vertical-align: top;
+}
+.black-wrapper {
     display: none;
     position: fixed;
     top: 0;
@@ -174,6 +179,7 @@ html, body {
 }
 .button_add__wrapper {
     display: inline-block;
+    vertical-align: top;
     width: 35px;
     height: 35px;
     background: linear-gradient(#FE5D4C, #97253D);
@@ -281,7 +287,6 @@ html, body {
     /* width:100%; */
 }
 .create-tu__data {
-    float: left;
     font-size: 1.1em;
     height: 29px;
 }
@@ -420,7 +425,6 @@ html, body {
 }
 .create-tu__label_radio {
     display: inline-block;
-    /* border: 1px solid yellow; */
 }
 
 ul {

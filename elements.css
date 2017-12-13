@@ -1,12 +1,14 @@
 
 .combobox-wrapper {
-    width: 199px;
+    width: 250;
     height: 40px;
     border: 1px solid green;
 }
 
 .button-wrapper {
     display: inline-block;
+    vertical-align: top;
+    /* margin-left: -4px; */
     width: 35px;
     height: 35px;
     font-family: Helvetica;
@@ -28,11 +30,12 @@
 
 .create-tu__data {
     font-size: 1.1em;
-    height: 29px;
+    height: 31px;
     width: 160px;
     outline-color: orange;
-    outline-width: 10px;
-    float: left;
+    /* outline-width: 10px; */
+    border: 1px solid black;
+    padding: 1px 5px;
 }
 .list-container {
     position: relative;

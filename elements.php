@@ -11,7 +11,7 @@
 </head>
 <body>
     <div class="combobox-wrapper combobox-wrapper_region">
-        <input type="text" class="create-tu__data create-tu__data_district" name="district">
+        <input type="text" class="create-tu__data create-tu__data_district" name="district" autocomplete='off'>
         <div class="button-wrapper">
             <div class="arrow">&gt;</div>
         </div>
@@ -21,7 +21,7 @@
         </div>
     </div>
     <div class="combobox-wrapper combobox-wrapper_state">
-        <input type="text" class="create-tu__data create-tu__data_district" name="district">
+        <input type="text" class="create-tu__data create-tu__data_district" name="district" autocomplete='off'  >
         <div class="button-wrapper">
             <div class="arrow">&gt;</div>
         </div>
