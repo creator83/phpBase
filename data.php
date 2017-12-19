@@ -18,17 +18,19 @@
     include "base.php";
 ?>
 <section class="main-container">
-    <div class="major-menu-container-header">
-        <div class="header__elements major-menu-header">ТУ</div>
-        <div class="header__elements major-menu-header">ПИСЬМА</div>
-        <div class="header__elements major-menu-header">ОБЪЕКТЫ</div>
-        <div class="header__elements major-menu-header">ОТЧЁТЫ</div>
-    </div>
+    <ul class="major-menu-container-header">
+        <li class="header__elements major-menu-header">
+            <a href="#">ту</a>
+            <ul class="sub-menu-container-header">
+                <li class="header__elements major-menu-header"><a href="#">создание ту</a></li>
+                <li class="header__elements major-menu-header"><a href="#">просмотр ту</a></li>
+            </ul>
+        </li>
+        <li class="header__elements major-menu-header"><a href="#">письма</a></li>
+        <li class="header__elements major-menu-header"><a href="#">объекты</a></li>
+        <li class="header__elements major-menu-header"><a href="#">отчёты</a></li>
+    </ul>
     <div id="body-container">
-        <div id="subMenuTU-container">
-            <div class="header__elements create-tu-header">Создание ТУ</div>
-            <div class="header__elements create-tu-header">Просмотр ТУ</div>
-        </div>
         <!-- основное окно ввода ТУ -->
          <div id="create-tu">
                 <!-- первая строка -->
@@ -240,14 +242,18 @@
                      <div class="create-tu__label create-tu__label_radio">Без проекта</div>
                 </div>
                 <!-- Кнопки создания и очистка формы -->
-                <div class="button__container button-container_create-tu">
+                <!-- <div class="button__container button-container_create-tu">
                     <div class="create-tu__button-wrapper">
                         <div class="button header__elements create-tu__button create-tu__button-add">Добавить</div>
                     </div>
                     <div class="create-tu__button-wrapper">
                         <div class="button header__elements create-tu__button create-tu__button-reset">Очистить</div>
                     </div>
-                </div>
+                </div> -->
+                <ul class="button__container button-container_create-tu">
+                    <li class="button header__elements create-tu__button create-tu__button-add"><a href="#">Добавить</a></li>
+                    <li class="button header__elements create-tu__button create-tu__button-add"><a href="#">Очистить</a></li>
+                </ul>
          </div>
          <div id="search-tu">
              

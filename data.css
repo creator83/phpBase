@@ -1,6 +1,9 @@
 html, body {
     height: 100%;
 }
+body{
+    margin: 0;
+}
 .main-container {
     width: 608px;
     /* height: 42px; */
@@ -11,11 +14,34 @@ html, body {
     bottom: 0;
     margin: 20px auto 0;
 }
-.major-menu-container-header {
+/* .major-menu-container-header {
     display: flex;
-    /* width: 800px; */
     height: 40px;
     border: 1px solid red;
+} */
+.major-menu-container-header {
+    width: 100%;
+    display: table;
+    table-layout: fixed;
+}
+.major-menu-header {
+    display: table-cell;
+}
+.major-menu-header a{
+    text-decoration: none;
+    color: whitesmoke;
+    text-transform: uppercase;
+    display: block;
+}
+.sub-menu-container-header{
+    width: 530px;
+    /* display: table; */
+    display: none;
+    table-layout: fixed;
+    position: absolute;
+    transform: rotate(270deg);
+    top: 285px;
+    right: 363px;
 }
 .header__elements { 
     background: linear-gradient(#FE5D4C, #97253D);
@@ -34,14 +60,14 @@ html, body {
     outline-color: orange;
     outline-width: 10px;
 }
-.header__elements:hover {
+/* .header__elements:hover {
     cursor: pointer;
-}
+} */
 
 .header__elements::selection {
     background: transparent;
 }
-.button__container {
+/* .button__container {
     display: flex;
     margin-top: 30px;
     width: 100%;
@@ -50,7 +76,7 @@ html, body {
     display: flex;
     
     width: 100%;
-} 
+}  */
 .button-container_create-tu {
     margin-top: 40px;
 }
@@ -84,10 +110,10 @@ html, body {
 .arrow::selection {
     background: transparent;
 } 
-.major-menu-header {
+/* .major-menu-header {
     height: 40px; 
     width: 150px;
-}
+} */
 .create-tu-header {
     height: 40px; 
     width: 150px; 
@@ -282,7 +308,6 @@ html, body {
     font-size: 1.1em;
     color: bisque;
     text-align: center;
-    /* width:100%; */
 }
 .create-tu__data {
     font-size: 1.1em;
@@ -411,12 +436,26 @@ html, body {
 .create-tu__button-wrapper {
     width: 50%;
 }
-.create-tu__button {
+/* .create-tu__button {
     width: 150px;
     height: 40px;
-}
-.create-tu__button-add {
+} */
+/* .create-tu__button-add {
     margin-left: 110px;
+} */
+.button__container{
+    display: table;
+}
+.button__container li{
+    display: table-cell;
+}   
+.button__container a{
+    display: block;
+    margin: auto;
+    width: 150px;
+    text-decoration: none;
+    background: yellow;
+    
 }
 .create-tu__button-reset {
     margin-left: 40px;
