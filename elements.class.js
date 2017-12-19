@@ -12,6 +12,9 @@ class Combobox {
         this.flagOpen = false;
         this.subscribeBtnClick();
         this.subscribeItemSelect();
+        this.cEvent = new CustomEvent("cEv", {
+            'detail':this.name
+        });
         // var myEvent = new CustomEvent ('getName')
     }
     setCallBack(func){
