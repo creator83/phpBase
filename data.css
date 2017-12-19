@@ -6,7 +6,6 @@ body{
 }
 .main-container {
     width: 608px;
-    /* height: 42px; */
     position: absolute;
     left: 0;
     right: 0;   
@@ -14,20 +13,18 @@ body{
     bottom: 0;
     margin: 20px auto 0;
 }
-/* .major-menu-container-header {
-    display: flex;
-    height: 40px;
-    border: 1px solid red;
-} */
-.major-menu-container-header {
+.major-menu {
     width: 100%;
     display: table;
     table-layout: fixed;
 }
-.major-menu-header {
+.major-menu__elements {
     display: table-cell;
+    height: 40px;
+    line-height: 40px;
+    border: 1px solid black;
 }
-.major-menu-header a{
+.major-menu__elements a{
     text-decoration: none;
     color: whitesmoke;
     text-transform: uppercase;
@@ -43,16 +40,17 @@ body{
     top: 285px;
     right: 363px;
 }
-.header__elements { 
+#create-tu {
+    width: 608px;
+    border: 1px solid transparent;
+    padding-bottom: 20px;
+}
+.elements-style { 
     background: linear-gradient(#FE5D4C, #97253D);
-    border: 1px solid black;
     text-align: center;
     color: white;
     font-family: Helvetica;
     font-size: 1.2em;
-    transition: all 0.7s;
-    line-height: 40px;
-    /* padding-top: 10px; */
 }
 .input-data {
     font-size: 1.1em;
@@ -60,23 +58,12 @@ body{
     outline-color: orange;
     outline-width: 10px;
 }
-/* .header__elements:hover {
-    cursor: pointer;
-} */
-
-.header__elements::selection {
-    background: transparent;
+.button a{
+    display: block;
+    margin: auto;
+    text-align: center;
+    text-decoration: none; 
 }
-/* .button__container {
-    display: flex;
-    margin-top: 30px;
-    width: 100%;
-} 
-.button__container {
-    display: flex;
-    
-    width: 100%;
-}  */
 .button-container_create-tu {
     margin-top: 40px;
 }
@@ -84,36 +71,60 @@ body{
     display: inline-block;
     position: relative;
 }
-.button-wrapper {
+.button-rotate {
     display: inline-block;
     vertical-align: top;
     margin-left: -4px;
     width: 35px;
     height: 35px;
+    line-height: 35px;
     font-family: Helvetica;
     font-size: 1.1em;
-    background: linear-gradient(#FE5D4C, #97253D);
-    /* background:rgb(241, 229, 229); */
-    /* border-top: 1px solid gray;
-    border-right: 1px solid gray;
-    border-bottom: 1px solid gray; */
 }
-.button-wrapper:hover {
-    cursor: pointer;
+.button_open{
+    display: inline-block;
+    vertical-align: top;
+    margin-left: -4px;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    font-family: Helvetica;
+    font-size: 1.1em;
 }
 .arrow {
-    line-height: 40px;
+    display: block;
+    text-decoration: none;
     text-align: center;
-    border-radius: 50%;
+    color: #000;
     transition: all 0.4s;
 }
 .arrow::selection {
     background: transparent;
 } 
-/* .major-menu-header {
-    height: 40px; 
-    width: 150px;
-} */
+/* Формы */
+.add-form__wrapper_region .button_open{
+    margin-left: 5px;
+}
+.button_open-form{
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    color: #000;
+    transition: all 0.4s; 
+}
+.add-form{
+    position: absolute;
+    box-shadow: 25px 25px 15px rgba(0,0,0,.9);  
+    border: 1px solid red;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+.add-form_region{
+    width: 300px;
+    display: none;
+}
+
 .create-tu-header {
     height: 40px; 
     width: 150px; 
@@ -161,6 +172,25 @@ body{
     display: inline-block;
     vertical-align: top;
 }
+.add-form__header{
+    display: inline-block;
+    vertical-align: top;
+    width: 265px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border-bottom:1px solid red;
+    font-size: 1.2em;
+    color: #fff;
+}
+.black-wrapper_r {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,.7);
+}
 .black-wrapper {
     display: none;
     position: fixed;
@@ -168,7 +198,15 @@ body{
     bottom: 0;
     left: 0;
     right: 0;
-    background: rgba(0,0,0,.3);
+    background: rgba(0,0,0,.7);
+}
+.data-field_add-region{
+    display: block;
+    width: 290px;
+    margin: auto;
+}
+.button-container_add-region{
+    margin-top: 30px;
 }
 .create-tu-add-menu {
     display: none;
@@ -193,9 +231,7 @@ body{
     background: rgba(0,0,0,.95);
 }
 .button_exit {
-    position: absolute;
-    bottom: calc(100% - 40px);
-    left: calc(100% - 40px);
+    display: inline-block;
     width: 30px;
     height: 30px;
     background: url(pic/close_small1.png) no-repeat center, linear-gradient(#FE5D4C, #97253D);
@@ -295,11 +331,7 @@ body{
     transform: rotate(270deg) translate(-252px, -302px);
 }
 
-#create-tu {
-    width: 608px;
-    border: 1px solid transparent;
-    padding-bottom: 20px;
-}
+
 .create-tu__line-container {
     display: flex;
 }
@@ -313,7 +345,10 @@ body{
     font-size: 1.1em;
     height: 29px;
 }
-
+.data-field {
+    font-size: 1.1em;
+    height: 29px;
+}
 /* 1-я строка формы ТУ */
 .create-tu__first-line-container {
     margin-top: 40px;
@@ -436,27 +471,21 @@ body{
 .create-tu__button-wrapper {
     width: 50%;
 }
-/* .create-tu__button {
-    width: 150px;
-    height: 40px;
-} */
-/* .create-tu__button-add {
-    margin-left: 110px;
-} */
 .button__container{
     display: table;
 }
 .button__container li{
     display: table-cell;
 }   
-.button__container a{
-    display: block;
-    margin: auto;
+
+.button-container_create-tu a{
+
     width: 150px;
-    text-decoration: none;
-    background: yellow;
+    height: 40px;
+    line-height: 40px;
     
 }
+
 .create-tu__button-reset {
     margin-left: 40px;
 }
@@ -475,10 +504,7 @@ li {
     font-size: 1.1em;
     display: block;
 }
-li:hover {
-    cursor: pointer;
-    background: rgb(201, 209, 209);
-}
+
 li::selection {
     background: transparent;
 }

@@ -18,17 +18,18 @@
     include "base.php";
 ?>
 <section class="main-container">
-    <ul class="major-menu-container-header">
-        <li class="header__elements major-menu-header">
+    <!--  -->
+    <ul class="major-menu">
+        <li class="elements-style major-menu__elements">
             <a href="#">ту</a>
             <ul class="sub-menu-container-header">
-                <li class="header__elements major-menu-header"><a href="#">создание ту</a></li>
-                <li class="header__elements major-menu-header"><a href="#">просмотр ту</a></li>
+                <li class="elements-style major-menu-header"><a href="#">создание ту</a></li>
+                <li class="elements-style major-menu-header"><a href="#">просмотр ту</a></li>
             </ul>
         </li>
-        <li class="header__elements major-menu-header"><a href="#">письма</a></li>
-        <li class="header__elements major-menu-header"><a href="#">объекты</a></li>
-        <li class="header__elements major-menu-header"><a href="#">отчёты</a></li>
+        <li class="elements-style major-menu__elements"><a href="#">письма</a></li>
+        <li class="elements-style major-menu__elements"><a href="#">объекты</a></li>
+        <li class="elements-style major-menu__elements"><a href="#">отчёты</a></li>
     </ul>
     <div id="body-container">
         <!-- основное окно ввода ТУ -->
@@ -50,57 +51,50 @@
                 </div>
                 <!-- вторая строка -->
                 <div class="create-tu__line-container create-tu__second-line-container">
+                    <!-- блок регионы -->
                     <div class="create-tu__second-line-container__element create-tu__second-line-container__element_region">
                         <div class="create-tu__label data__label_region">Регион:</div>
+                        <!-- выпадающий список регионы -->
                         <div class="combobox-wrapper combobox-wrapper_region">
                             <input type="text" class="create-tu__data create-tu__data_region" name="region">
-                            <div class="button-wrapper">
-                                <div class="arrow create-tu__arrow_region">&gt;</div>
-                            </div>
-                            <div class="list-container list-container_region">
-                                <ul class="create-tu-list create-tu-list_region">
-                                </ul>
-                            </div>
+                            <div class="button-rotate elements-style"><a href="" class="arrow">&gt;</a></div>
+                            <ul class="list list_region">
+                            </ul>
                         </div>
+                        <!-- контейнер формы добавления региона -->
                         <div class="add-form__wrapper add-form__wrapper_region">
-                            <div class="button button_add__wrapper button_add__wrapper_region">
-                                <div class="button_add">+</div>
-                            </div>
-                            <div class="black-wrapper">
+                            <!-- кнопка открытия -->
+                            <div class="button elements-style button_open"><a href="" class="button_open-form">+</a></div>
+                            <!-- затемнение -->
+                            <div class="black-wrapper"></div>
                                 <!-- форма добавления региона -->
-                                <div class="add-form create-tu-add-menu create-tu-add-menu_region">
-                                    <div class="create-tu-add-menu__header create-tu-add-menu__header_region">добавление региона</div>
+                                <div class="add-form add-form_region">
+                                    <div class="add-form__header">добавление региона</div>
                                     <div class="button button_exit"></div>
                                     <div class="create-tu-add-menu_second-line">
-                                        <input type="text" class="create-tu__data create-tu__data_add-region" name="add-region">
-                                        <div class="button__container create-tu-add-menu__button-container_region">
-                                            <div class="create-tu-add-menu__button-wrapper create-tu-add-menu__button-wrapper_region">
-                                                <div class="button header__elements create-tu-add-menu__button create-tu-add-menu__button-add_region">Добавить</div>
-                                            </div>
-                                            <div class="create-tu-add-menu__button-wrapper create-tu-add-menu__button-wrapper_region">
-                                                <div class="button header__elements create-tu-add-menu__button create-tu-add-menu__button-reset_region">Очистить</div>
-                                            </div>
-                                        </div>
+                                        <input type="text" class="data-field data-field_add-region" name="add-region">
+                                        <ul class="button__container button-container_add-region">
+                                            <li class="button add-region__button-add"><a href="#" class="elements-style">Добавить</a></li>
+                                            <li class="button add-region__button-reset"><a href="#" class="elements-style">Очистить</a></li>
+                                        </ul>
                                     </div>
                                 </div>
-                            </div>
                         </div>
                     </div>    
+                    <!-- блок населенный пункт -->
                     <div class="create-tu__second-line-container__element create-tu__second-line-container__element_state">
                         <div class="create-tu__label data__label_state">Нас. пункт:</div>
+                        <!-- выпадающий список населённый пункт -->
                         <div class="combobox-wrapper combobox-wrapper_state">
-                            <input type="text" class="create-tu__data create-tu__data_state" name="state">
-                            <div class="button-wrapper">
-                                <div class="arrow create-tu__arrow_state">&gt;</div>
-                            </div>
-                            <div class="list-container list-container_state">
-                                <ul class="create-tu-list create-tu-list_state">
-                                </ul>
-                            </div>
+                        <input type="text" class="create-tu__data create-tu__data_state" name="state">
+                            <div class="button-rotate elements-style"><a href="" class="arrow">&gt;</a></div>
+                            <ul class="list list_state">
+                            </ul>
                         </div>
+                        <!-- контейнер формы добавления населённого пункта -->
                         <div class="add-form__wrapper add-form__wrapper_state">
                             <div class="button button_add__wrapper button_add__wrapper_state">
-                                <div class="button_add">+</div>   
+                                <div class="button_add">+</div>
                             </div>
                             <div class="black-wrapper">
                                 <!-- форма добавления населённого пункта -->
@@ -144,6 +138,7 @@
                 <div class="create-tu__line-container create-tu__third-line-container">
                     <div class="create-tu__third-line-container__element create-tu__third-line-container__element_street">
                         <div class="create-tu__label data__label_street">Улица:</div>
+                        <!-- combobox улицы-->
                         <div class="combobox-wrapper combobox-wrapper_street">
                             <input type="text" class="create-tu__data create-tu__data_street" name="street">
                             <div class="button-wrapper">
@@ -154,14 +149,15 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="add-form__wrapper add-form__wrapper_state">
-                            <div class="button button_add__wrapper button_add__wrapper_street">
-                                <div class="button_add">+</div>
-                            </div>
-                            <div class="black-wrapper">
-                                <!-- форма добавления улицы -->
-                                <div class="add-form create-tu-add-menu create-tu-add-menu_state">
-                                <div class="create-tu-add-menu__header create-tu-add-menu__header_street">добавление улицы</div>
+                        <!-- кнопка открытия меню добавления улицы -->
+                        <div class="button button_add__wrapper button_add__wrapper_street">
+                            <div class="button_add">+</div>
+                        </div>
+                        <!-- форма добавления улицы -->
+                        <div class="add-form__wrapper add-form__wrapper_street">
+                            <div class="black-wrapper"></div>
+                            <div class="add-form create-tu-add-menu create-tu-add-menu_state">
+                            <div class="create-tu-add-menu__header create-tu-add-menu__header_street">добавление улицы</div>
                 <div class="button_exit"></div>
                 <div class="create-tu-add-menu_second-line">
                     <input type="text" disabled class="input-data create-tu-add-menu__input create-tu-add-menu__const_state" name="const-state">
@@ -177,16 +173,13 @@
                     <input type="text" class="input-data create-tu-add-menu__input create-tu-add-menu__input_prfx-street" name="add-prfx-street">
                     <div class="arrow-wrapper"><div class="arrow create-tu-add-menu__arrow_prfx-street">&gt;</div></div>
                     <input type="text" class="input-data create-tu-add-menu__input create-tu-add-menu__input_street" name="add-street">
-                    <div class="button__container create-tu-add-menu__button-container_state">
-                        <div class="create-tu-add-menu__button-wrapper create-tu-add-menu__button-wrapper_street">
-                            <div class="header__elements create-tu-add-menu__button create-tu-add-menu__button-add_street">Добавить</div>
-                        </div>
-                        <div class="create-tu-add-menu__button-wrapper create-tu-add-menu__button-wrapper_street">
-                            <div class="header__elements create-tu-add-menu__button create-tu-add-menu__button-reset_street">Очистить</div>
-                        </div>
-                    </div>
+                    <!-- кнопки -->
+                    <ul class="button__container button-container_state">
+                        <li class="button button__add-street"><a href="#" class="elements-style">Добавить</a></li>
+                        <li class="button button__reset-street"><a href="#" class="elements-style">Очистить</a></li>
+                    </ul>
                 </div>
-                                </div>
+                                
                             </div>
                         </div>
                     </div>
@@ -241,18 +234,10 @@
                      <input type="radio" class="create-tu__data create-tu__data_type-tu" name="type-tu" value"without" checked>
                      <div class="create-tu__label create-tu__label_radio">Без проекта</div>
                 </div>
-                <!-- Кнопки создания и очистка формы -->
-                <!-- <div class="button__container button-container_create-tu">
-                    <div class="create-tu__button-wrapper">
-                        <div class="button header__elements create-tu__button create-tu__button-add">Добавить</div>
-                    </div>
-                    <div class="create-tu__button-wrapper">
-                        <div class="button header__elements create-tu__button create-tu__button-reset">Очистить</div>
-                    </div>
-                </div> -->
+                <!-- кнопки создания ту -->
                 <ul class="button__container button-container_create-tu">
-                    <li class="button header__elements create-tu__button create-tu__button-add"><a href="#">Добавить</a></li>
-                    <li class="button header__elements create-tu__button create-tu__button-add"><a href="#">Очистить</a></li>
+                    <li class="button create-tu__button-add"><a href="#" class="elements-style">Добавить</a></li>
+                    <li class="button create-tu__button-reset"><a href="#" class="elements-style">Очистить</a></li>
                 </ul>
          </div>
          <div id="search-tu">
