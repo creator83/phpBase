@@ -84,7 +84,6 @@ body{
 .button_open{
     display: inline-block;
     vertical-align: top;
-    margin-left: -4px;
     width: 35px;
     height: 35px;
     line-height: 35px;
@@ -114,6 +113,7 @@ body{
 }
 .add-form{
     position: absolute;
+    display: none;
     box-shadow: 25px 25px 15px rgba(0,0,0,.9);  
     border: 1px solid red;
     left: 0;
@@ -350,9 +350,39 @@ body{
     height: 29px;
 }
 /* 1-я строка формы ТУ */
-.create-tu__first-line-container {
+/* .create-tu__first-line-container {
     margin-top: 40px;
+} */
+.create-tu__first-line-container{
+    display: table;
+    width: 100%;
+    table-layout: fixed;  
+    border-collapse: separate;
 }
+.label_name{
+    display: table;
+    width: 100%;
+    table-layout: fixed;  
+    font-family: Helvetica;
+    font-size: 1.1em;
+    color: bisque;
+}
+.label_name div{
+    display: table-cell;
+    text-align: center; 
+}
+.data_name{
+    display: table;
+    width: 100%;
+    table-layout: fixed; 
+}
+.data_name input{
+    display: table-cell;
+    text-align: center;
+    width: 31.5%;
+    margin-left: 5px;
+}
+
 .create-tu__first-line-container__element {
     width: 220px;
 }
