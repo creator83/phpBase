@@ -7,7 +7,6 @@
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="substrate.css" />
 	<link rel="stylesheet" href="data.css" />
-    <!-- <script src="lists.class.js"></script> -->
     <script src="data.js"></script>
     <script src="httprqust.js"></script>
     <script src="elements.class.js"></script>
@@ -21,7 +20,7 @@
 <section class="main-container">
     <!--  -->
     <ul class="major-menu">
-        <li class="elements-style major-menu__elements">
+        <li class="elements-style major-menu__elements major-menu__elements_tu">
             <a href="#">ту</a>
             <ul class="sub-menu-container-header">
                 <li class="elements-style major-menu-header"><a href="#">создание ту</a></li>
@@ -36,7 +35,7 @@
         <!-- основное окно ввода ТУ -->
          <div id="create-tu">
                 <!-- первая строка -->
-                <div class="create-tu__line-container create-tu__first-line-container">
+                <div class="create-tu__first-line-container">
                     <div class="label label_name">
                         <div class="label_sur-name">Фамилия:</div>
                         <div class="label_first-name">Имя:</div>
@@ -49,13 +48,13 @@
                     </div>  
                 </div>
                 <!-- вторая строка -->
-                <div class="create-tu__line-container create-tu__second-line-container">
+                <div class="create-tu__second-line-container">
                     <!-- блок регионы -->
                     <div class="create-tu__second-line-container__element create-tu__second-line-container__element_region">
                         <div class="create-tu__label data__label_region">Регион:</div>
                         <!-- выпадающий список регионы -->
                         <div class="combobox-wrapper combobox-wrapper_region">
-                            <input type="text" class="create-tu__data create-tu__data_region" name="region">
+                            <input type="text" class="data-field data-field_region" name="region">
                             <div class="button-rotate elements-style"><a href="" class="arrow">&gt;</a></div>
                             <ul class="list list_region">
                             </ul>
@@ -82,7 +81,7 @@
                         <div class="create-tu__label data__label_state">Нас. пункт:</div>
                         <!-- выпадающий список населённый пункт -->
                         <div class="combobox-wrapper combobox-wrapper_state">
-                            <input type="text" class="create-tu__data create-tu__data_state" name="state">
+                            <input type="text" class="data-field data-field_state" name="state">
                             <div class="button-rotate elements-style"><a href="" class="arrow">&gt;</a></div>
                             <ul class="list list_state">
                             </ul>
@@ -99,7 +98,7 @@
                                 <input type="text" class="data-field data-field_const-region" name="const-region">
                                 <!-- выпадающий список префикс населенных пунктов -->
                                 <div class="combobox-wrapper combobox-wrapper_prfx-state">
-                                    <input type="text" class="create-tu__data create-tu__data_prfx-state" name="prfx-state">
+                                    <input type="text" class="data-field data-field_prfx-state" name="prfx-state">
                                     <div class="button-rotate elements-style"><a href="" class="arrow">&gt;</a></div>
                                     <ul class="list list_prfx-state">
                                     <li class="list__items">г.</li>
@@ -110,7 +109,7 @@
                                         <li class="list__items">д.</li>
                                     </ul>
                                 </div>
-                                 <input type="text" class="input-data create-tu-add-menu__input create-tu-add-menu__input_state" name="add-state">
+                                 <input type="text" class="data-field data-field_add-state" name="add-state">
                             </div>
                             <ul class="button__container button-container_add-region">
                                 <li class="button add-state__button-add"><a href="#" class="elements-style">Добавить</a></li>
@@ -120,13 +119,13 @@
                     </div>
                 </div>    
                 <!-- третья строка -->
-                <div class="create-tu__line-container create-tu__third-line-container">
+                <div class="create-tu__third-line-container">
                     <!-- блок улицы -->
                     <div class="create-tu__third-line-container__element create-tu__third-line-container__element_street">
                         <div class="create-tu__label data__label_street">Улица:</div>
                         <!-- выпадающий список улицы-->
                         <div class="combobox-wrapper combobox-wrapper_state">
-                            <input type="text" class="create-tu__data create-tu__data_street" name="street">
+                            <input type="text" class="data-field data-field_street" name="street">
                             <div class="button-rotate elements-style"><a href="" class="arrow">&gt;</a></div>
                             <ul class="list list_street">
                             </ul>
@@ -143,7 +142,7 @@
                                 <input type="text" class="data-field data-field_const-state" name="const-state">
                                 <!-- выпадающий список префикс улиц -->
                                 <div class="combobox-wrapper combobox-wrapper_prfx-street">
-                                    <input type="text" class="create-tu__data create-tu__data_prfx-street" name="prfx-street">
+                                    <input type="text" class="data-field data-field_prfx-street" name="prfx-street">
                                     <div class="button-rotate elements-style"><a href="" class="arrow">&gt;</a></div>
                                     <ul class="list list_prfx-street">
                                         <li class="list__items">ул.</li>
@@ -160,59 +159,60 @@
                             </ul>
                         </div>
                     </div>
+                    <!-- блок номер дома -->
                     <div class="create-tu__third-line-container__element create-tu__third-line-container__element_house">
                         <div class="create-tu__label data__label_house">Дом:</div>
-                        <input type="text" class="create-tu__data create-tu__data_house" name="house">
+                        <input type="text" class="data-field data-field_house" name="house">
                     </div>
+                    <!-- блок корпус -->
                     <div class="create-tu__third-line-container__element create-tu__third-line-container__element_corps">
                         <div class="create-tu__label data__label_corps">Корп:</div>
-                        <input type="text" class="create-tu__data create-tu__data_corps" name="corps">
+                        <input type="text" class="data-field data-field_corps" name="corps">
                     </div>
+                    <!-- блок номер квартиры -->
                     <div class="create-tu__third-line-container__element create-tu__third-line-container__element_apartment">
                         <div class="create-tu__label data__label_apartment">Кв:</div>
-                        <input type="text" class="create-tu__data create-tu__data_apartment" name="apartment">
-                    </div>                    
+                        <input type="text" class="data-field data-field_apartment" name="apartment">
+                    </div>   
+                    <!-- блок телефон -->
                     <div class="create-tu__third-line-container__element create-tu__third-line-container__element_phone">
                         <div class="create-tu__label data__label_phone">Телефон:</div>
-                        <input type="text" class="create-tu__data create-tu__data_prfx-phone" name="prfx-phone">
-                        <input type="text" class="create-tu__data create-tu__data_num-phone" name="num-phone">       
+                        <input type="text" class="data-field data-field_prfx-phone" name="prfx-phone">
+                        <input type="text" class="data-field data-field_num-phone" name="num-phone">       
                     </div>
                 </div>
                 <!-- четвёртая строка -->
-                <div class="create-tu__line-container create-tu__fourth-line-container">
+                <div class="create-tu__fourth-line-container">
                     <div class="create-tu__fourth-line-container__element create-tu__fourth-line-container__element_district">
                         <div class="create-tu__label data__label_district">Район:</div>
-                        <div class="combobox-wrapper combobox-wrapper_district">
-                            <input type="text" class="create-tu__data create-tu__data_district" name="district">
-                            <div class="button-wrapper">
-                                <div class="arrow create-tu__arrow_district">&gt;</div>
-                            </div>
-                            <div class="list-container list-container_district">
-                                <ul class="create-tu-list create-tu-list_district">
-                                </ul>
-                            </div>
+                        <!-- выпадающий список районы-->
+                        <div class="combobox-wrapper combobox-wrapper_state">
+                            <input type="text" class="data-field data-field_district" name="district">
+                            <div class="button-rotate elements-style"><a href="" class="arrow">&gt;</a></div>
+                            <ul class="list list_district">
+                            </ul>
                         </div>
                     </div>
                     <div class="create-tu__fourth-line-container__element create-tu__fourth-line-container__element_kadastr">
                         <div class="create-tu__label data__label_kadastr">Кадастровый номер:</div>
                         <div class="create-tu__label data__label_kadastr-prfx">23:47:</div>
-                        <input type="text" class="create-tu__data create-tu__data_kadastr-district" name="kadastr-district">
-                        <input type="text" class="create-tu__data create-tu__data_kadastr-number" name="kadastr-number">
+                        <input type="text" class="data-field data-field_kadastr-district" name="kadastr-district">
+                        <input type="text" class="data-field data-field_kadastr-number" name="kadastr-number">
                     </div>
                     <div class="create-tu__fourth-line-container__element create-tu__fourth-line-container__element_address">
                         <div class="create-tu__label data__label_address">Адрес:</div>
-                        <textarea class="create-tu__data create-tu__data_address" name="address" rows="50"></textarea>
+                        <textarea class="data-field data-field_address" name="address" rows="10"></textarea>
                     </div>
                 </div>
                 <!-- пятая строка -->
-                <div class="create-tu__line-container create-tu__five-line-container">
-                     <input type="radio" class="create-tu__data create-tu__data_type-tu" name="type-tu" value"with">
+                <div class="create-tu__five-line-container">
+                     <input type="radio" class="data-field data-field_type-tu" name="type-tu" value"with">
                      <div class="create-tu__label create-tu__label_radio">С проектом</div>
-                     <input type="radio" class="create-tu__data create-tu__data_type-tu" name="type-tu" value"without" checked>
+                     <input type="radio" class="data-field data-field_type-tu" name="type-tu" value"without" checked>
                      <div class="create-tu__label create-tu__label_radio">Без проекта</div>
                 </div>
                 <!-- кнопки создания ту -->
-                <ul class="button__container button-container_create-tu">
+                <ul class="button__container create-tu__button-container">
                     <li class="button create-tu__button-add"><a href="#" class="elements-style">Добавить</a></li>
                     <li class="button create-tu__button-reset"><a href="#" class="elements-style">Очистить</a></li>
                 </ul>
