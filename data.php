@@ -55,12 +55,17 @@
                         <!-- выпадающий список регионы -->
                         <div class="combobox-wrapper combobox-wrapper_region">
                             <input type="text" class="data-field data-field_region" name="region">
-                            <div class="button-rotate elements-style"><a href="" class="arrow">&gt;</a></div>
+                            <div class="button-rotate elements-style"><div class="arrow">&gt;</div></div>
                             <ul class="list list_region">
+                                <li>define_sys</li>
+                                <li>adsfadsfasdf</li>
+                                <li>dfhghhgh</li>
+                                <li>jkjkjk</li>
+                                <li>jkjkjk</li>
                             </ul>
                         </div>
                         <!-- кнопка открытия -->
-                        <div class="button elements-style button_open"><a href="" class="button_open-form">+</a></div>   
+                        <div class="button elements-style button_open"><div class="button_open-form">+</div></div>   
                         <!-- затемнение -->
                         <div class="black-wrapper"></div>
                         <!-- форма добавления региона -->
@@ -70,8 +75,8 @@
                             <div class="create-tu-add-menu_second-line">
                                 <input type="text" class="data-field data-field_add-region" name="add-region">
                                 <ul class="button__container button-container_add-region">
-                                    <li class="button add-region__button-add"><a href="#" class="elements-style">Добавить</a></li>
-                                    <li class="button add-region__button-reset"><a href="#" class="elements-style">Очистить</a></li>
+                                    <li class="button add-region__button-add"><div class="elements-style">Добавить</div></li>
+                                    <li class="button add-region__button-reset"><div class="elements-style">Очистить</div></li>
                                 </ul>
                             </div>
                         </div>
@@ -82,12 +87,12 @@
                         <!-- выпадающий список населённый пункт -->
                         <div class="combobox-wrapper combobox-wrapper_state">
                             <input type="text" class="data-field data-field_state" name="state">
-                            <div class="button-rotate elements-style"><a href="" class="arrow">&gt;</a></div>
+                            <div class="button-rotate elements-style"><div class="arrow">&gt;</div></div>
                             <ul class="list list_state">
                             </ul>
                         </div>
                         <!-- кнопка открытия формы-->
-                        <div class="button elements-style button_open"><a href="" class="button_open-form">+</a></div>   
+                        <div class="button elements-style button_open"><div class="button_open-form">+</div></div>   
                         <!-- затемнение -->
                         <div class="black-wrapper"></div>
                         <!-- форма добавления населённого пункта -->
@@ -99,7 +104,7 @@
                                 <!-- выпадающий список префикс населенных пунктов -->
                                 <div class="combobox-wrapper combobox-wrapper_prfx-state">
                                     <input type="text" class="data-field data-field_prfx-state" name="prfx-state">
-                                    <div class="button-rotate elements-style"><a href="" class="arrow">&gt;</a></div>
+                                    <div class="button-rotate elements-style"><div class="arrow">&gt;</div></div>
                                     <ul class="list list_prfx-state">
                                     <li class="list__items">г.</li>
                                         <li class="list__items">с.</li>
@@ -112,8 +117,8 @@
                                  <input type="text" class="data-field data-field_add-state" name="add-state">
                             </div>
                             <ul class="button__container button-container_add-region">
-                                <li class="button add-state__button-add"><a href="#" class="elements-style">Добавить</a></li>
-                                <li class="button add-state__button-reset"><a href="#" class="elements-style">Очистить</a></li>
+                                <li class="button add-state__button-add"><div class="elements-style">Добавить</div></li>
+                                <li class="button add-state__button-reset"><div class="elements-style">Очистить</div></li>
                             </ul>
                         </div>      
                     </div>
@@ -126,12 +131,12 @@
                         <!-- выпадающий список улицы-->
                         <div class="combobox-wrapper combobox-wrapper_state">
                             <input type="text" class="data-field data-field_street" name="street">
-                            <div class="button-rotate elements-style"><a href="" class="arrow">&gt;</a></div>
+                            <div class="button-rotate elements-style"><div class="arrow">&gt;</div></div>
                             <ul class="list list_street">
                             </ul>
                         </div>
                         <!-- кнопка открытия формы-->
-                        <div class="button elements-style button_open"><a href="" class="button_open-form">+</a></div>   
+                        <div class="button elements-style button_open"><div class="button_open-form">+</div></div>   
                         <!-- затемнение -->
                         <div class="black-wrapper"></div>
                         <!-- форма добавления населённого пункта -->
@@ -143,7 +148,7 @@
                                 <!-- выпадающий список префикс улиц -->
                                 <div class="combobox-wrapper combobox-wrapper_prfx-street">
                                     <input type="text" class="data-field data-field_prfx-street" name="prfx-street">
-                                    <div class="button-rotate elements-style"><a href="" class="arrow">&gt;</a></div>
+                                    <div class="button-rotate elements-style"><div class="arrow">&gt;</div></div>
                                     <ul class="list list_prfx-street">
                                         <li class="list__items">ул.</li>
                                         <li class="list__items">проезд</li>
@@ -154,8 +159,8 @@
                                  <input type="text" class="data-field data-field_street" name="add-street">
                             </div>
                             <ul class="button__container button-container_add-street">
-                                <li class="button add-street__button-add"><a href="#" class="elements-style">Добавить</a></li>
-                                <li class="button add-street__button-reset"><a href="#" class="elements-style">Очистить</a></li>
+                                <li class="button add-street__button-add"><div class="elements-style">Добавить</div></li>
+                                <li class="button add-street__button-reset"><div class="elements-style">Очистить</div></li>
                             </ul>
                         </div>
                     </div>
@@ -188,7 +193,7 @@
                         <!-- выпадающий список районы-->
                         <div class="combobox-wrapper combobox-wrapper_state">
                             <input type="text" class="data-field data-field_district" name="district">
-                            <div class="button-rotate elements-style"><a href="" class="arrow">&gt;</a></div>
+                            <div class="button-rotate elements-style"><div class="arrow">&gt;</div></div>
                             <ul class="list list_district">
                             </ul>
                         </div>
@@ -213,8 +218,8 @@
                 </div>
                 <!-- кнопки создания ту -->
                 <ul class="button__container create-tu__button-container">
-                    <li class="button create-tu__button-add"><a href="#" class="elements-style">Добавить</a></li>
-                    <li class="button create-tu__button-reset"><a href="#" class="elements-style">Очистить</a></li>
+                    <li class="button create-tu__button-add"><div class="elements-style">Добавить</div></li>
+                    <li class="button create-tu__button-reset"><div class="elements-style">Очистить</div></li>
                 </ul>
          </div>
          <div id="search-tu">

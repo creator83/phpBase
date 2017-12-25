@@ -44,9 +44,9 @@ function init (){
         var comboElement = new Combobox (createTu__combobox[i],createTu__combobox_list);
         createTu__combobox_list.addElement (comboElement);
     }
-    createTu__combobox_list.fillCombobox ('region');
-    createTu__combobox_list.getItemByName('region').setInputValue('Краснодарский край');
-    createTu__combobox_list.fillCombobox ('district');
+    // createTu__combobox_list.fillCombobox ('region');
+    // createTu__combobox_list.getItemByName('region').setInputValue('Краснодарский край');
+    // createTu__combobox_list.fillCombobox ('district');
     for (var i=0;i<createTu__buttons.length;++i){
         var el = new Button(createTu__buttons[i]);
     }

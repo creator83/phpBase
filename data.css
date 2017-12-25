@@ -96,11 +96,12 @@ body{
     font-size: 1.1em;
 }
 .arrow {
-    display: block;
-    text-decoration: none;
     text-align: center;
     color: #000;
     transition: all 0.4s;
+}
+.arrow:hover{
+    cursor: pointer;
 }
 .arrow::selection {
     background: transparent;
@@ -111,11 +112,14 @@ body{
     margin-left: 5px;
 }
 .button_open-form{
-    display: block;
-    text-decoration: none;
     text-align: center;
     color: #000;
-    transition: all 0.4s; 
+}
+.button_open-form:hover{
+    cursor: pointer;
+}
+.button_open-form::selection{
+    background: transparent;
 }
 .add-form{
     position: absolute;
@@ -136,7 +140,15 @@ body{
     width: 150px; 
 }
 
-
+.list{
+    position: absolute;
+    width: 100%;
+    background: white;
+    transform: rotateX(90deg);
+    transform-origin: top;
+    transition: all 0.5s;
+    overflow: auto;
+}
 .list-container {
     position: absolute;
     width: 100%;
@@ -476,16 +488,17 @@ body{
     display: table-cell;
 }   
 
-.create-tu__button-container a{
+.create-tu__button-container div{
     width: 150px;
     height: 40px;
-    line-height: 40px;
-    
+    line-height: 40px;  
+    margin: auto; 
 }
 
-.create-tu__button-reset {
-    margin-left: 40px;
+.create-tu__button-container div:hover{
+    cursor: pointer;
 }
+
 ul {
     
     list-style-type: none;

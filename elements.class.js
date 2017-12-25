@@ -2,42 +2,36 @@ class Combobox {
     constructor(comboWrapper, collection){
         this.collection = collection;
         this.name = comboWrapper.getAttribute ('class').split('_').pop();
-        this.listWrapper = comboWrapper.getElementsByClassName ('list-container')[0];
-        this.list = this.listWrapper.getElementsByTagName('ul')[0];
+        this.list = comboWrapper.getElementsByTagName('ul')[0];
         this.inputField = comboWrapper.getElementsByTagName ('input')[0];
         this.inputFieldValue;
-        this.buttonWrapper = comboWrapper.getElementsByClassName ('button-wrapper')[0];
-        this.buttonInner = this.buttonWrapper.getElementsByTagName('div')[0];
-        // this.callBack = collection;  
+        this.button = comboWrapper.getElementsByClassName ('button-rotate')[0];
+        this.buttonIcon = this.button.getElementsByTagName('div')[0];
         this.flagOpen = false;
         this.subscribeBtnClick();
         this.subscribeItemSelect();
-        this.cEvent = new CustomEvent("cEv", {
-            'detail':this.name
-        });
-        // var myEvent = new CustomEvent ('getName')
     }
     setCallBack(func){
         this.callBack = func;
     }
     closeList (){
-        this.buttonInner.style.transform = "rotate(0deg)";
-        this.listWrapper.style.transform = "rotateX(90deg)";
-        this.listWrapper.style.zIndex = '0';
+        this.buttonIcon.style.transform = "rotate(0deg)";
+        this.list.style.transform = "rotateX(90deg)";
+        this.list.style.zIndex = '0';
         this.flagOpen = false;
     }
     openList (){
-        this.buttonInner.style.transform = "rotate(90deg)";
-        this.listWrapper.style.transform = "rotateX(0deg)";
-        this.listWrapper.style.zIndex = '1';
+        this.buttonIcon.style.transform = "rotate(90deg)";
+        this.list.style.transform = "rotateX(0deg)";
+        this.list.style.zIndex = '1';
         this.flagOpen = true;
     }
     subscribeBtnClick(){
         var objectPtr = this;
-        this.buttonWrapper.addEventListener ('click', function(){
+        this.button.addEventListener ('click', function(){
             if (objectPtr.flagOpen == false){
                 objectPtr.openList();
-                objectPtr.collection.callBackOpen(objectPtr.name);
+                objectPtr.collection.closeOther(objectPtr.name);
             }
             else {
                 objectPtr.closeList();
@@ -51,7 +45,7 @@ class Combobox {
             listItem[i].addEventListener ('click', function(){
                 objPtr.setInputValue (this.innerHTML);
                 objPtr.closeList();
-                objPtr.collection.callBackFillOther(objPtr.name);
+                // objPtr.collection.callBackFillOther(objPtr.name);
             });
         }
     }
@@ -160,6 +154,13 @@ class ComboboxList extends listObject {
         request.setRequest (this.list[index].name);
         request.sendRequest();
         request.receiveRequest (this.list[index]);
+    }
+    closeOther(name){
+        for (var i=0;i<this.list.length;++i){
+            if (this.list[i].name!=name){
+                this.list[i].closeList();
+            }
+        }
     }
 }
 class ListFunction {
