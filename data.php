@@ -3,10 +3,10 @@
 ?>
 <!DOCTYPE html>
 <head>
-	<title>Данные</title>
+	<title>Создание ТУ</title>
 	<meta charset="utf-8">
-	<link rel="stylesheet" href="substrate.css" />
-	<link rel="stylesheet" href="data.css" />
+    <link rel="stylesheet" href="data.css" />
+    <link rel="stylesheet" href="substrate.css" />
     <script src="data.js"></script>
     <script src="httprqust.js"></script>
     <script src="elements.class.js"></script>
@@ -18,19 +18,10 @@
 ?>
 
 <section class="main-container">
-    <!--  -->
-    <ul class="major-menu">
-        <li class="elements-style major-menu__elements major-menu__elements_tu">
-            <a href="#">ту</a>
-            <ul class="sub-menu-container-header">
-                <li class="elements-style major-menu-header"><a href="#">создание ту</a></li>
-                <li class="elements-style major-menu-header"><a href="#">просмотр ту</a></li>
-            </ul>
-        </li>
-        <li class="elements-style major-menu__elements"><a href="#">письма</a></li>
-        <li class="elements-style major-menu__elements"><a href="#">объекты</a></li>
-        <li class="elements-style major-menu__elements"><a href="#">отчёты</a></li>
-    </ul>
+    <!-- Основное меню -->
+    <?php
+        include "main_menu.php";
+    ?>
     <div id="body-container">
         <!-- основное окно ввода ТУ -->
          <div id="create-tu">
@@ -129,7 +120,7 @@
                     <div class="create-tu__third-line-container__element create-tu__third-line-container__element_street">
                         <div class="create-tu__label data__label_street">Улица:</div>
                         <!-- выпадающий список улицы-->
-                        <div class="combobox-wrapper combobox-wrapper_state">
+                        <div class="combobox-wrapper combobox-wrapper_street">
                             <input type="text" class="data-field data-field_street" name="street">
                             <div class="button-rotate elements-style"><div class="arrow">&gt;</div></div>
                             <ul class="list list_street">
@@ -191,7 +182,7 @@
                     <div class="create-tu__fourth-line-container__element create-tu__fourth-line-container__element_district">
                         <div class="create-tu__label data__label_district">Район:</div>
                         <!-- выпадающий список районы-->
-                        <div class="combobox-wrapper combobox-wrapper_state">
+                        <div class="combobox-wrapper combobox-wrapper_district">
                             <input type="text" class="data-field data-field_district" name="district">
                             <div class="button-rotate elements-style"><div class="arrow">&gt;</div></div>
                             <ul class="list list_district">
@@ -221,9 +212,6 @@
                     <li class="button create-tu__button-add"><div class="elements-style">Добавить</div></li>
                     <li class="button create-tu__button-reset"><div class="elements-style">Очистить</div></li>
                 </ul>
-         </div>
-         <div id="search-tu">
-             
          </div>
     </div>
 </section>

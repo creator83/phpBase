@@ -1,0 +1,102 @@
+#search-tu {
+    width: 608px;
+    border: 1px solid transparent;
+    padding-bottom: 20px;
+}
+.major-menu__elements_tu{
+    transition: all 3s;
+    background: rgba(0,0,0,.7);
+    border-bottom: none;
+}
+/* 1-я строка формы ТУ */
+.create-tu__first-line-container{
+    margin-top: 15px;
+    display: table;
+    width: 100%;
+    table-layout: fixed;  
+    border-collapse: separate;
+}
+.label_name{
+    display: table;
+    width: 100%;
+    table-layout: fixed;  
+    font-family: Helvetica;
+    font-size: 1.1em;
+    color: bisque;
+}
+.label_name div{
+    display: table-cell;
+    text-align: center; 
+}
+.data_name{
+    display: table;
+    width: 100%;
+    table-layout: fixed; 
+}
+.data_name input{
+    display: table-cell;
+    text-align: center;
+    width: 31.5%;
+    margin-left: 5px;
+}
+
+/* 2-я строка формы ТУ*/
+.create-tu__fourth-line-container {
+    margin-top: 25px;
+}
+.create-tu__fourth-line-container__element {
+    display: inline-block;
+}
+.create-tu__fourth-line-container__element_district {
+    margin-left: 5px;
+}
+
+.create-tu__fourth-line-container__element_kadastr {
+    margin-left: 50px;
+    width: 200px;
+}
+.data__label_kadastr-prfx {
+    display: inline-block;
+    width: 50px;
+}
+.data-field_kadastr-district {
+    width: 75px;
+}
+.data-field_kadastr-number {
+    width: 45px;
+}
+/* кнопки форма ТУ */
+.create-tu__button-container {
+    margin-top: 40px;
+}
+.button__container{
+    display: table;
+}
+.button__container li{
+    display: table-cell;
+}   
+
+.create-tu__button-container div{
+    width: 150px;
+    height: 40px;
+    line-height: 40px;  
+    margin: auto; 
+}
+
+.create-tu__button-container div:hover{
+    cursor: pointer;
+}
+.button__separate{
+    height: 20px;
+}
+
+ul {
+    
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+li::selection {
+    background: transparent;
+}

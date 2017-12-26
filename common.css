@@ -1,0 +1,163 @@
+html, body {
+    height: 100%;
+}
+body{
+    margin: 0;
+}
+.main-container {
+    width: 608px;
+    position: absolute;
+    left: 0;
+    right: 0;   
+    top: 0;
+    bottom: 0;
+    margin: 20px auto 0;
+}
+#body-container {
+    position: relative;
+    width: 608px;
+    background: rgba(0,0,0,.7);
+    box-shadow: 25px 25px 15px rgba(0,0,0,.9);  
+}
+.elements-style { 
+    background: linear-gradient(#FE5D4C, #97253D);
+    text-align: center;
+    color: white;
+    font-family: Helvetica;
+    font-size: 1.2em;
+}.combobox-wrapper {
+    display: inline-block;
+    position: relative;
+}
+.button-rotate {
+    display: inline-block;
+    vertical-align: top;
+    margin-left: -4px;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    font-family: Helvetica;
+    font-size: 1.1em;
+}
+.button_open{
+    display: inline-block;
+    vertical-align: top;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    font-family: Helvetica;
+    font-size: 1.1em;
+}
+.arrow {
+    text-align: center;
+    color: #000;
+    transition: all 0.4s;
+}
+.arrow:hover{
+    cursor: pointer;
+}
+.arrow::selection {
+    background: transparent;
+} 
+
+/* Формы */
+.add-form__wrapper_region .button_open{
+    margin-left: 5px;
+}
+.button_open-form{
+    text-align: center;
+    color: #000;
+}
+.button_open-form:hover{
+    cursor: pointer;
+}
+.button_open-form::selection{
+    background: transparent;
+}
+.add-form{
+    position: absolute;
+    display: none;
+    box-shadow: 25px 25px 15px rgba(0,0,0,.9);  
+    border: 1px solid red;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+.list{
+    position: absolute;
+    width: 100%;
+    background: white;
+    transform: rotateX(90deg);
+    transform-origin: top;
+    transition: all 0.5s;
+    overflow: auto;
+}
+.list-container {
+    position: absolute;
+    width: 100%;
+    background: white;
+    transform: rotateX(90deg);
+    transform-origin: top;
+    transition: all 0.5s;
+    overflow: auto;
+}
+.list__items {
+    height: 30px;
+    font-size: 1.2em;
+}
+.add-form__wrapper{
+    display: inline-block;
+    vertical-align: top;
+}
+.add-form__header{
+    display: inline-block;
+    vertical-align: top;
+    width: 265px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border-bottom:1px solid red;
+    font-size: 1.2em;
+    color: #fff;
+}
+.black-wrapper {
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,.7);
+}
+.button_exit:hover {
+    cursor: pointer;
+}
+.create-tu__label {
+    font-family: Helvetica;
+    font-size: 1.1em;
+    color: bisque;
+    text-align: center;
+}
+.data-field {
+    font-size: 1.1em;
+    height: 29px;
+}
+.button__container{
+    display: table;
+}
+.button__container li{
+    display: table-cell;
+}   
+/* списки */
+ul {   
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+li::selection {
+    background: transparent;
+}
+li:hover {
+    cursor: pointer;
+}

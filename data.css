@@ -1,218 +1,30 @@
-html, body {
-    height: 100%;
-}
-body{
-    margin: 0;
-}
-.main-container {
-    width: 608px;
-    position: absolute;
-    left: 0;
-    right: 0;   
-    top: 0;
-    bottom: 0;
-    margin: 20px auto 0;
-}
-.major-menu {
-    width: 100%;
-    display: table;
-    table-layout: fixed;
-}
-.major-menu__elements {
-    display: table-cell;
-    height: 40px;
-    line-height: 40px;
-    border: 1px solid black;
-    transition: all 3s;
-}
-.major-menu__elements a{
-    text-decoration: none;
-    color: whitesmoke;
-    text-transform: uppercase;
-    display: block;
-}
-.sub-menu-container-header{
-    width: 530px;
-    /* display: table; */
-    display: none;
-    table-layout: fixed;
-    position: absolute;
-    transform: rotate(270deg);
-    top: 285px;
-    right: 363px;
-}
 #create-tu {
     width: 608px;
     border: 1px solid transparent;
     padding-bottom: 20px;
 }
-#body-container {
-    position: relative;
-    width: 608px;
-    background: rgba(0,0,0,.7);
-    box-shadow: 25px 25px 15px rgba(0,0,0,.9);  
-}
-/* общие элементы */
-.elements-style { 
-    background: linear-gradient(#FE5D4C, #97253D);
-    text-align: center;
-    color: white;
-    font-family: Helvetica;
-    font-size: 1.2em;
-}
 .major-menu__elements_tu{
-    transition: all 3s;
     background: rgba(0,0,0,.7);
     border-bottom: none;
-}
-.button a{
-    display: block;
-    margin: auto;
-    text-align: center;
-    text-decoration: none; 
-}
-
-.combobox-wrapper {
-    display: inline-block;
-    position: relative;
-}
-.button-rotate {
-    display: inline-block;
-    vertical-align: top;
-    margin-left: -4px;
-    width: 35px;
-    height: 35px;
-    line-height: 35px;
-    font-family: Helvetica;
-    font-size: 1.1em;
-}
-.button_open{
-    display: inline-block;
-    vertical-align: top;
-    width: 35px;
-    height: 35px;
-    line-height: 35px;
-    font-family: Helvetica;
-    font-size: 1.1em;
-}
-.arrow {
-    text-align: center;
-    color: #000;
-    transition: all 0.4s;
-}
-.arrow:hover{
-    cursor: pointer;
-}
-.arrow::selection {
-    background: transparent;
-} 
-
-/* Формы */
-.add-form__wrapper_region .button_open{
-    margin-left: 5px;
-}
-.button_open-form{
-    text-align: center;
-    color: #000;
-}
-.button_open-form:hover{
-    cursor: pointer;
-}
-.button_open-form::selection{
-    background: transparent;
-}
-.add-form{
-    position: absolute;
-    display: none;
-    box-shadow: 25px 25px 15px rgba(0,0,0,.9);  
-    border: 1px solid red;
-    left: 0;
-    right: 0;
-    margin: auto;
 }
 .add-form_region{
     width: 300px;
     display: none;
 }
-
-.create-tu-header {
-    height: 40px; 
-    width: 150px; 
-}
-
-.list{
-    position: absolute;
-    width: 100%;
-    background: white;
-    transform: rotateX(90deg);
-    transform-origin: top;
-    transition: all 0.5s;
-    overflow: auto;
-}
-.list-container {
-    position: absolute;
-    width: 100%;
-    background: white;
-    transform: rotateX(90deg);
-    transform-origin: top;
-    transition: all 0.5s;
-    overflow: auto;
-}
-.list-container_region {
+/* выпадающие списки основной формы */
+.list_region {
     max-height: 350px;
 }
-
-.list-container_state{ 
+.list_state{ 
     max-height: 350px;
 }
-.list-container_street{
+.list_street{
     max-height: 260px;
 }
-.list-container_district {
+.list_district {
     max-height: 180px;
 }
-.create-tu-add-menu__button {
-    width: 150px;
-    height: 40px;
-}
-
-
-.list__items {
-    height: 30px;
-    font-size: 1.2em;
-}
-.add-form__wrapper{
-    display: inline-block;
-    vertical-align: top;
-}
-.add-form__header{
-    display: inline-block;
-    vertical-align: top;
-    width: 265px;
-    height: 30px;
-    line-height: 30px;
-    text-align: center;
-    border-bottom:1px solid red;
-    font-size: 1.2em;
-    color: #fff;
-}
-.black-wrapper_r {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgba(0,0,0,.7);
-}
-.black-wrapper {
-    display: none;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgba(0,0,0,.7);
-}
+/* форма добавления региона */
 .data-field_add-region{
     display: block;
     width: 290px;
@@ -221,149 +33,17 @@ body{
 .button-container_add-region{
     margin-top: 30px;
 }
-.create-tu-add-menu {
-    display: none;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;   
-    background: rgba(0,0,0,.85);
-    padding: 10px;
-}
-.create-tu-add-menu__header {
-    text-align: center;
-    border-bottom: 1px solid rgb(233, 144, 144);
-    width: 100%;
-    height: 24px;
-    font-family: Helvetica;
-    font-size: 1.2em;
-    padding-top: 5px;
-    color: whitesmoke;
-    background: rgba(0,0,0,.95);
-}
 .button_exit {
     display: inline-block;
     width: 30px;
     height: 30px;
     background: url(pic/close_small1.png) no-repeat center, linear-gradient(#FE5D4C, #97253D);
 }
-.button_exit:hover {
-    cursor: pointer;
-}
-.button_add__wrapper {
-    display: inline-block;
-    vertical-align: top;
-    width: 35px;
-    height: 35px;
-    background: linear-gradient(#FE5D4C, #97253D);
-    /* background:rgb(241, 229, 229); */
-}
-.button_add__wrapper:hover {
-    cursor: pointer;
-}
-.button_add {
-    line-height: 40px;
-    text-align: center;
-    border-radius: 50%;
-}
-.button_add::selection {
-    background: transparent;    
-}
-
-.create-tu-add-menu__button-container {
-    text-align: center;
-    border-bottom: 1px solid rgb(233, 144, 144);
-    width: 100%;
-    height: 24px;
-    font-family: Helvetica;
-    font-size: 1.2em;
-    padding-top: 5px;
-    color: whitesmoke;
-    background: rgba(0,0,0,.95);
-}
-.create-tu-add-menu__button-container_region {
-
-}
+/* форма добавления населённого пункта */
 .create-tu-add-menu_second-line{
     margin-top: 20px;
 }
-.create-tu-add-menu_region {
-    width: 300px;
-    height: 170px;
-}
-
-.create-tu__data_add-region {
-    width: 298px;
-}
-.create-tu-add-menu__button-wrapper {
-    width: 50%;
-}
-.create-tu-add-menu_state {
-    width: 525px;
-    height: 170px;
-}
-.create-tu-add-menu__header_state {
-}
-.create-tu__prfx-state {
-    width: 40px;
-}
-.create-tu-add-menu__button-add_state {
-    margin-left: 70px;
-}
-.create-tu-add-menu__button-reset_state {
-    margin-left: 30px;
-}
-.create-tu-add-menu-list-container_prfx-state {
-    left: 217px;
-    width: 78px;
-}
-.create-tu-add-menu_street {
-    width: 525px;
-    height: 200px;
-}
-.create-tu-add-menu__input_prfx-street   {
-    width: 40px;
-}
-.create-tu-add-menu__button-add_street {
-    margin-left: 70px;
-}
-.create-tu-add-menu__button-reset_street {
-    margin-left: 30px;
-}
-.create-tu-add-menu-list-container_prfx-street {
-    left: 217px;
-    width: 78px;
-}
-#subMenuTU-container{
-    display: none;
-    position: absolute;
-    width: 600px;
-    height: 100px;
-    transform: rotate(270deg) translate(-252px, -302px);
-}
-
-
-/* .create-tu__line-container {
-    display: flex;
-} */
-.create-tu__label {
-    font-family: Helvetica;
-    font-size: 1.1em;
-    color: bisque;
-    text-align: center;
-}
-.create-tu__data {
-    font-size: 1.1em;
-    height: 29px;
-}
-.data-field {
-    font-size: 1.1em;
-    height: 29px;
-}
 /* 1-я строка формы ТУ */
-
 .create-tu__first-line-container{
     margin-top: 15px;
     display: table;
@@ -394,7 +74,6 @@ body{
     width: 31.5%;
     margin-left: 5px;
 }
-
 /* 2-я строка формы ТУ*/
 .create-tu__second-line-container {
     margin-top: 25px;
@@ -405,11 +84,9 @@ body{
 .create-tu__second-line-container__element_region {
     margin-left: 5px;
 }
-
 .create-tu__second-line-container__element_state {
     margin-left: 10px;
 }
-
 /* 3-я строка формы ТУ */
 .create-tu__third-line-container {
     margin-top: 25px;
@@ -421,7 +98,6 @@ body{
     margin-left: 5px;
     width: 300px;
 }
-
 .data-field_house {
     width: 45px;
 }
@@ -431,7 +107,6 @@ body{
 .data-field_apartment {
     width: 40px;
 }
-
 .create-tu__third-line-container__element_phone {
     margin-left: 10px;
 }
@@ -441,7 +116,6 @@ body{
 .data-field_num-phone {
     width: 85px;
 }
-
 /* 4-я строка формы ТУ*/
 .create-tu__fourth-line-container {
     margin-top: 25px;
@@ -481,31 +155,12 @@ body{
 .create-tu__button-container {
     margin-top: 40px;
 }
-.button__container{
-    display: table;
-}
-.button__container li{
-    display: table-cell;
-}   
-
 .create-tu__button-container div{
     width: 150px;
     height: 40px;
     line-height: 40px;  
     margin: auto; 
 }
-
 .create-tu__button-container div:hover{
     cursor: pointer;
-}
-
-ul {
-    
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-}
-li::selection {
-    background: transparent;
 }
