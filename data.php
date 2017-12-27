@@ -4,7 +4,9 @@
 <!DOCTYPE html>
 <head>
 	<title>Создание ТУ</title>
-	<meta charset="utf-8">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="common.css" />
+    <link rel="stylesheet" href="main_menu.css" />
     <link rel="stylesheet" href="data.css" />
     <link rel="stylesheet" href="substrate.css" />
     <script src="data.js"></script>
