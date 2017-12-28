@@ -36,7 +36,7 @@ function init (){
     var createTu = document.getElementById('create-tu');
     var createTu__combobox = createTu.getElementsByClassName ('combobox-wrapper');
     var createTu__buttons = document.getElementsByClassName('button');
-    var createTu__forms =  createTu.getElementsByClassName ('add-form__wrapper');
+    var createTu__forms =  createTu.getElementsByClassName ('add-form');
     var createTu__combobox_list = new ComboboxList ();
     var createTu__function = new ListFunction();
     createTu__function.addFunction(openList);

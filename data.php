@@ -211,8 +211,8 @@
                 </div>
                 <!-- кнопки создания ту -->
                 <ul class="button__container create-tu__button-container">
-                    <li class="button create-tu__button-add"><div class="elements-style">Добавить</div></li>
-                    <li class="button create-tu__button-reset"><div class="elements-style">Очистить</div></li>
+                    <li class="create-tu__button-add"><div class="button elements-style">Добавить</div></li>
+                    <li class="create-tu__button-reset"><div class="button elements-style">Очистить</div></li>
                 </ul>
          </div>
     </div>

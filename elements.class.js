@@ -250,14 +250,13 @@ class Button{
     }
 }
 class Form {
-    constructor (wrapper){
-        this.wrapper = wrapper;
-        this.blackWrapper = this.wrapper.getElementsByClassName('black-wrapper')[0];
-        this.btnOpen = this.wrapper.getElementsByClassName('button_add__wrapper')[0];
-        this.form = this.wrapper.getElementsByClassName('add-form')[0];
+    constructor (form){
+        this.form = form;
+        this.blackWrapper = this.form.getElementsByClassName('black-wrapper')[0];
+        this.btnOpen = this.form.getElementsByClassName('button_open')[0];
         this.btnClose = this.form.getElementsByClassName ('button_exit')[0];
-        this.btnSubmit = this.form.getElementsByClassName('create-tu-add-menu__button')[0];
-        this.btnReset = this.form.getElementsByClassName('create-tu-add-menu__button')[1];
+        this.btnSubmit = this.form.getElementsByClassName('button__container')[0].getElementsByTagName('li')[0];
+        this.btnReset = this.form.getElementsByClassName('button__container')[0].getElementsByTagName('li')[1];
         this.targetInput = this.form.getElementsByTagName ('input')[0];
         this.requestResult;
         this.subscribeBtnClose ();
