@@ -31,7 +31,7 @@ class Combobox {
         this.button.addEventListener ('click', function(){
             if (objectPtr.flagOpen == false){
                 objectPtr.openList();
-                objectPtr.collection.closeOther(objectPtr.name);
+                // objectPtr.collection.closeOther(objectPtr.name);
             }
             else {
                 objectPtr.closeList();

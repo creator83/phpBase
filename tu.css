@@ -1,0 +1,166 @@
+#create-tu {
+    width: 608px;
+    border: 1px solid transparent;
+    padding-bottom: 20px;
+}
+.major-menu__elements_tu{
+    background: rgba(0,0,0,.7);
+    border-bottom: none;
+}
+.add-form_region{
+    width: 300px;
+    display: none;
+}
+/* выпадающие списки основной формы */
+.list_region {
+    max-height: 350px;
+}
+.list_state{ 
+    max-height: 350px;
+}
+.list_street{
+    max-height: 260px;
+}
+.list_district {
+    max-height: 180px;
+}
+/* форма добавления региона */
+.data-field_add-region{
+    display: block;
+    width: 290px;
+    margin: auto;
+}
+.button-container_add-region{
+    margin-top: 30px;
+}
+.button_exit {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(pic/close_small1.png) no-repeat center, linear-gradient(#FE5D4C, #97253D);
+}
+/* форма добавления населённого пункта */
+.create-tu-add-menu_second-line{
+    margin-top: 20px;
+}
+/* 1-я строка формы ТУ */
+.create-tu__first-line-container{
+    margin-top: 15px;
+    display: table;
+    width: 100%;
+    table-layout: fixed;  
+    border-collapse: separate;
+}
+.label_name{
+    display: table;
+    width: 100%;
+    table-layout: fixed;  
+    font-family: Helvetica;
+    font-size: 1.1em;
+    color: bisque;
+}
+.label_name div{
+    display: table-cell;
+    text-align: center; 
+}
+.data_name{
+    display: table;
+    width: 100%;
+    table-layout: fixed; 
+}
+.data_name input{
+    display: table-cell;
+    text-align: center;
+    width: 31.5%;
+    margin-left: 5px;
+}
+/* 2-я строка формы ТУ*/
+.create-tu__second-line-container {
+    margin-top: 25px;
+}
+.create-tu__second-line-container__element {
+    display: inline-block;
+}
+.create-tu__second-line-container__element_region {
+    margin-left: 5px;
+}
+.create-tu__second-line-container__element_state {
+    margin-left: 10px;
+}
+/* 3-я строка формы ТУ */
+.create-tu__third-line-container {
+    margin-top: 25px;
+}
+.create-tu__third-line-container__element {
+    display: inline-block;
+}
+.create-tu__third-line-container__element_street {
+    margin-left: 5px;
+    width: 300px;
+}
+.data-field_house {
+    width: 45px;
+}
+.data-field_corps {
+    width: 45px;
+}
+.data-field_apartment {
+    width: 40px;
+}
+.create-tu__third-line-container__element_phone {
+    margin-left: 10px;
+}
+.data-field_prfx-phone {
+    width: 35px;
+}
+.data-field_num-phone {
+    width: 85px;
+}
+/* 4-я строка формы ТУ*/
+.create-tu__fourth-line-container {
+    margin-top: 25px;
+}
+.create-tu__fourth-line-container__element {
+    display: inline-block;
+}
+.create-tu__fourth-line-container__element_district {
+    margin-left: 5px;
+}
+
+.create-tu__fourth-line-container__element_kadastr {
+    width: 200px;
+}
+.data__label_kadastr-prfx {
+    display: inline-block;
+    width: 50px;
+}
+.data-field_kadastr-district {
+    width: 75px;
+}
+.data-field_kadastr-number {
+    width: 45px;
+}
+.create-tu__fourth-line-container__element_address {
+    vertical-align: top;
+}
+.data-field_address {
+    height: 75px;
+    width: 130px;
+}
+/* 5-я строка */
+.create-tu__label_radio {
+    display: inline-block;
+}
+/* кнопки форма ТУ */
+.create-tu__button-container {
+    margin-top: 40px;
+}
+.create-tu__button-container div{
+    width: 150px;
+    height: 40px;
+    line-height: 40px;  
+    margin: auto; 
+}
+.create-tu__button-container div:hover{
+    cursor: pointer;
+}

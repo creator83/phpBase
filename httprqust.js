@@ -31,8 +31,35 @@ class HttpRequest extends XMLHttpRequest{
         this.onreadystatechange = function () {
             if (this.readyState == 4) {
                 arr = this.responseText.split (',');
-                // console.log (arr);
-                callBack.fillList(arr);
+                console.log (arr);
+                // callBack.fillList(arr);
+            }
+        }
+    }
+    receiveRequest1 (list){
+        var arr=[];
+        // console.log(callBack);
+        this.onreadystatechange = function () {
+            if (this.readyState == 4) {
+                arr = this.responseText.split (',');
+                console.log(list);
+                while(list.length!=0){
+                    list.pop();
+                }   
+                for(var i=0;i<arr.length;++i){
+                    list.push(arr[i]);
+                }
+                console.log(list);
+            }
+        }
+    }
+    receiveRequest2 (){
+        var arr = [];
+        this.onreadystatechange = function () {
+            if (this.readyState == 4) {
+                arr = this.responseText.split (',');
+                console.log (arr);  
+                return arr;
             }
         }
     }
