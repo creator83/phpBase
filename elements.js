@@ -2,17 +2,6 @@ window.addEventListener ("DOMContentLoaded", init);
 HTMLCollection.prototype.forEach = Array.prototype.forEach;
 var arr = ['asdf','asdf','asdff','ffg'];
 
-// function update (combo, list){
-//     var index = list.getIndexByName (combo.name);
-//     var request= new HttpRequest ("POST", "request.php");
-//     request.setRequest (list.list[index].name, list.list[index].inputFieldValue);
-//     request.sendRequest();
-//     request.receiveRequest (list.list[index]);
-
-//     for (var i=index+2;i<list.list.length;++i){
-//         list.list[i].clearList ();
-//     }
-// }
 function init (){
     var combo1 = document.getElementsByClassName('combobox-wrapper');
     var createTuList = new ComboboxList ();
