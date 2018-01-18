@@ -10,6 +10,16 @@ class Combobox {
         this.flagOpen = false;
         this.subscribeBtnClick();
         this.subscribeItemSelect();
+        this.btnClickFunc;
+        this.itemSelectFunc;
+        // this.selectedItemEvent = new CustomEvent('select');
+        // this.addEventListener("select", this.itemSelectFunc, false);
+    }
+    setBtnClickFunc(f){
+        this.btnClickFunc = f;
+    }
+    setItemSelectFunc(f){
+        this.itemSelectFunc = f;
     }
     setCallBack(func){
         this.callBack = func;
@@ -27,14 +37,16 @@ class Combobox {
         this.flagOpen = true;
     }
     subscribeBtnClick(){
-        var objectPtr = this;
+        var objPtr = this;
         this.button.addEventListener ('click', function(){
-            if (objectPtr.flagOpen == false){
-                objectPtr.openList();
-                // objectPtr.collection.closeOther(objectPtr.name);
+            if (objPtr.flagOpen == false){
+                objPtr.openList();
+                if (objPtr.btnClickFunc!=undefined){
+                    objPtr.btnClickFunc.iterate(objPtr.name);
+                }
             }
             else {
-                objectPtr.closeList();
+                objPtr.closeList();
             }
         });
     }
@@ -45,6 +57,10 @@ class Combobox {
             listItem[i].addEventListener ('click', function(){
                 objPtr.setInputValue (this.innerHTML);
                 objPtr.closeList();
+                if (objPtr.itemSelectFunc!=undefined){
+                    objPtr.itemSelectFunc.iterate(objPtr.name);
+                }
+                
                 // objPtr.collection.callBackFillOther(objPtr.name);
             });
         }
@@ -59,7 +75,7 @@ class Combobox {
         for (var i=0;i<listItems.length;++i){
             listItems[i].addEventListener ("click", function(){
                 objPtr.setInputValue (this.innerHTML);
-                objectPtr.closeList();
+                objPtr.closeList();
             });
         }
     }
@@ -72,6 +88,10 @@ class Combobox {
             this.list.appendChild (item);
         }
         this.subscribeItemSelect();
+    }
+    fillCombobox(arr, value){
+        this.fillList(arr);
+        this.setInputValue(value);
     }
     clearList (){
         while (this.list.hasChildNodes()){
@@ -112,6 +132,14 @@ class listObject {
                 return this.list[i];
             }
         }
+    }
+    next(name){
+        this.list[this.getIndexByName (name)+1];
+    }
+}
+class ComboListCreateTu extends listObject {
+    constructor (){
+        super ();
     }
 }
 class ComboboxList extends listObject {
@@ -170,10 +198,13 @@ class ListFunction {
     addFunction(func){
         this.list.push(func);
     }
-    iterate(){
+    iterate(val){
         for (var i=0;i<this.list.length;++i){
-            this.list[i]();
+            this.list[i](val);
         }
+    }
+    runFunction(i, val){
+        this.list[i](val);
     }
 }
 class Calendar{

@@ -9,9 +9,10 @@
     <link rel="stylesheet" href="main_menu.css" />
     <link rel="stylesheet" href="data.css" />
     <link rel="stylesheet" href="substrate.css" />
+    <script src="elements.class.js"></script>    
     <script src="data.js"></script>
     <script src="httprqust.js"></script>
-    <script src="elements.class.js"></script>
+
 </head>
 <body>
 <?php
