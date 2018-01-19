@@ -78,7 +78,8 @@ body{
     position: absolute;
     display: none;
     box-shadow: 25px 25px 15px rgba(0,0,0,.9);  
-    border: 1px solid red;
+    background:  rgba(0,0,0,.9);
+    /* border: 1px solid red; */
     left: 0;
     right: 0;
     margin: auto;

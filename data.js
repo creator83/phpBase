@@ -33,7 +33,7 @@ function valueToString (coll){
 
 var createTuList = [];
 var createTuAddStateMenu = [];
-var addMenuForm = [];
+var addForm = [];
 var addMenuList = [];
 
 function fillCreateTu(){
@@ -62,6 +62,9 @@ function updateNextCombo (combo){
     
     // request.receiveRequest (list);
     // var list=[];
+    console.log(combo);
+    console.log(createTu__combobox_list.next(combo.name));
+    console.log(combo.name, combo.inputFieldValue);
     fillCombobox(createTu__combobox_list.next(combo.name), '',combo.name, combo.inputFieldValue);
 }
 function updateFormCombo(combo){
@@ -79,31 +82,40 @@ function updateFormCombo(combo){
     }
 }
 var createTu__combobox_list = new listObject (); 
+var addForm =  new listObject (); 
+function openFormAddRegion(name){
+
+}
 function init (){
     var createTu = document.getElementById('create-tu');
     var createTu__combobox = createTu.getElementsByClassName ('combobox-wrapper');
+    var btnOpen = createTu.getElementsByClassName ('button_open');
     var createTu__buttons = document.getElementsByClassName('button');
-    var createTu__forms =  createTu.getElementsByClassName ('add-form');
-    
+    var createTu__forms =  createTu.getElementsByClassName ('add-form__container');
     var createTu__function = new ListFunction();
     var selectItem = new ListFunction();
     createTu__function.addFunction(autoCloseList);
     selectItem.addFunction(updateFormCombo);
     for (var i=0;i<createTu__combobox.length;++i){
-        var comboElement = new Combobox (createTu__combobox[i],createTu__combobox_list);
-        createTu__combobox_list.addElement (comboElement);
-        comboElement.setBtnClickFunc(createTu__function);
-        comboElement.setItemSelectFunc(selectItem);
+        var name = createTu__combobox[i].getElementsByTagName('input')[0].getAttribute('name');
+        if(name =='region'||name =='state'||name =='street'||name =='district'){
+            var comboElement = new Combobox (createTu__combobox[i],createTu__combobox_list);
+            createTu__combobox_list.addElement (comboElement);
+            comboElement.setBtnClickFunc(createTu__function);
+            comboElement.setItemSelectFunc(selectItem);
+        }
     }
-    console.log (createTu__combobox_list.list.length);
     // заполнение списков регионы, районы
     fillCombobox(createTu__combobox_list.getItemByName('region'),'Краснодарский край', 'region');
+    fillCombobox(createTu__combobox_list.getItemByName('state'), '','region', 'Краснодарский край');
     fillCombobox(createTu__combobox_list.getItemByName('district'), '','district');
+    console.log(createTu__buttons);
     for (var i=0;i<createTu__buttons.length;++i){
         var el = new Button(createTu__buttons[i]);
     }
-    // for (var i=0;i<createTu__forms.length;++i){
-    //     var el = new Form(createTu__forms[i]);
-    // }
+    for (var i=0;i<createTu__forms.length;++i){
+        var form = new Form(createTu__forms[i], btnOpen[i]);
+        addForm.addElement (form);
+    }
 
 }

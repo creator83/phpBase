@@ -9,7 +9,12 @@
 }
 .add-form_region{
     width: 300px;
-    display: none;
+}
+.combobox-wrapper_prfx-state{
+    /* width: 60px; */
+}
+.add-form_state{
+    width: 450px;
 }
 /* выпадающие списки основной формы */
 .list_region {

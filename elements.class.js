@@ -58,10 +58,8 @@ class Combobox {
                 objPtr.setInputValue (this.innerHTML);
                 objPtr.closeList();
                 if (objPtr.itemSelectFunc!=undefined){
-                    objPtr.itemSelectFunc.iterate(objPtr.name);
+                    objPtr.itemSelectFunc.iterate(objPtr);
                 }
-                
-                // objPtr.collection.callBackFillOther(objPtr.name);
             });
         }
     }
@@ -134,7 +132,7 @@ class listObject {
         }
     }
     next(name){
-        this.list[this.getIndexByName (name)+1];
+        return this.list[this.getIndexByName (name)+1];
     }
 }
 class ComboListCreateTu extends listObject {
@@ -268,6 +266,11 @@ class Button{
         this.wrapper = wrapper;
         this.subscribeBtnOpenMd();
         this.subscribeBtnOpenMu();
+        // this.subscribeBtnClick();
+        this.btnClickFunc;
+    }
+    setBtnClickFunc(f){
+        this.btnClickFunc = f;
     }
     subscribeBtnOpenMd(){
         this.wrapper.addEventListener ('mousedown', function(){
@@ -279,16 +282,23 @@ class Button{
             this.style.background = "linear-gradient(#FE5D4C, #97253D)";
         });
     }
+    // subscribeBtnClick(){
+    //     var objPtr = this;
+    //     this.wrapper.addEventListener ('click', function(){
+    //         objPtr.btnClickFunc.iterate(objPtr);
+    //     });
+    // }
 }
 class Form {
-    constructor (form){
-        this.form = form;
-        this.blackWrapper = this.form.getElementsByClassName('black-wrapper')[0];
-        this.btnOpen = this.form.getElementsByClassName('button_open')[0];
-        this.btnClose = this.form.getElementsByClassName ('button_exit')[0];
-        this.btnSubmit = this.form.getElementsByClassName('button__container')[0].getElementsByTagName('li')[0];
-        this.btnReset = this.form.getElementsByClassName('button__container')[0].getElementsByTagName('li')[1];
-        this.targetInput = this.form.getElementsByTagName ('input')[0];
+    constructor (form,btn){
+        this.formWrapper = form;
+        this.form = this.formWrapper.getElementsByClassName('add-form')[0];
+        this.blackWrapper = this.formWrapper.getElementsByClassName('black-wrapper')[0];
+        this.btnOpen = btn;
+        this.btnClose = this.formWrapper.getElementsByClassName ('button_exit')[0];
+        this.btnSubmit = this.formWrapper.getElementsByClassName('button__container')[0].getElementsByTagName('li')[0];
+        this.btnReset = this.formWrapper.getElementsByClassName('button__container')[0].getElementsByTagName('li')[1];
+        this.targetInput = this.formWrapper.getElementsByTagName ('input')[0];
         this.requestResult;
         this.subscribeBtnClose ();
         this.subscribeBtnOpen ();
@@ -306,16 +316,22 @@ class Form {
           objPtr.closeForm();  
         });
     }
+
     openForm(){
+        // затемнение
         this.blackWrapper.style.display = 'block';
         this.blackWrapper.style.zIndex = '1';
+        
         this.form.style.display = 'block';
+        this.form.style.zIndex = '1';
     }
 
     closeForm(){
         this.form.style.display = 'none';
+        this.form.style.zIndex = '0';
         this.blackWrapper.style.display = 'none';
         this.blackWrapper.style.zIndex = '0';
+        
     }
     setResult (value){
         this.requestResult = value;

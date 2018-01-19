@@ -51,27 +51,25 @@
                             <input type="text" class="data-field data-field_region" name="region">
                             <div class="button-rotate elements-style"><div class="arrow">&gt;</div></div>
                             <ul class="list list_region">
-                                <li>define_sys</li>
-                                <li>adsfadsfasdf</li>
-                                <li>dfhghhgh</li>
-                                <li>jkjkjk</li>
-                                <li>jkjkjk</li>
                             </ul>
                         </div>
                         <!-- кнопка открытия -->
                         <div class="button elements-style button_open"><div class="button_open-form">+</div></div>   
-                        <!-- затемнение -->
-                        <div class="black-wrapper"></div>
-                        <!-- форма добавления региона -->
-                        <div class="add-form add-form_region">
-                            <div class="add-form__header">добавление региона</div>
-                            <div class="button button_exit"></div>
-                            <div class="create-tu-add-menu_second-line">
-                                <input type="text" class="data-field data-field_add-region" name="add-region">
-                                <ul class="button__container button-container_add-region">
-                                    <li class="button add-region__button-add"><div class="elements-style">Добавить</div></li>
-                                    <li class="button add-region__button-reset"><div class="elements-style">Очистить</div></li>
-                                </ul>
+                        <!-- контейнер формы добавления региона -->
+                        <div class="add-form__container add-form__container_region">
+                            <!-- затемнение -->
+                            <div class="black-wrapper"></div>
+                            <!-- форма добавления региона -->
+                            <div class="add-form add-form_region">
+                                <div class="add-form__header">добавление региона</div>
+                                <div class="button button_exit"></div>
+                                <div class="create-tu-add-menu_second-line">
+                                    <input type="text" class="data-field data-field_add-region" name="add-region">
+                                    <ul class="button__container button-container_add-region">
+                                        <li class="button add-region__button-add"><div class="elements-style">Добавить</div></li>
+                                        <li class="button add-region__button-reset"><div class="elements-style">Очистить</div></li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -87,34 +85,36 @@
                         </div>
                         <!-- кнопка открытия формы-->
                         <div class="button elements-style button_open"><div class="button_open-form">+</div></div>   
-                        <!-- затемнение -->
-                        <div class="black-wrapper"></div>
-                        <!-- форма добавления населённого пункта -->
-                        <div class="add-form add-form_state">
-                            <div class="add-form__header">добавление населенного пункта</div>
-                            <div class="button button_exit"></div>
-                            <div class="create-tu-add-menu_second-line">
-                                <input type="text" class="data-field data-field_const-region" name="const-region">
-                                <!-- выпадающий список префикс населенных пунктов -->
-                                <div class="combobox-wrapper combobox-wrapper_prfx-state">
-                                    <input type="text" class="data-field data-field_prfx-state" name="prfx-state">
-                                    <div class="button-rotate elements-style"><div class="arrow">&gt;</div></div>
-                                    <ul class="list list_prfx-state">
-                                    <li class="list__items">г.</li>
-                                        <li class="list__items">с.</li>
-                                        <li class="list__items">х.</li>
-                                        <li class="list__items">п.</li>
-                                        <li class="list__items">ст.</li>
-                                        <li class="list__items">д.</li>
-                                    </ul>
+                        <div class="add-form__container add-form__container_state">
+                            <!-- затемнение -->
+                            <div class="black-wrapper"></div>
+                            <!-- форма добавления населённого пункта -->
+                            <div class="add-form add-form_state">
+                                <div class="add-form__header">добавление населенного пункта</div>
+                                <div class="button button_exit"></div>
+                                <div class="create-tu-add-menu_second-line">
+                                    <input type="text" class="data-field data-field_const-region" name="const-region">
+                                    <!-- выпадающий список префикс населенных пунктов -->
+                                    <div class="combobox-wrapper combobox-wrapper_prfx-state">
+                                        <input type="text" class="data-field data-field_prfx-state" name="prfx-state">
+                                        <div class="button-rotate elements-style"><div class="arrow">&gt;</div></div>
+                                        <ul class="list list_prfx-state">
+                                        <li class="list__items">г.</li>
+                                            <li class="list__items">с.</li>
+                                            <li class="list__items">х.</li>
+                                            <li class="list__items">п.</li>
+                                            <li class="list__items">ст.</li>
+                                            <li class="list__items">д.</li>
+                                        </ul>
+                                    </div>
+                                    <input type="text" class="data-field data-field_add-state" name="add-state">
                                 </div>
-                                 <input type="text" class="data-field data-field_add-state" name="add-state">
-                            </div>
-                            <ul class="button__container button-container_add-region">
-                                <li class="button add-state__button-add"><div class="elements-style">Добавить</div></li>
-                                <li class="button add-state__button-reset"><div class="elements-style">Очистить</div></li>
-                            </ul>
-                        </div>      
+                                <ul class="button__container button-container_add-region">
+                                    <li class="button add-state__button-add"><div class="elements-style">Добавить</div></li>
+                                    <li class="button add-state__button-reset"><div class="elements-style">Очистить</div></li>
+                                </ul>
+                            </div>    
+                        </div>   
                     </div>
                 </div>    
                 <!-- третья строка -->
@@ -131,32 +131,34 @@
                         </div>
                         <!-- кнопка открытия формы-->
                         <div class="button elements-style button_open"><div class="button_open-form">+</div></div>   
-                        <!-- затемнение -->
-                        <div class="black-wrapper"></div>
-                        <!-- форма добавления населённого пункта -->
-                        <div class="add-form add-form_street">
-                            <div class="add-form__header">добавление улицы</div>
-                            <div class="button button_exit"></div>
-                            <div class="create-tu-add-menu_second-line">
-                                <input type="text" class="data-field data-field_const-state" name="const-state">
-                                <!-- выпадающий список префикс улиц -->
-                                <div class="combobox-wrapper combobox-wrapper_prfx-street">
-                                    <input type="text" class="data-field data-field_prfx-street" name="prfx-street">
-                                    <div class="button-rotate elements-style"><div class="arrow">&gt;</div></div>
-                                    <ul class="list list_prfx-street">
-                                        <li class="list__items">ул.</li>
-                                        <li class="list__items">проезд</li>
-                                        <li class="list__items">пр-т.</li>
-                                        <li class="list__items">пер.</li>
-                                    </ul>
+                        <div class="add-form__container add-form__container_street">
+                            <!-- затемнение -->
+                            <div class="black-wrapper"></div>
+                            <!-- форма добавления населённого пункта -->
+                            <div class="add-form add-form_street">
+                                <div class="add-form__header">добавление улицы</div>
+                                <div class="button button_exit"></div>
+                                <div class="create-tu-add-menu_second-line">
+                                    <input type="text" class="data-field data-field_const-state" name="const-state">
+                                    <!-- выпадающий список префикс улиц -->
+                                    <div class="combobox-wrapper combobox-wrapper_prfx-street">
+                                        <input type="text" class="data-field data-field_prfx-street" name="prfx-street">
+                                        <div class="button-rotate elements-style"><div class="arrow">&gt;</div></div>
+                                        <ul class="list list_prfx-street">
+                                            <li class="list__items">ул.</li>
+                                            <li class="list__items">проезд</li>
+                                            <li class="list__items">пр-т.</li>
+                                            <li class="list__items">пер.</li>
+                                        </ul>
+                                    </div>
+                                    <input type="text" class="data-field data-field_street" name="add-street">
                                 </div>
-                                 <input type="text" class="data-field data-field_street" name="add-street">
+                                <ul class="button__container button-container_add-street">
+                                    <li class="button add-street__button-add"><div class="elements-style">Добавить</div></li>
+                                    <li class="button add-street__button-reset"><div class="elements-style">Очистить</div></li>
+                                </ul>
                             </div>
-                            <ul class="button__container button-container_add-street">
-                                <li class="button add-street__button-add"><div class="elements-style">Добавить</div></li>
-                                <li class="button add-street__button-reset"><div class="elements-style">Очистить</div></li>
-                            </ul>
-                        </div>
+                        </div> 
                     </div>
                     <!-- блок номер дома -->
                     <div class="create-tu__third-line-container__element create-tu__third-line-container__element_house">
