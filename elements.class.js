@@ -27,13 +27,12 @@ class Combobox {
     closeList (){
         this.buttonIcon.style.transform = "rotate(0deg)";
         this.list.style.transform = "rotateX(90deg)";
-        this.list.style.zIndex = '0';
         this.flagOpen = false;
     }
     openList (){
-        this.buttonIcon.style.transform = "rotate(90deg)";
-        this.list.style.transform = "rotateX(0deg)";
         this.list.style.zIndex = '1';
+        this.buttonIcon.style.transform = "rotate(90deg)";
+        this.list.style.transform = "rotateX(0deg)"; 
         this.flagOpen = true;
     }
     subscribeBtnClick(){
