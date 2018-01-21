@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="main_menu.css" />
     <link rel="stylesheet" href="data.css" />
     <link rel="stylesheet" href="substrate.css" />
+    <script src="json2.js"></script>
     <script src="elements.class.js"></script>    
     <script src="data.js"></script>
     <script src="httprqust.js"></script>
@@ -66,8 +67,8 @@
                                 <div class="create-tu-add-menu_second-line">
                                     <input type="text" class="data-field data-field_add-region" name="add-region">
                                     <ul class="button__container button-container_add-region">
-                                        <li class="button add-region__button-add"><div class="elements-style">Добавить</div></li>
-                                        <li class="button add-region__button-reset"><div class="elements-style">Очистить</div></li>
+                                        <li class="add-region__button-add"><div class="button elements-style">Добавить</div></li>
+                                        <li class="add-region__button-reset"><div class="button elements-style">Очистить</div></li>
                                     </ul>
                                 </div>
                             </div>
@@ -110,8 +111,8 @@
                                     <input type="text" class="data-field data-field_add-state" name="add-state">
                                 </div>
                                 <ul class="button__container button-container_add-region">
-                                    <li class="button add-state__button-add"><div class="elements-style">Добавить</div></li>
-                                    <li class="button add-state__button-reset"><div class="elements-style">Очистить</div></li>
+                                    <li class="add-state__button-add"><div class="button elements-style">Добавить</div></li>
+                                    <li class="add-state__button-reset"><div class="button elements-style">Очистить</div></li>
                                 </ul>
                             </div>    
                         </div>   

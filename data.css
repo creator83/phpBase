@@ -10,12 +10,7 @@
 .add-form_region{
     width: 300px;
 }
-.combobox-wrapper_prfx-state{
-    /* width: 60px; */
-}
-.add-form_state{
-    width: 450px;
-}
+
 /* выпадающие списки основной формы */
 .list_region {
     max-height: 350px;
@@ -45,8 +40,15 @@
     background: url(pic/close_small1.png) no-repeat center, linear-gradient(#FE5D4C, #97253D);
 }
 /* форма добавления населённого пункта */
+.add-form_state{
+    width: 530px;
+}
 .create-tu-add-menu_second-line{
     margin-top: 20px;
+    margin-left: 5px;
+}
+.data-field_prfx-state{
+    width: 30px;
 }
 /* 1-я строка формы ТУ */
 .create-tu__first-line-container{

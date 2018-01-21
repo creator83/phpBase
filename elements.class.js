@@ -301,12 +301,54 @@ class Form {
         this.requestResult;
         this.subscribeBtnClose ();
         this.subscribeBtnOpen ();
-    }    
-
+        this.subscribeBtnSubmit ();
+        this.subscribeBtnReset();
+        this.btnOpenFunc;
+        this.btnSubmitFunc;
+    }  
+    setBtnOpenFunc(f)  {
+        this.btnOpenFunc = f;
+    }
+    setBtnSubmitFunc(f)  {
+       this.btnSubmitFunc = f; 
+    }
+    subscribeBtnSubmit (){
+        var objPtr = this;
+        this.btnSubmit.addEventListener ('click', function(){
+                if (objPtr.targetInput.value!=''){
+                    var req = new XMLHttpRequest();
+                    var region = JSON.stringify(objPtr.targetInput.value);
+                    req.onreadystatechange = function(){
+                        if (req.readyState != 4) return;
+                        var result = req.responseText;
+                        console.log(result);
+                    }
+                    // метод POST
+                    req.open("POST", "add_region.php",true);
+                    
+                    // Установка заголовков
+                    req.setRequestHeader('Content-Type', 'text/plain');
+                   
+                    // Отправка данных
+                    req.send(region);	
+                    objPtr.closeForm();
+                }
+                if (objPtr.btnSubmitFunc!=undefined){
+                    objPtr.btnSubmitFunc.iterate();
+                }
+            });
+    }
+    subscribeBtnReset(){
+        var objPtr = this;
+        
+    }
     subscribeBtnOpen (){
         var objPtr = this;
         this.btnOpen.addEventListener ('click', function(){
-          objPtr.openForm();  
+            objPtr.openForm();  
+            if (objPtr.btnOpenFunc!=undefined){
+                objPtr.btnOpenFunc.iterate();
+            }
         });
     }
     subscribeBtnClose (){

@@ -56,12 +56,6 @@ function autoCloseList(name){
     }
 }
 function updateNextCombo (combo){
-    // var request= new HttpRequest ("POST", "request.php");
-    // request.setRequest (combo.name, combo.inputFieldValue);
-    // request.sendRequest();
-    
-    // request.receiveRequest (list);
-    // var list=[];
     console.log(combo);
     console.log(createTu__combobox_list.next(combo.name));
     console.log(combo.name, combo.inputFieldValue);
@@ -82,9 +76,19 @@ function updateFormCombo(combo){
     }
 }
 var createTu__combobox_list = new listObject (); 
+var addFormsCombo = new listObject (); 
 var addForm =  new listObject (); 
-function openFormAddRegion(name){
-
+function openFormAddState(name){
+    document.getElementsByName ('const-region')[0].value = document.getElementsByName ('region')[0].value;
+}
+function openFormAddStreet(name){
+    document.getElementsByName ('const-state')[0].value = document.getElementsByName ('state')[0].value;
+}
+function updateRegion(){
+    fillCombobox(createTu__combobox_list.getItemByName('region'),'Краснодарский край', 'region');
+}
+function addRegion(){
+    
 }
 function init (){
     var createTu = document.getElementById('create-tu');
@@ -94,17 +98,26 @@ function init (){
     var createTu__forms =  createTu.getElementsByClassName ('add-form__container');
     var createTu__function = new ListFunction();
     var selectItem = new ListFunction();
+    var addState = new ListFunction();
+    var addStreet = new ListFunction();
     createTu__function.addFunction(autoCloseList);
     selectItem.addFunction(updateFormCombo);
+    addState.addFunction(openFormAddState);
+    addStreet.addFunction(openFormAddStreet);
     for (var i=0;i<createTu__combobox.length;++i){
+        var comboElement = new Combobox (createTu__combobox[i],createTu__combobox_list);
         var name = createTu__combobox[i].getElementsByTagName('input')[0].getAttribute('name');
-        if(name =='region'||name =='state'||name =='street'||name =='district'){
-            var comboElement = new Combobox (createTu__combobox[i],createTu__combobox_list);
+        if(name =='region'||name =='state'||name =='street'||name =='district'){   
             createTu__combobox_list.addElement (comboElement);
             comboElement.setBtnClickFunc(createTu__function);
             comboElement.setItemSelectFunc(selectItem);
         }
+        else{
+            addFormsCombo.addElement (comboElement);
+        }
     }
+
+    
     // заполнение списков регионы, районы
     fillCombobox(createTu__combobox_list.getItemByName('region'),'Краснодарский край', 'region');
     fillCombobox(createTu__combobox_list.getItemByName('state'), '','region', 'Краснодарский край');
@@ -117,5 +130,6 @@ function init (){
         var form = new Form(createTu__forms[i], btnOpen[i]);
         addForm.addElement (form);
     }
-
+    addForm.list[1].setBtnOpenFunc (addState);
+    addForm.list[2].setBtnOpenFunc (addStreet);
 }

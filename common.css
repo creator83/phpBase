@@ -29,6 +29,9 @@ body{
     display: inline-block;
     position: relative;
 }
+.button::selection{
+    background: transparent;
+}
 .button-rotate {
     display: inline-block;
     vertical-align: top;
