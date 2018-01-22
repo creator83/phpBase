@@ -87,8 +87,26 @@ function openFormAddStreet(name){
 function updateRegion(){
     fillCombobox(createTu__combobox_list.getItemByName('region'),'Краснодарский край', 'region');
 }
-function addRegion(){
-    
+function addRegion(objPtr){
+    var input = objPtr.formWrapper.getElementsByTagName ('input')[0];
+    if (input.value!=''){
+        var req = new XMLHttpRequest();
+        var region = JSON.stringify(input.value);
+        req.onreadystatechange = function(){
+            if (req.readyState != 4) return;
+            var result = req.responseText;
+            console.log(result);
+        }
+        // метод POST
+        req.open("POST", "add_region.php",true);
+        
+        // Установка заголовков
+        req.setRequestHeader('Content-Type', 'text/plain');
+       
+        // Отправка данных
+        req.send(region);	
+        objPtr.closeForm();
+    }
 }
 function init (){
     var createTu = document.getElementById('create-tu');
@@ -98,12 +116,15 @@ function init (){
     var createTu__forms =  createTu.getElementsByClassName ('add-form__container');
     var createTu__function = new ListFunction();
     var selectItem = new ListFunction();
+    var addRegionForm = new ListFunction();
     var addState = new ListFunction();
     var addStreet = new ListFunction();
     createTu__function.addFunction(autoCloseList);
     selectItem.addFunction(updateFormCombo);
+    addRegionForm.addFunction (addRegion);
     addState.addFunction(openFormAddState);
     addStreet.addFunction(openFormAddStreet);
+
     for (var i=0;i<createTu__combobox.length;++i){
         var comboElement = new Combobox (createTu__combobox[i],createTu__combobox_list);
         var name = createTu__combobox[i].getElementsByTagName('input')[0].getAttribute('name');
@@ -130,6 +151,10 @@ function init (){
         var form = new Form(createTu__forms[i], btnOpen[i]);
         addForm.addElement (form);
     }
+    // Форма добавления региона
+    addForm.list[0].setBtnSubmitFunc(addRegionForm);
+    // Форма добавление населённого пункта
     addForm.list[1].setBtnOpenFunc (addState);
+    // Форма добавления улицы
     addForm.list[2].setBtnOpenFunc (addStreet);
 }

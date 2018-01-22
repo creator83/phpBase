@@ -297,7 +297,7 @@ class Form {
         this.btnClose = this.formWrapper.getElementsByClassName ('button_exit')[0];
         this.btnSubmit = this.formWrapper.getElementsByClassName('button__container')[0].getElementsByTagName('li')[0];
         this.btnReset = this.formWrapper.getElementsByClassName('button__container')[0].getElementsByTagName('li')[1];
-        this.targetInput = this.formWrapper.getElementsByTagName ('input')[0];
+        // this.targetInput = this.formWrapper.getElementsByTagName ('input')[0];
         this.requestResult;
         this.subscribeBtnClose ();
         this.subscribeBtnOpen ();
@@ -315,26 +315,8 @@ class Form {
     subscribeBtnSubmit (){
         var objPtr = this;
         this.btnSubmit.addEventListener ('click', function(){
-                if (objPtr.targetInput.value!=''){
-                    var req = new XMLHttpRequest();
-                    var region = JSON.stringify(objPtr.targetInput.value);
-                    req.onreadystatechange = function(){
-                        if (req.readyState != 4) return;
-                        var result = req.responseText;
-                        console.log(result);
-                    }
-                    // метод POST
-                    req.open("POST", "add_region.php",true);
-                    
-                    // Установка заголовков
-                    req.setRequestHeader('Content-Type', 'text/plain');
-                   
-                    // Отправка данных
-                    req.send(region);	
-                    objPtr.closeForm();
-                }
                 if (objPtr.btnSubmitFunc!=undefined){
-                    objPtr.btnSubmitFunc.iterate();
+                    objPtr.btnSubmitFunc.iterate(objPtr);
                 }
             });
     }
