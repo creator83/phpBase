@@ -50,6 +50,13 @@
 .data-field_prfx-state{
     width: 30px;
 }
+/* форма добавления улицы */
+.add-form_street{
+    width: 530px;
+}
+.data-field_prfx-street{
+    width: 30px;
+}
 /* 1-я строка формы ТУ */
 .create-tu__first-line-container{
     margin-top: 15px;

@@ -100,12 +100,6 @@
                                         <input type="text" class="data-field data-field_prfx-state" name="prfx-state">
                                         <div class="button-rotate elements-style"><div class="arrow">&gt;</div></div>
                                         <ul class="list list_prfx-state">
-                                        <li class="list__items">г.</li>
-                                            <li class="list__items">с.</li>
-                                            <li class="list__items">х.</li>
-                                            <li class="list__items">п.</li>
-                                            <li class="list__items">ст.</li>
-                                            <li class="list__items">д.</li>
                                         </ul>
                                     </div>
                                     <input type="text" class="data-field data-field_add-state" name="add-state">
@@ -146,10 +140,6 @@
                                         <input type="text" class="data-field data-field_prfx-street" name="prfx-street">
                                         <div class="button-rotate elements-style"><div class="arrow">&gt;</div></div>
                                         <ul class="list list_prfx-street">
-                                            <li class="list__items">ул.</li>
-                                            <li class="list__items">проезд</li>
-                                            <li class="list__items">пр-т.</li>
-                                            <li class="list__items">пер.</li>
                                         </ul>
                                     </div>
                                     <input type="text" class="data-field data-field_street" name="add-street">

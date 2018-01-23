@@ -108,6 +108,107 @@ function addRegion(objPtr){
         objPtr.closeForm();
     }
 }
+function addState(objPtr){
+    var regionF = objPtr.formWrapper.getElementsByTagName ('input')[0];
+    var prfxStateF = objPtr.formWrapper.getElementsByTagName ('input')[1];
+    var stateF = objPtr.formWrapper.getElementsByTagName ('input')[2];
+    if (regionF.value!=''&&prfxStateF.value!=''&&stateF.value!=''){
+        var req = new XMLHttpRequest();
+        var data = JSON.stringify({
+            region: regionF.value,
+            prfxState: prfxStateF.value,
+            state: stateF.value
+        });
+        req.onreadystatechange = function(){
+            if (req.readyState != 4) return;
+            var result = req.responseText;
+            console.log(result);
+        }
+        // метод POST
+        req.open("POST", "add_state.php",true);
+        
+        // Установка заголовков
+        req.setRequestHeader('Content-Type', 'text/plain');
+       
+        // Отправка данных
+        req.send(data);	
+        objPtr.closeForm();
+    }
+}
+function addStreet(objPtr){
+    var stateF = objPtr.formWrapper.getElementsByTagName ('input')[0];
+    var prfxStreetF = objPtr.formWrapper.getElementsByTagName ('input')[1];
+    var streetF = objPtr.formWrapper.getElementsByTagName ('input')[2];
+    if (stateF.value!=''&&prfxStreetF.value!=''&&streetF.value!=''){
+        var req = new XMLHttpRequest();
+        var data = JSON.stringify({
+            state: stateF.value,
+            prfxStreet: prfxStreetF.value,
+            street: streetF.value
+        });
+        req.onreadystatechange = function(){
+            if (req.readyState != 4) return;
+            var result = req.responseText;
+            console.log(result);
+        }
+        // метод POST
+        req.open("POST", "add_street.php",true);
+        
+        // Установка заголовков
+        req.setRequestHeader('Content-Type', 'text/plain');
+       
+        // Отправка данных
+        req.send(data);	
+        objPtr.closeForm();
+    }
+    function addTu(objPtr){
+        var sureNameF = document.getElementsByClassName ('data-field_sur-name')[0];
+        var firstNameF = document.getElementsByClassName ('data-field_first-name')[0];
+        var middleNameF = document.getElementsByClassName ('data-field_mid-name')[0];
+        var streetF = document.getElementsByClassName ('data-field_street')[0];
+        var houseF = document.getElementsByClassName ('data-field_house')[0];
+        var korpF = document.getElementsByClassName ('data-field_corps')[0];
+        var apF = document.getElementsByClassName ('data-field_apartment')[0];
+        var phoneF1 = document.getElementsByClassName ('data-field_prfx-phone')[0];
+        var phoneF2 = document.getElementsByClassName ('data-field_num-phone')[0];
+        var districtF = document.getElementsByClassName ('data-field_district')[0];
+        var kadastrF1 = document.getElementsByClassName ('data-field_kadastr-district')[0];
+        var kadastrF2 = document.getElementsByClassName ('data-field_kadastr-number')[0];
+        var addressF = document.getElementsByClassName ('data-field_address')[0];
+        // var typeTuF = 
+        
+
+        if (stateF.value!=''&&prfxStreetF.value!=''&&streetF.value!=''){
+            var req = new XMLHttpRequest();
+            var data = JSON.stringify({
+                sureName: sureNameF.value,
+                firstName: firstNameF.value,
+                midName: middleNameF.value,
+                street: streetF.value,
+                house: houseF.value,
+                korp: korpF.value,
+                ap: apF.value,
+                phone: phoneF1.value+phoneF2.value,
+                district: districtF.value,
+                kadastr: kadastrF1.value+kadastrF2.value,
+                address: addressF.value
+            });
+            req.onreadystatechange = function(){
+                if (req.readyState != 4) return;
+                var result = req.responseText;
+                console.log(result);
+            }
+            // метод POST
+            req.open("POST", "add_tu.php",true);
+            
+            // Установка заголовков
+            req.setRequestHeader('Content-Type', 'text/plain');
+           
+            // Отправка данных
+            req.send(data);	
+            objPtr.closeForm();
+        }
+}
 function init (){
     var createTu = document.getElementById('create-tu');
     var createTu__combobox = createTu.getElementsByClassName ('combobox-wrapper');
@@ -117,13 +218,28 @@ function init (){
     var createTu__function = new ListFunction();
     var selectItem = new ListFunction();
     var addRegionForm = new ListFunction();
-    var addState = new ListFunction();
-    var addStreet = new ListFunction();
+    //===функции формы добавления населённого пункта===//
+    // нажатие кнопки open
+    var addStateOpen = new ListFunction();
+    addStateOpen.addFunction(openFormAddState);
+    // нажатие кнопки submit
+    var addStateSubmit = new ListFunction();
+    addStateSubmit.addFunction(addState);
+
+    //===функции формы добавления населённого пункта===//
+    // нажатие кнопки open
+    var addStreetOpen = new ListFunction();
+    addStreetOpen.addFunction(openFormAddStreet);
+
+    // нажатие кнопки submit
+    var addStreetSubmit = new ListFunction();
+    addStreetSubmit.addFunction(addStreet);
+
     createTu__function.addFunction(autoCloseList);
     selectItem.addFunction(updateFormCombo);
     addRegionForm.addFunction (addRegion);
-    addState.addFunction(openFormAddState);
-    addStreet.addFunction(openFormAddStreet);
+    
+    
 
     for (var i=0;i<createTu__combobox.length;++i){
         var comboElement = new Combobox (createTu__combobox[i],createTu__combobox_list);
@@ -143,6 +259,10 @@ function init (){
     fillCombobox(createTu__combobox_list.getItemByName('region'),'Краснодарский край', 'region');
     fillCombobox(createTu__combobox_list.getItemByName('state'), '','region', 'Краснодарский край');
     fillCombobox(createTu__combobox_list.getItemByName('district'), '','district');
+
+    // заполнение префиксов населённых пунктов и улиц
+    fillCombobox(addFormsCombo.getItemByName('prfx-state'), '','prfx-state');
+    fillCombobox(addFormsCombo.getItemByName('prfx-street'), '','prfx-street');
     console.log(createTu__buttons);
     for (var i=0;i<createTu__buttons.length;++i){
         var el = new Button(createTu__buttons[i]);
@@ -154,7 +274,10 @@ function init (){
     // Форма добавления региона
     addForm.list[0].setBtnSubmitFunc(addRegionForm);
     // Форма добавление населённого пункта
-    addForm.list[1].setBtnOpenFunc (addState);
+    addForm.list[1].setBtnOpenFunc (addStateOpen);
+    addForm.list[1].setBtnSubmitFunc(addStateSubmit);
     // Форма добавления улицы
-    addForm.list[2].setBtnOpenFunc (addStreet);
+    addForm.list[2].setBtnOpenFunc (addStreetOpen);
+    addForm.list[2].setBtnSubmitFunc(addStreetSubmit);
+
 }

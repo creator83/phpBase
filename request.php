@@ -38,16 +38,32 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         echo implode (',', $result);
     }
     if (isset($_POST['region']) and $_POST['region']!=''){
-        $sql = 'SELECT prfx, name FROM stateReg WHERE region ="'.$_POST['region'].'"';
+        $sql = 'SELECT p.name, s.name, r.name FROM state AS s 
+        INNER JOIN region r ON r.id = s.region
+        INNER JOIN prfxState p ON p.id = s.prfxState
+        WHERE r.name = "'.$_POST['region'].'"';
         echo implode (',', splitArray ($base->getData ($sql, 2)));
     }
     if (isset($_POST['state']) and $_POST['state']!=''){
         $state = explode (" ", $_POST['state']);
-        $sql = 'SELECT prfxStreet, name FROM street WHERE stateReg ="'.$state[1].'"';
+        $sql = 	'SELECT p.name, st.name FROM street AS st
+        INNER JOIN state s ON s.id = st.state
+        INNER JOIN prfxStreet p ON p.id = st.prfxStreet
+        WHERE s.name = "'.$state[1].'"';
         echo implode (',', splitArray ($base->getData ($sql, 2)));
     }
     if (isset($_POST['district'])){
         $sql = 'SELECT name FROM district';
+        $result = $base->getData ($sql);
+        echo implode (',', $result);
+    }
+    if (isset($_POST['prfx-state'])){
+        $sql = 'SELECT name FROM prfxstate';
+        $result = $base->getData ($sql);
+        echo implode (',', $result);
+    }
+    if (isset($_POST['prfx-street'])){
+        $sql = 'SELECT name FROM prfxstreet';
         $result = $base->getData ($sql);
         echo implode (',', $result);
     }
