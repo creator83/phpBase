@@ -33,15 +33,15 @@
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     if (isset($_POST['region']) and $_POST['region']==''){
-        $sql = 'SELECT name FROM region';
+        $sql = 'SELECT name FROM region ORDER BY name';
         $result = $base->getData ($sql);
         echo implode (',', $result);
     }
     if (isset($_POST['region']) and $_POST['region']!=''){
-        $sql = 'SELECT p.name, s.name, r.name FROM state AS s 
+        $sql = 'SELECT p.name, s.name FROM state AS s 
         INNER JOIN region r ON r.id = s.region
         INNER JOIN prfxState p ON p.id = s.prfxState
-        WHERE r.name = "'.$_POST['region'].'"';
+        WHERE r.name = "'.$_POST['region'].'" ORDER BY s.name';
         echo implode (',', splitArray ($base->getData ($sql, 2)));
     }
     if (isset($_POST['state']) and $_POST['state']!=''){
@@ -49,11 +49,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         $sql = 	'SELECT p.name, st.name FROM street AS st
         INNER JOIN state s ON s.id = st.state
         INNER JOIN prfxStreet p ON p.id = st.prfxStreet
-        WHERE s.name = "'.$state[1].'"';
+        WHERE s.name = "'.$state[1].'" ORDER BY st.name';
         echo implode (',', splitArray ($base->getData ($sql, 2)));
     }
     if (isset($_POST['district'])){
-        $sql = 'SELECT name FROM district';
+        $sql = 'SELECT name FROM district ORDER BY name';
         $result = $base->getData ($sql);
         echo implode (',', $result);
     }
@@ -66,39 +66,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         $sql = 'SELECT name FROM prfxstreet';
         $result = $base->getData ($sql);
         echo implode (',', $result);
-    }
-    if (isset($_POST['add-region'])){
-        $sql = 'INSERT INTO region (name) VALUES ("'.$_POST['add-region'].'")';
-        $result = $base->putData ($sql);
-        echo $result;
-    }
-    if (isset($_POST['add-state'])){
-        $arr = explode (',', $_POST['add-state']);
-        $sql = 'INSERT INTO stateReg (name, region, prfx) VALUES ("'.$arr[0].'","'.$arr[1].'","'.$arr[2].'")';
-        $result = $base->putData ($sql);
-        echo $result;
-    }
-    if (isset($_POST['add-street'])){
-        $arr = explode (',', $_POST['add-street']);
-        $arr[1] = trim($arr[1]);
-        $state = explode (' ', $arr[1]);
-        $str='';
-        for ($i=1;$i<count($state);++$i){
-            $str .= $state[$i]." ";
-        }
-        $str = trim($str);
-        $sql = 'INSERT INTO street (name, stateReg, prfxStreet) VALUES ("'.$arr[0].'","'.$str.'","'.$arr[2].'")';
-        $result = $base->putData ($sql);
-        echo $result;
-    }
-    if (isset($_POST['create-tu'])){
-        $data = explode (',', $_POST['create-tu']);
-        $numPhone = $data[PRFX_PHONE].$data[NUM_PHONE];
-        $numKadastr = $data[DISTRICT_KADASTR].$data[NUM_KADASTR];
-        /*$sql = 'INSERT INTO tu (nDate, firstName, midleName, sureName, numHouse, numAp, numPhone, reg, address, numKadastr, fileplace, typeTu, street) VALUES
-                                ("'.$data[FIRST_NAME].'","'.$data[MID_NAME].'","'.$data[SUR_NAME].
-                                '","'.$data[HOUSE].'","'.$data[APP].'","'.$numPhone.'","'.;
-                                $data[DISTRICT].'","'.$data[ADDRESS].'","'.*/
     }
 }
 ?>

@@ -1,6 +1,5 @@
 window.addEventListener ("DOMContentLoaded", init);
 
-
 function fillList (list, header, value){
     if (value == undefined){
         value = '';
@@ -10,6 +9,7 @@ function fillList (list, header, value){
     request.sendRequest();
     request.receiveRequest (list);
 }
+
 function fillCombobox (combo, str, header, value){
     if (value == undefined){
         value = '';
@@ -22,6 +22,7 @@ function fillCombobox (combo, str, header, value){
     request.sendRequest();
     request.receiveRequestFunc (combo, str);
 }
+
 function valueToString (coll){
     var str='';
     for (var i=0;i<coll.length-1;++i){
@@ -48,6 +49,7 @@ function fillCreateTu(){
             }
         }
 }
+
 function autoCloseList(name){
     for (var i=0;i < createTu__combobox_list.list.length;++i){
         if (createTu__combobox_list.list[i].name!=name){
@@ -55,12 +57,14 @@ function autoCloseList(name){
         }
     }
 }
+
 function updateNextCombo (combo){
     console.log(combo);
     console.log(createTu__combobox_list.next(combo.name));
     console.log(combo.name, combo.inputFieldValue);
     fillCombobox(createTu__combobox_list.next(combo.name), '',combo.name, combo.inputFieldValue);
 }
+
 function updateFormCombo(combo){
     var index = createTu__combobox_list.getIndexByName(combo.name);
     if (index>1){
@@ -75,6 +79,7 @@ function updateFormCombo(combo){
         }
     }
 }
+
 var createTu__combobox_list = new listObject (); 
 var addFormsCombo = new listObject (); 
 var addForm =  new listObject (); 
@@ -123,6 +128,7 @@ function addState(objPtr){
             if (req.readyState != 4) return;
             var result = req.responseText;
             console.log(result);
+            
         }
         // метод POST
         req.open("POST", "add_state.php",true);
@@ -161,54 +167,56 @@ function addStreet(objPtr){
         req.send(data);	
         objPtr.closeForm();
     }
-    function addTu(objPtr){
-        var sureNameF = document.getElementsByClassName ('data-field_sur-name')[0];
-        var firstNameF = document.getElementsByClassName ('data-field_first-name')[0];
-        var middleNameF = document.getElementsByClassName ('data-field_mid-name')[0];
-        var streetF = document.getElementsByClassName ('data-field_street')[0];
-        var houseF = document.getElementsByClassName ('data-field_house')[0];
-        var korpF = document.getElementsByClassName ('data-field_corps')[0];
-        var apF = document.getElementsByClassName ('data-field_apartment')[0];
-        var phoneF1 = document.getElementsByClassName ('data-field_prfx-phone')[0];
-        var phoneF2 = document.getElementsByClassName ('data-field_num-phone')[0];
-        var districtF = document.getElementsByClassName ('data-field_district')[0];
-        var kadastrF1 = document.getElementsByClassName ('data-field_kadastr-district')[0];
-        var kadastrF2 = document.getElementsByClassName ('data-field_kadastr-number')[0];
-        var addressF = document.getElementsByClassName ('data-field_address')[0];
-        // var typeTuF = 
-        
-
-        if (stateF.value!=''&&prfxStreetF.value!=''&&streetF.value!=''){
-            var req = new XMLHttpRequest();
-            var data = JSON.stringify({
-                sureName: sureNameF.value,
-                firstName: firstNameF.value,
-                midName: middleNameF.value,
-                street: streetF.value,
-                house: houseF.value,
-                korp: korpF.value,
-                ap: apF.value,
-                phone: phoneF1.value+phoneF2.value,
-                district: districtF.value,
-                kadastr: kadastrF1.value+kadastrF2.value,
-                address: addressF.value
-            });
-            req.onreadystatechange = function(){
-                if (req.readyState != 4) return;
-                var result = req.responseText;
-                console.log(result);
-            }
-            // метод POST
-            req.open("POST", "add_tu.php",true);
-            
-            // Установка заголовков
-            req.setRequestHeader('Content-Type', 'text/plain');
-           
-            // Отправка данных
-            req.send(data);	
-            objPtr.closeForm();
-        }
 }
+
+function addTu(objPtr){
+    var sureNameF = document.getElementsByClassName ('data-field_sur-name')[0];
+    var firstNameF = document.getElementsByClassName ('data-field_first-name')[0];
+    var middleNameF = document.getElementsByClassName ('data-field_mid-name')[0];
+    var streetF = document.getElementsByClassName ('data-field_street')[0];
+    var houseF = document.getElementsByClassName ('data-field_house')[0];
+    var korpF = document.getElementsByClassName ('data-field_corps')[0];
+    var apF = document.getElementsByClassName ('data-field_apartment')[0];
+    var phoneF1 = document.getElementsByClassName ('data-field_prfx-phone')[0];
+    var phoneF2 = document.getElementsByClassName ('data-field_num-phone')[0];
+    var districtF = document.getElementsByClassName ('data-field_district')[0];
+    var kadastrF1 = document.getElementsByClassName ('data-field_kadastr-district')[0];
+    var kadastrF2 = document.getElementsByClassName ('data-field_kadastr-number')[0];
+    var addressF = document.getElementsByClassName ('data-field_address')[0];
+    // var typeTuF = 
+
+    if (stateF.value!=''&&prfxStreetF.value!=''&&streetF.value!=''){
+        var req = new XMLHttpRequest();
+        var data = JSON.stringify({
+            sureName: sureNameF.value,
+            firstName: firstNameF.value,
+            midName: middleNameF.value,
+            street: streetF.value,
+            house: houseF.value,
+            korp: korpF.value,
+            ap: apF.value,
+            phone: phoneF1.value+phoneF2.value,
+            district: districtF.value,
+            kadastr: kadastrF1.value+kadastrF2.value,
+            address: addressF.value
+        });
+        req.onreadystatechange = function(){
+            if (req.readyState != 4) return;
+            var result = req.responseText;
+            console.log(result);
+        }
+        // метод POST
+        req.open("POST", "add_tu.php",true);
+        
+        // Установка заголовков
+        req.setRequestHeader('Content-Type', 'text/plain');
+        
+        // Отправка данных
+        req.send(data);	
+        objPtr.closeForm();
+    }
+}
+
 function init (){
     var createTu = document.getElementById('create-tu');
     var createTu__combobox = createTu.getElementsByClassName ('combobox-wrapper');
@@ -238,8 +246,6 @@ function init (){
     createTu__function.addFunction(autoCloseList);
     selectItem.addFunction(updateFormCombo);
     addRegionForm.addFunction (addRegion);
-    
-    
 
     for (var i=0;i<createTu__combobox.length;++i){
         var comboElement = new Combobox (createTu__combobox[i],createTu__combobox_list);
@@ -279,5 +285,4 @@ function init (){
     // Форма добавления улицы
     addForm.list[2].setBtnOpenFunc (addStreetOpen);
     addForm.list[2].setBtnSubmitFunc(addStreetSubmit);
-
 }
