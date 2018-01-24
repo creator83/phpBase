@@ -265,7 +265,7 @@ class Button{
         this.wrapper = wrapper;
         this.subscribeBtnOpenMd();
         this.subscribeBtnOpenMu();
-        // this.subscribeBtnClick();
+        this.subscribeBtnClick();
         this.btnClickFunc;
     }
     setBtnClickFunc(f){
@@ -281,12 +281,14 @@ class Button{
             this.style.background = "linear-gradient(#FE5D4C, #97253D)";
         });
     }
-    // subscribeBtnClick(){
-    //     var objPtr = this;
-    //     this.wrapper.addEventListener ('click', function(){
-    //         objPtr.btnClickFunc.iterate(objPtr);
-    //     });
-    // }
+    subscribeBtnClick(){
+        var objPtr = this;
+        this.wrapper.addEventListener ('click', function(){
+            if (objPtr.btnClickFunc!=undefined){
+                objPtr.btnClickFunc.iterate(objPtr);
+            }
+        });
+    }
 }
 class Form {
     constructor (form,btn){

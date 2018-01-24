@@ -35,7 +35,7 @@ class Database implements IDatabase{
         // $this->setCharset();
 		// $this->__construct($this->host, $this->login, $this->password, $this->base);
         //parent::real_connect($host, $login, $password, $base);
-        $this->_db->real_connect("localhost", $this->login, $this->password, "workbase");
+		$this->_db->real_connect("localhost", $this->login, $this->password, "workbase");
 	}
 	function getData ($sql, $n=1) {
 		$buffer = array ();
@@ -50,7 +50,7 @@ class Database implements IDatabase{
 				}
 				$result->close();
 			}
-		$this->_db->close();
+		// $this->_db->close();
 		return $buffer;
 	}
 	function query ($sql){
@@ -59,7 +59,6 @@ class Database implements IDatabase{
 	function putData ($sql) {
 		$this->open();
 		$this->_db->query("SET NAMES utf8 COLLATE utf8_unicode_ci");
-		// $this->_db->begin_transaction(MYSQLI_TRANS_START_READ_ONLY);
 		if ($this->_db->query($sql)===TRUE) {
 			$this->_db->close();
 			return "Выпонено";

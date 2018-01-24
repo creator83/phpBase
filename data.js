@@ -83,6 +83,7 @@ function updateFormCombo(combo){
 var createTu__combobox_list = new listObject (); 
 var addFormsCombo = new listObject (); 
 var addForm =  new listObject (); 
+var buttons =  new listObject (); 
 function openFormAddState(name){
     document.getElementsByName ('const-region')[0].value = document.getElementsByName ('region')[0].value;
 }
@@ -168,42 +169,47 @@ function addStreet(objPtr){
         objPtr.closeForm();
     }
 }
-
 function addTu(objPtr){
-    var sureNameF = document.getElementsByClassName ('data-field_sur-name')[0];
-    var firstNameF = document.getElementsByClassName ('data-field_first-name')[0];
-    var middleNameF = document.getElementsByClassName ('data-field_mid-name')[0];
-    var streetF = document.getElementsByClassName ('data-field_street')[0];
-    var houseF = document.getElementsByClassName ('data-field_house')[0];
-    var korpF = document.getElementsByClassName ('data-field_corps')[0];
-    var apF = document.getElementsByClassName ('data-field_apartment')[0];
-    var phoneF1 = document.getElementsByClassName ('data-field_prfx-phone')[0];
-    var phoneF2 = document.getElementsByClassName ('data-field_num-phone')[0];
-    var districtF = document.getElementsByClassName ('data-field_district')[0];
-    var kadastrF1 = document.getElementsByClassName ('data-field_kadastr-district')[0];
-    var kadastrF2 = document.getElementsByClassName ('data-field_kadastr-number')[0];
-    var addressF = document.getElementsByClassName ('data-field_address')[0];
-    // var typeTuF = 
+    var sureNameF = document.getElementsByClassName ('data-field_sur-name')[0].value;
+    var firstNameF = document.getElementsByClassName ('data-field_first-name')[0].value;
+    var middleNameF = document.getElementsByClassName ('data-field_mid-name')[0].value;
+    var streetF = document.getElementsByClassName ('data-field_street')[0].value;
+    var houseF = document.getElementsByClassName ('data-field_house')[0].value;
+    var korpF = document.getElementsByClassName ('data-field_corps')[0].value;
+    var apF = document.getElementsByClassName ('data-field_apartment')[0].value;
+    var phoneF1 = document.getElementsByClassName ('data-field_prfx-phone')[0].value;
+    var phoneF2 = document.getElementsByClassName ('data-field_num-phone')[0].value;
+    var districtF = document.getElementsByClassName ('data-field_district')[0].value;
+    var kadastrF1 = document.getElementsByClassName ('data-field_kadastr-district')[0].value;
+    var kadastrF2 = document.getElementsByClassName ('data-field_kadastr-number')[0].value;
+    var addressF = document.getElementsByClassName ('data-field_address')[0].value;
+    var typeTuF = document.getElementsByClassName ('data-field_type-tu')[0].value;
+    var additionalF = document.getElementsByClassName ('data-field_additional')[0].checked;
 
-    if (stateF.value!=''&&prfxStreetF.value!=''&&streetF.value!=''){
+    if (sureNameF!=''&&firstNameF!=''&&middleNameF!=''&&streetF!=''&&houseF!=''
+    &&phoneF1!=''&&phoneF2!=''&&districtF!=''&&kadastrF1!=''&&kadastrF2!=''&&typeTuF!=''){
+    
         var req = new XMLHttpRequest();
         var data = JSON.stringify({
-            sureName: sureNameF.value,
-            firstName: firstNameF.value,
-            midName: middleNameF.value,
-            street: streetF.value,
-            house: houseF.value,
-            korp: korpF.value,
-            ap: apF.value,
-            phone: phoneF1.value+phoneF2.value,
-            district: districtF.value,
-            kadastr: kadastrF1.value+kadastrF2.value,
-            address: addressF.value
+            sureName: sureNameF,
+            firstName: firstNameF,
+            midName: middleNameF,
+            street: streetF,
+            house: houseF,
+            korp: korpF,
+            ap: apF,
+            phone: phoneF1+phoneF2,
+            district: districtF,
+            kadastr: kadastrF1+kadastrF2,
+            address: addressF,
+            typetu: typeTuF,
+            additional: additionalF==true?1:0
         });
         req.onreadystatechange = function(){
             if (req.readyState != 4) return;
             var result = req.responseText;
             console.log(result);
+
         }
         // метод POST
         req.open("POST", "add_tu.php",true);
@@ -213,7 +219,6 @@ function addTu(objPtr){
         
         // Отправка данных
         req.send(data);	
-        objPtr.closeForm();
     }
 }
 
@@ -226,6 +231,7 @@ function init (){
     var createTu__function = new ListFunction();
     var selectItem = new ListFunction();
     var addRegionForm = new ListFunction();
+    // var btnSubmit = document.getElementsByClassName('create-tu__button-add')[0].getElementsByTagName('div');
     //===функции формы добавления населённого пункта===//
     // нажатие кнопки open
     var addStateOpen = new ListFunction();
@@ -246,6 +252,10 @@ function init (){
     createTu__function.addFunction(autoCloseList);
     selectItem.addFunction(updateFormCombo);
     addRegionForm.addFunction (addRegion);
+
+    // === функции кнопки создания ТУ ===//
+    var addTuSubmit = new ListFunction();
+    addTuSubmit.addFunction (addTu);
 
     for (var i=0;i<createTu__combobox.length;++i){
         var comboElement = new Combobox (createTu__combobox[i],createTu__combobox_list);
@@ -269,10 +279,15 @@ function init (){
     // заполнение префиксов населённых пунктов и улиц
     fillCombobox(addFormsCombo.getItemByName('prfx-state'), '','prfx-state');
     fillCombobox(addFormsCombo.getItemByName('prfx-street'), '','prfx-street');
+
+    fillCombobox(createTu__combobox_list.getItemByName('type-tu'), 'без проекта','type-tu');
     console.log(createTu__buttons);
     for (var i=0;i<createTu__buttons.length;++i){
         var el = new Button(createTu__buttons[i]);
+        buttons.addElement(el);
     }
+    buttons.list[12].setBtnClickFunc (addTuSubmit);
+
     for (var i=0;i<createTu__forms.length;++i){
         var form = new Form(createTu__forms[i], btnOpen[i]);
         addForm.addElement (form);

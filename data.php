@@ -198,11 +198,21 @@
                 </div>
                 <!-- пятая строка -->
                 <div class="create-tu__five-line-container">
-                     <input type="radio" class="data-field data-field_type-tu" name="type-tu" value"with">
-                     <div class="create-tu__label create-tu__label_radio">С проектом</div>
-                     <input type="radio" class="data-field data-field_type-tu" name="type-tu" value"without" checked>
-                     <div class="create-tu__label create-tu__label_radio">Без проекта</div>
-                </div>
+                    <div class="create-tu__five-line-container__element create-tu__five-line-container__element_type-tu">
+                        <div class="create-tu__label data__label_type-tu">Тип технических условий:</div>
+                <!-- выпадающий список тип ТУ-->
+                        <div class="combobox-wrapper combobox-wrapper_type-tu">
+                            <input type="text" class="data-field data-field_type-tu" name="district">
+                            <div class="button-rotate elements-style"><div class="arrow">&gt;</div></div>
+                            <ul class="list list_type-tu">
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="create-tu__five-line-container__element create-tu__five-line-container__element_additional">
+                        <div class="create-tu__label data__label_additional">Обременение:</div>
+                        <input class="data-field data-field_additional" type="checkbox" unchecked>
+                    </div>
+                </div>    
                 <!-- кнопки создания ту -->
                 <ul class="button__container create-tu__button-container">
                     <li class="create-tu__button-add"><div class="button elements-style">Добавить</div></li>
